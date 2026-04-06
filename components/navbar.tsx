@@ -40,7 +40,7 @@ export function Navbar() {
                 href={link.href}
                 className={cn(
                   "transition-colors hover:text-[--sky]",
-                  pathname === link.href ? "text-[--sky]" : "text-white/80"
+                  pathname === link.href ? "text-[--sky]" : "text-white"
                 )}
               >
                 {link.label}
@@ -60,7 +60,7 @@ export function Navbar() {
 
           {/* Mobile hamburger */}
           <button
-            className="md:hidden p-2 rounded-md text-white/80 hover:text-white"
+            className="md:hidden p-2 rounded-md text-white hover:text-[--sky]"
             aria-label={open ? "Close menu" : "Open menu"}
             onClick={() => setOpen(!open)}
           >
@@ -79,7 +79,7 @@ export function Navbar() {
               onClick={() => setOpen(false)}
               className={cn(
                 "py-2 text-sm font-medium transition-colors hover:text-[--sky]",
-                pathname === link.href ? "text-[--sky]" : "text-white/80"
+                pathname === link.href ? "text-[--sky]" : "text-white"
               )}
             >
               {link.label}
