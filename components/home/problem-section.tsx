@@ -25,25 +25,25 @@ const problems = [
 
 export function ProblemSection() {
   return (
-    <section className="py-16 bg-[--navy] text-white">
+    <section className="py-16 bg-blue-950 text-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <p className="text-[--sky] text-sm font-semibold uppercase tracking-widest mb-2">The Challenge</p>
-          <h2 className="text-3xl font-bold text-balance mb-4">
+          <p className="text-sky-400 text-sm font-semibold uppercase tracking-widest mb-2">The Challenge</p>
+          <h2 className="text-3xl font-bold text-balance mb-4 text-white">
             Misinformation is spreading. Education is the antidote.
           </h2>
-          <p className="text-white/65 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-slate-300 max-w-2xl mx-auto leading-relaxed">
             VaxShield exists because the problem is real — and because communities deserve better than fear, silence, or outdated materials. Our approach is rooted in science, built on empathy, and designed to empower.
           </p>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {problems.map(({ icon: Icon, title, body }) => (
-            <div key={title} className="bg-white/5 rounded-2xl p-6 border border-white/10 hover:border-[--sky]/40 transition-colors">
-              <div className="w-10 h-10 rounded-full bg-[--sky]/20 flex items-center justify-center mb-4">
-                <Icon className="h-5 w-5 text-[--sky]" aria-hidden="true" />
+            <div key={title} className="bg-white/5 rounded-2xl p-6 border border-white/10 hover:border-sky-400/40 transition-colors">
+              <div className="w-10 h-10 rounded-full bg-sky-400/20 flex items-center justify-center mb-4">
+                <Icon className="h-5 w-5 text-sky-400" aria-hidden="true" />
               </div>
               <h3 className="font-semibold text-white mb-2">{title}</h3>
-              <p className="text-sm text-white/60 leading-relaxed">{body}</p>
+              <p className="text-sm text-slate-300 leading-relaxed">{body}</p>
             </div>
           ))}
         </div>
