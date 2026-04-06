@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useCallback, useRef } from "react"
+import { useState, useCallback, useRef, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Slider } from "@/components/ui/slider"
 import Link from "next/link"
@@ -11,9 +11,14 @@ const TOTAL = GRID_SIZE * GRID_SIZE
 
 type CellState = "susceptible" | "vaccinated" | "infected" | "recovered"
 
-function buildInitialGrid(vaccinationRate: number): CellState[] {
+// Deterministic initial state for SSR (all susceptible)
+function buildEmptyGrid(): CellState[] {
+  return Array(TOTAL).fill("susceptible") as CellState[]
+}
+
+// Randomized grid only called on client
+function buildRandomizedGrid(vaccinationRate: number): CellState[] {
   const grid: CellState[] = Array(TOTAL).fill("susceptible")
-  // vaccinate cells
   const vaccCount = Math.round(TOTAL * (vaccinationRate / 100))
   const indices = Array.from({ length: TOTAL }, (_, i) => i)
   for (let i = indices.length - 1; i > 0; i--) {
@@ -21,7 +26,6 @@ function buildInitialGrid(vaccinationRate: number): CellState[] {
     [indices[i], indices[j]] = [indices[j], indices[i]]
   }
   for (let i = 0; i < vaccCount; i++) grid[indices[i]] = "vaccinated"
-  // seed one infection
   const susceptible = indices.filter((idx) => grid[idx] === "susceptible")
   if (susceptible.length > 0) grid[susceptible[0]] = "infected"
   return grid
@@ -36,16 +40,23 @@ const cellColor: Record<CellState, string> = {
 
 export function SimulatorSection() {
   const [vacRate, setVacRate] = useState(60)
-  const [grid, setGrid] = useState<CellState[]>(() => buildInitialGrid(60))
+  const [grid, setGrid] = useState<CellState[]>(buildEmptyGrid)
   const [running, setRunning] = useState(false)
   const [step, setStep] = useState(0)
+  const [mounted, setMounted] = useState(false)
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
+
+  // Initialize with random grid after hydration
+  useEffect(() => {
+    setGrid(buildRandomizedGrid(60))
+    setMounted(true)
+  }, [])
 
   const reset = useCallback(() => {
     if (intervalRef.current) clearInterval(intervalRef.current)
     setRunning(false)
     setStep(0)
-    setGrid(buildInitialGrid(vacRate))
+    setGrid(buildRandomizedGrid(vacRate))
   }, [vacRate])
 
   const runStep = useCallback((current: CellState[]) => {
