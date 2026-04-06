@@ -6,25 +6,12 @@ import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
-import {
-  FileText, Image as ImageIcon, Video, BookOpen,
-  Download, Search, Package, Presentation, ExternalLink
-} from "lucide-react"
+import { FileText, Download, Search, ExternalLink } from "lucide-react"
 
-type ResourceType = "All" | "Lesson Plan" | "Worksheet" | "Infographic" | "Video" | "Kit" | "Pamphlet"
+type ResourceType = "All" | "Worksheet"
 type Audience = "All" | "Students" | "Educators" | "Parents" | "Providers"
 
 const resources = [
-  {
-    title: "Herd Immunity Lesson Plan",
-    description: "A full-period high school lesson integrating the VaxShield simulator with discussion prompts and learning objectives aligned to health science standards.",
-    type: "Lesson Plan" as ResourceType,
-    audience: ["Students", "Educators"] as Audience[],
-    icon: Presentation,
-    free: true,
-    featured: true,
-    file: "#",
-  },
   {
     title: "Worksheet 1: Original",
     description: "A foundational worksheet covering vaccine basics, disease spread, and herd immunity concepts — suitable for grades 9–12.",
@@ -44,76 +31,6 @@ const resources = [
     free: true,
     featured: true,
     file: "/downloads/VaxImpact-Simulator-Case-Study.pdf",
-  },
-  {
-    title: "Parent & Caregiver Pamphlet",
-    description: "A concise, plain-language pamphlet addressing common vaccine questions and concerns. Ideal for clinic waiting rooms and school take-home packets.",
-    type: "Pamphlet" as ResourceType,
-    audience: ["Parents", "Providers"] as Audience[],
-    icon: BookOpen,
-    free: true,
-    featured: false,
-    file: "#",
-  },
-  {
-    title: "How Vaccines Work — Science Infographic",
-    description: "A science-focused infographic explaining how the immune system responds to vaccines, suitable for older students and adults.",
-    type: "Infographic" as ResourceType,
-    audience: ["Students", "Parents", "Providers"] as Audience[],
-    icon: ImageIcon,
-    free: true,
-    featured: false,
-    file: "#",
-  },
-  {
-    title: "Vaccine Myths vs. Facts",
-    description: "A short emotional infographic debunking common vaccine myths with evidence-based responses. Designed for social sharing and flyer distribution.",
-    type: "Infographic" as ResourceType,
-    audience: ["Parents", "Students"] as Audience[],
-    icon: ImageIcon,
-    free: true,
-    featured: false,
-    file: "#",
-  },
-  {
-    title: "Elementary Vaccine Literacy Kit",
-    description: "Hands-on learning kit with germ-spread demonstration materials, colorful worksheets, and guided activities for grades K–5.",
-    type: "Kit" as ResourceType,
-    audience: ["Students", "Educators"] as Audience[],
-    icon: Package,
-    free: false,
-    featured: false,
-    file: "#",
-  },
-  {
-    title: "Why Vaccines Matter — Video",
-    description: "A 5-minute animated explainer on how vaccines protect communities, featuring real student and community perspectives.",
-    type: "Video" as ResourceType,
-    audience: ["Students", "Parents"] as Audience[],
-    icon: Video,
-    free: true,
-    featured: false,
-    file: "#",
-  },
-  {
-    title: "Community Outreach Flyer",
-    description: "A printable, bilingual flyer for community bulletin boards and clinic distribution drives. Includes VaxSearch QR code.",
-    type: "Infographic" as ResourceType,
-    audience: ["Parents", "Providers"] as Audience[],
-    icon: ImageIcon,
-    free: true,
-    featured: false,
-    file: "#",
-  },
-  {
-    title: "Educator Implementation Guide",
-    description: "A step-by-step guide for teachers on how to use VaxShield resources in the classroom, including standards alignment notes.",
-    type: "Lesson Plan" as ResourceType,
-    audience: ["Educators"] as Audience[],
-    icon: Presentation,
-    free: true,
-    featured: false,
-    file: "#",
   },
 ]
 
