@@ -58,11 +58,11 @@ export default function ResourcesPage() {
       <main>
         {/* Hero */}
         <section className="bg-[--navy] text-white py-14 px-4 text-center">
-          <p className="text-[--sky] text-sm font-semibold uppercase tracking-widest mb-2">Resource Hub</p>
-          <h1 className="text-4xl font-bold mb-4 text-balance">
+          <p className="text-sky-300 text-sm font-semibold uppercase tracking-widest mb-2">Resource Hub</p>
+          <h1 className="text-4xl font-bold mb-4 text-balance text-white">
             Free tools for learning, teaching,<br />and building healthier communities.
           </h1>
-          <p className="text-white/70 text-lg max-w-2xl mx-auto">
+          <p className="text-slate-300 text-lg max-w-2xl mx-auto">
             Every resource is designed with a specific audience and use case in mind — searchable, downloadable, and ready to use.
           </p>
         </section>
@@ -198,8 +198,8 @@ export default function ResourcesPage() {
 
           {/* CTA */}
           <div className="mt-12 bg-[--navy] rounded-2xl p-8 text-white text-center">
-            <h2 className="text-2xl font-bold mb-2">Need organizational access?</h2>
-            <p className="text-white/70 mb-5">Schools, clinics, and districts can access premium kits and request bulk materials.</p>
+            <h2 className="text-2xl font-bold mb-2 text-white">Need organizational access?</h2>
+            <p className="text-slate-300 mb-5">Schools, clinics, and districts can access premium kits and request bulk materials.</p>
             <Button asChild className="bg-[--sky] text-white hover:bg-[--sky]/80 gap-2">
               <a href="/organizations">View Organizational Offerings</a>
             </Button>
