@@ -33,7 +33,7 @@ const resources = [
     icon: FileText,
     free: true,
     featured: true,
-    file: "#",
+    file: "/downloads/VaxImpact-Simulator-Worksheet.pdf",
   },
   {
     title: "Worksheet 2: Case Study",
@@ -43,7 +43,7 @@ const resources = [
     icon: FileText,
     free: true,
     featured: true,
-    file: "#",
+    file: "/downloads/VaxImpact-Simulator-Case-Study.pdf",
   },
   {
     title: "Parent & Caregiver Pamphlet",
