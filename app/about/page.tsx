@@ -28,12 +28,12 @@ export default function AboutPage() {
       <Navbar />
       <main>
         {/* Hero */}
-        <section className="bg-[--navy] text-white py-16 px-4">
+        <section className="bg-slate-900 text-white py-16 px-4">
           <div className="mx-auto max-w-4xl text-center">
-            <div className="w-16 h-16 rounded-full bg-[--sky]/20 flex items-center justify-center mx-auto mb-6">
-              <Shield className="h-8 w-8 text-[--sky]" aria-hidden="true" />
+            <div className="w-16 h-16 rounded-full bg-sky-600/20 flex items-center justify-center mx-auto mb-6">
+              <Shield className="h-8 w-8 text-sky-600" aria-hidden="true" />
             </div>
-            <p className="text-[--sky] text-sm font-semibold uppercase tracking-widest mb-2">About VaxShield</p>
+            <p className="text-sky-600 text-sm font-semibold uppercase tracking-widest mb-2">About VaxShield</p>
             <h1 className="text-4xl sm:text-5xl font-bold text-balance mb-6">
               Rooted in community.<br />Built on science.
             </h1>
@@ -48,8 +48,8 @@ export default function AboutPage() {
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
-                <p className="text-[--sky] text-sm font-semibold uppercase tracking-widest mb-2">Our Story</p>
-                <h2 className="text-3xl font-bold text-[--navy] text-balance mb-4">Why we started VaxShield</h2>
+                <p className="text-sky-600 text-sm font-semibold uppercase tracking-widest mb-2">Our Story</p>
+                <h2 className="text-3xl font-bold text-slate-900 text-balance mb-4">Why we started VaxShield</h2>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   VaxShield was founded in communities where vaccine conversations are often shaped by hesitation, historical mistrust, and rapidly spreading misinformation. The founders recognized that existing resources were either too clinical, too fear-based, or simply not reaching the people who needed them most.
                 </p>
@@ -60,17 +60,17 @@ export default function AboutPage() {
                   From its roots at the University of Michigan, VaxShield has grown into a platform connecting students, educators, clinicians, and communities around a shared belief: that informed communities are healthier communities.
                 </p>
               </div>
-              <div className="bg-[--sky-pale] rounded-2xl p-8 border border-[--sky]/20">
+              <div className="bg-sky-50 rounded-2xl p-8 border border-sky-600/20">
                 <div className="flex items-center gap-3 mb-6">
-                  <Eye className="h-6 w-6 text-[--sky]" aria-hidden="true" />
-                  <h3 className="font-bold text-[--navy] text-lg">Our Vision</h3>
+                  <Eye className="h-6 w-6 text-sky-600" aria-hidden="true" />
+                  <h3 className="font-bold text-slate-900 text-lg">Our Vision</h3>
                 </div>
                 <p className="text-muted-foreground leading-relaxed mb-6">
                   A world where every student understands how vaccines work, every community has access to honest public health education, and misinformation no longer drives decisions that affect lives.
                 </p>
                 <div className="flex items-center gap-3 mb-4">
-                  <Target className="h-6 w-6 text-[--sky]" aria-hidden="true" />
-                  <h3 className="font-bold text-[--navy] text-lg">Our Mission</h3>
+                  <Target className="h-6 w-6 text-sky-600" aria-hidden="true" />
+                  <h3 className="font-bold text-slate-900 text-lg">Our Mission</h3>
                 </div>
                 <p className="text-muted-foreground leading-relaxed">
                   To reduce vaccine stigma and misinformation through engaging, science-backed educational tools that foster curiosity, scientific literacy, and community responsibility.
@@ -81,19 +81,19 @@ export default function AboutPage() {
         </section>
 
         {/* Values */}
-        <section className="py-16 bg-[--sky-pale]">
+        <section className="py-16 bg-sky-50">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <p className="text-[--sky] text-sm font-semibold uppercase tracking-widest mb-2">What We Believe</p>
-              <h2 className="text-3xl font-bold text-[--navy] text-balance">Our core principles</h2>
+              <p className="text-sky-600 text-sm font-semibold uppercase tracking-widest mb-2">What We Believe</p>
+              <h2 className="text-3xl font-bold text-slate-900 text-balance">Our core principles</h2>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {values.map(({ icon: Icon, title, body }) => (
-                <div key={title} className="bg-white rounded-2xl p-6 border border-[--sky]/20">
-                  <div className="w-10 h-10 rounded-full bg-[--sky]/15 flex items-center justify-center mb-4">
-                    <Icon className="h-5 w-5 text-[--sky]" aria-hidden="true" />
+                <div key={title} className="bg-white rounded-2xl p-6 border border-sky-600/20">
+                  <div className="w-10 h-10 rounded-full bg-sky-600/15 flex items-center justify-center mb-4">
+                    <Icon className="h-5 w-5 text-sky-600" aria-hidden="true" />
                   </div>
-                  <h3 className="font-semibold text-[--navy] mb-2">{title}</h3>
+                  <h3 className="font-semibold text-slate-900 mb-2">{title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{body}</p>
                 </div>
               ))}
@@ -105,16 +105,16 @@ export default function AboutPage() {
         <section className="py-16 bg-white">
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <p className="text-[--sky] text-sm font-semibold uppercase tracking-widest mb-2">Our Partners</p>
-              <h2 className="text-3xl font-bold text-[--navy] text-balance">Collaborative, advisor-informed, expert-connected</h2>
+              <p className="text-sky-600 text-sm font-semibold uppercase tracking-widest mb-2">Our Partners</p>
+              <h2 className="text-3xl font-bold text-slate-900 text-balance">Collaborative, advisor-informed, expert-connected</h2>
               <p className="text-muted-foreground mt-2 max-w-xl mx-auto">
                 VaxShield is student-led but never alone. We are built with and supported by a network of public health professionals, clinicians, educators, and institutions.
               </p>
             </div>
             <div className="space-y-3">
               {partners.map(({ name, role }) => (
-                <div key={name} className="flex flex-col sm:flex-row sm:items-center justify-between bg-[--sky-pale] rounded-xl px-5 py-4 border border-[--sky]/20 gap-1">
-                  <p className="font-semibold text-[--navy]">{name}</p>
+                <div key={name} className="flex flex-col sm:flex-row sm:items-center justify-between bg-sky-50 rounded-xl px-5 py-4 border border-sky-600/20 gap-1">
+                  <p className="font-semibold text-slate-900">{name}</p>
                   <p className="text-sm text-muted-foreground">{role}</p>
                 </div>
               ))}
@@ -123,16 +123,16 @@ export default function AboutPage() {
         </section>
 
         {/* CTA */}
-        <section className="py-14 bg-[--navy] text-white text-center px-4">
+        <section className="py-14 bg-slate-900 text-white text-center px-4">
           <h2 className="text-2xl font-bold mb-3 text-balance">Ready to get involved?</h2>
           <p className="text-white/65 mb-6 max-w-lg mx-auto">
             Whether you want to partner, donate, volunteer, or bring VaxShield to your school or clinic — we want to hear from you.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Button asChild className="bg-[--sky] text-white hover:bg-[--sky]/80">
+            <Button asChild className="bg-sky-600 text-white hover:bg-sky-700">
               <Link href="/contact">Contact Us</Link>
             </Button>
-            <Button asChild variant="outline" className="border-white/30 text-white hover:bg-white/10 hover:text-white">
+            <Button asChild variant="outline" className="border-white text-white bg-transparent hover:bg-white/10 hover:text-white">
               <Link href="/impact">See Our Impact</Link>
             </Button>
           </div>

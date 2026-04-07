@@ -65,8 +65,8 @@ export default function ImpactPage() {
       <Navbar />
       <main>
         {/* Hero */}
-        <section className="bg-[--navy] text-white py-16 px-4 text-center">
-          <p className="text-[--sky] text-sm font-semibold uppercase tracking-widest mb-2">Impact & Partnerships</p>
+        <section className="bg-slate-900 text-white py-16 px-4 text-center">
+          <p className="text-sky-600 text-sm font-semibold uppercase tracking-widest mb-2">Impact & Partnerships</p>
           <h1 className="text-4xl font-bold mb-4 text-balance">VaxShield is not just an idea. It&apos;s operating.</h1>
           <p className="text-white/70 text-lg max-w-2xl mx-auto">
             Here is our measurable reach, our real-world partners, and a transparent look at where funds are going and why this work matters.
@@ -77,17 +77,17 @@ export default function ImpactPage() {
         <section className="py-14 bg-white">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-10">
-              <p className="text-[--sky] text-sm font-semibold uppercase tracking-widest mb-2">Live Metrics</p>
-              <h2 className="text-3xl font-bold text-[--navy]">Our reach, measured</h2>
+              <p className="text-sky-600 text-sm font-semibold uppercase tracking-widest mb-2">Live Metrics</p>
+              <h2 className="text-3xl font-bold text-slate-900">Our reach, measured</h2>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
               {metrics.map(({ icon: Icon, value, label, description }) => (
-                <div key={label} className="bg-[--sky-pale] rounded-2xl p-6 border border-[--sky]/20 text-center">
-                  <div className="w-12 h-12 rounded-full bg-[--sky]/15 flex items-center justify-center mx-auto mb-3">
-                    <Icon className="h-6 w-6 text-[--sky]" aria-hidden="true" />
+                <div key={label} className="bg-sky-50 rounded-2xl p-6 border border-sky-600/20 text-center">
+                  <div className="w-12 h-12 rounded-full bg-sky-600/15 flex items-center justify-center mx-auto mb-3">
+                    <Icon className="h-6 w-6 text-sky-600" aria-hidden="true" />
                   </div>
-                  <p className="text-4xl font-bold text-[--navy] mb-1">{value}</p>
-                  <p className="font-semibold text-[--navy] text-sm">{label}</p>
+                  <p className="text-4xl font-bold text-slate-900 mb-1">{value}</p>
+                  <p className="font-semibold text-slate-900 text-sm">{label}</p>
                   <p className="text-xs text-muted-foreground mt-1">{description}</p>
                 </div>
               ))}
@@ -101,25 +101,25 @@ export default function ImpactPage() {
         </section>
 
         {/* Case Studies */}
-        <section className="py-16 bg-[--sky-pale]">
+        <section className="py-16 bg-sky-50">
           <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-10">
-              <p className="text-[--sky] text-sm font-semibold uppercase tracking-widest mb-2">Proof Points</p>
-              <h2 className="text-3xl font-bold text-[--navy] text-balance">Pilot results & outcomes</h2>
+              <p className="text-sky-600 text-sm font-semibold uppercase tracking-widest mb-2">Proof Points</p>
+              <h2 className="text-3xl font-bold text-slate-900 text-balance">Pilot results & outcomes</h2>
             </div>
             <div className="space-y-6">
               {caseStudies.map(({ site, type, summary, outcome }) => (
-                <div key={site} className="bg-white rounded-2xl border border-[--sky]/20 p-6">
+                <div key={site} className="bg-white rounded-2xl border border-sky-600/20 p-6">
                   <div className="flex flex-wrap items-start gap-3 mb-3">
                     <div>
-                      <p className="font-bold text-[--navy]">{site}</p>
-                      <p className="text-xs text-[--sky] font-semibold uppercase tracking-wider">{type}</p>
+                      <p className="font-bold text-slate-900">{site}</p>
+                      <p className="text-xs text-sky-600 font-semibold uppercase tracking-wider">{type}</p>
                     </div>
                   </div>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-3">{summary}</p>
-                  <div className="flex items-center gap-2 bg-[--sky-pale] rounded-lg px-4 py-2">
-                    <TrendingUp className="h-4 w-4 text-[--sky] shrink-0" aria-hidden="true" />
-                    <p className="text-sm font-medium text-[--navy]">{outcome}</p>
+                  <div className="flex items-center gap-2 bg-sky-50 rounded-lg px-4 py-2">
+                    <TrendingUp className="h-4 w-4 text-sky-600 shrink-0" aria-hidden="true" />
+                    <p className="text-sm font-medium text-slate-900">{outcome}</p>
                   </div>
                 </div>
               ))}
@@ -131,22 +131,22 @@ export default function ImpactPage() {
         <section className="py-16 bg-white">
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-10">
-              <p className="text-[--sky] text-sm font-semibold uppercase tracking-widest mb-2">Transparency</p>
-              <h2 className="text-3xl font-bold text-[--navy] text-balance">Where funds go</h2>
+              <p className="text-sky-600 text-sm font-semibold uppercase tracking-widest mb-2">Transparency</p>
+              <h2 className="text-3xl font-bold text-slate-900 text-balance">Where funds go</h2>
               <p className="text-muted-foreground mt-2 max-w-xl mx-auto">
                 VaxShield is committed to using every dollar in service of our mission. Here is how contributions are allocated.
               </p>
             </div>
-            <div className="bg-[--sky-pale] rounded-2xl border border-[--sky]/20 p-6 space-y-4">
+            <div className="bg-sky-50 rounded-2xl border border-sky-600/20 p-6 space-y-4">
               {fundAllocation.map(({ category, percent }) => (
                 <div key={category}>
-                  <div className="flex justify-between text-sm font-medium text-[--navy] mb-1">
+                  <div className="flex justify-between text-sm font-medium text-slate-900 mb-1">
                     <span>{category}</span>
                     <span>{percent}%</span>
                   </div>
-                  <div className="h-2.5 bg-white rounded-full overflow-hidden border border-[--sky]/10">
+                  <div className="h-2.5 bg-white rounded-full overflow-hidden border border-sky-600/10">
                     <div
-                      className="h-full bg-[--sky] rounded-full transition-all"
+                      className="h-full bg-sky-600 rounded-full transition-all"
                       style={{ width: `${percent}%` }}
                       aria-label={`${category}: ${percent}%`}
                     />
@@ -161,20 +161,20 @@ export default function ImpactPage() {
         </section>
 
         {/* Partners */}
-        <section className="py-16 bg-[--navy] text-white">
+        <section className="py-16 bg-slate-900 text-white">
           <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-10">
-              <p className="text-[--sky] text-sm font-semibold uppercase tracking-widest mb-2">Our Network</p>
+              <p className="text-sky-600 text-sm font-semibold uppercase tracking-widest mb-2">Our Network</p>
               <h2 className="text-3xl font-bold text-balance">Partners & collaborators</h2>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {partnerTypes.map(({ category, partners }) => (
                 <div key={category} className="bg-white/5 rounded-2xl p-5 border border-white/10">
-                  <p className="text-[--sky] text-xs font-semibold uppercase tracking-wider mb-3">{category}</p>
+                  <p className="text-sky-600 text-xs font-semibold uppercase tracking-wider mb-3">{category}</p>
                   <ul className="space-y-2">
                     {partners.map((p) => (
                       <li key={p} className="text-sm text-white/70 flex items-center gap-2">
-                        <BarChart2 className="h-3.5 w-3.5 text-[--sky]/50 shrink-0" aria-hidden="true" />
+                        <BarChart2 className="h-3.5 w-3.5 text-sky-600/50 shrink-0" aria-hidden="true" />
                         {p}
                       </li>
                     ))}
@@ -186,18 +186,18 @@ export default function ImpactPage() {
         </section>
 
         {/* CTA */}
-        <section className="py-14 bg-[--sky-pale] text-center px-4">
+        <section className="py-14 bg-sky-50 text-center px-4">
           <div className="mx-auto max-w-2xl">
-            <Heart className="h-10 w-10 text-[--sky] mx-auto mb-4" aria-hidden="true" />
-            <h2 className="text-2xl font-bold text-[--navy] mb-3 text-balance">Help us grow this impact</h2>
+            <Heart className="h-10 w-10 text-sky-600 mx-auto mb-4" aria-hidden="true" />
+            <h2 className="text-2xl font-bold text-slate-900 mb-3 text-balance">Help us grow this impact</h2>
             <p className="text-muted-foreground mb-6 leading-relaxed">
               Whether you want to fund a classroom, partner with us as an organization, or spread the word — every action counts.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Button asChild className="bg-[--sky] text-white hover:bg-[--sky]/80">
+              <Button asChild className="bg-sky-600 text-white hover:bg-sky-600/80">
                 <Link href="/contact?type=donate">Donate to VaxShield</Link>
               </Button>
-              <Button asChild variant="outline" className="border-[--sky] text-[--sky] hover:bg-[--sky] hover:text-white">
+              <Button asChild variant="outline" className="border-sky-600 text-sky-600 hover:bg-sky-600 hover:text-white">
                 <Link href="/organizations">Partner With Us</Link>
               </Button>
             </div>

@@ -12,7 +12,7 @@ export function HeroSection() {
           src="/images/hero-community.jpg"
           alt=""
           fill
-          className="object-cover opacity-20"
+          className="object-cover opacity-80"
           priority
         />
       </div>
@@ -37,7 +37,7 @@ export function HeroSection() {
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 hover:text-white gap-2">
+            <Button asChild size="lg" variant="outline" className="border-white/30 bg-white/30 text-white hover:bg-white/10 hover:text-white gap-2">
               <Link href="/vaxsearch">
                 <MapPin className="h-4 w-4" aria-hidden="true" />
                 Find Vaccines Near You

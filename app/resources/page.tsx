@@ -6,7 +6,7 @@ import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
-import { FileText, Download, Search, ExternalLink } from "lucide-react"
+import { FileText, Download, Search, ExternalLink, BookOpen } from "lucide-react"
 
 type ResourceType = "All" | "Worksheet"
 type Audience = "All" | "Students" | "Educators" | "Parents" | "Providers"
@@ -37,6 +37,14 @@ const resources = [
 const types: ResourceType[] = ["All", "Lesson Plan", "Worksheet", "Infographic", "Video", "Kit", "Pamphlet"]
 const audiences: Audience[] = ["All", "Students", "Educators", "Parents", "Providers"]
 
+function handleDownload(file: string) {
+  window.open(file, "_blank", "noopener,noreferrer")
+  const a = document.createElement("a")
+  a.href = file
+  a.download = ""
+  a.click()
+}
+
 export default function ResourcesPage() {
   const [search, setSearch] = useState("")
   const [activeType, setActiveType] = useState<ResourceType>("All")
@@ -57,7 +65,7 @@ export default function ResourcesPage() {
       <Navbar />
       <main>
         {/* Hero */}
-        <section className="bg-[--navy] text-white py-14 px-4 text-center">
+        <section className="bg-slate-900 text-white py-14 px-4 text-center">
           <p className="text-sky-300 text-sm font-semibold uppercase tracking-widest mb-2">Resource Hub</p>
           <h1 className="text-4xl font-bold mb-4 text-balance text-white">
             Free tools for learning, teaching,<br />and building healthier communities.
@@ -69,7 +77,7 @@ export default function ResourcesPage() {
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
           {/* Filters */}
-          <div className="bg-white rounded-2xl border border-[--sky]/20 p-5 mb-8 flex flex-col gap-4">
+          <div className="bg-white rounded-2xl border border-sky-600/20 p-5 mb-8 flex flex-col gap-4">
             <div className="relative">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" aria-hidden="true" />
               <Input
@@ -87,7 +95,7 @@ export default function ResourcesPage() {
                   key={t}
                   onClick={() => setActiveType(t)}
                   className={`text-sm px-3 py-1.5 rounded-full border transition-colors font-medium ${
-                    activeType === t ? "bg-[--sky] text-white border-[--sky]" : "border-[--sky]/30 text-[--navy] hover:border-[--sky]"
+                    activeType === t ? "bg-sky-600 text-white border-sky-600" : "border-sky-600/30 text-slate-900 hover:border-sky-600"
                   }`}
                   aria-pressed={activeType === t}
                 >
@@ -102,7 +110,7 @@ export default function ResourcesPage() {
                   key={a}
                   onClick={() => setActiveAudience(a)}
                   className={`text-sm px-3 py-1.5 rounded-full border transition-colors font-medium ${
-                    activeAudience === a ? "bg-[--navy] text-white border-[--navy]" : "border-[--sky]/30 text-[--navy] hover:border-[--sky]"
+                    activeAudience === a ? "bg-slate-900 text-white border-slate-900" : "border-sky-600/30 text-slate-900 hover:border-sky-600"
                   }`}
                   aria-pressed={activeAudience === a}
                 >
@@ -115,33 +123,31 @@ export default function ResourcesPage() {
           {/* Featured */}
           {featured.length > 0 && (
             <div className="mb-10">
-              <h2 className="text-lg font-bold text-[--navy] mb-4">Featured Resources</h2>
+              <h2 className="text-lg font-bold text-slate-900 mb-4">Featured Resources</h2>
               <div className="grid md:grid-cols-3 gap-4">
                 {featured.map((r) => {
                   const Icon = r.icon
                   return (
-                    <div key={r.title} className="bg-[--sky-pale] rounded-2xl border border-[--sky]/30 p-5 flex flex-col ring-1 ring-[--sky]/20">
+                    <div key={r.title} className="bg-sky-50 rounded-2xl border border-sky-600/30 p-5 flex flex-col ring-1 ring-sky-600/20">
                       <div className="flex items-start justify-between mb-3">
-                        <div className="w-10 h-10 bg-[--sky]/15 rounded-lg flex items-center justify-center">
-                          <Icon className="h-5 w-5 text-[--sky]" aria-hidden="true" />
+                        <div className="w-10 h-10 bg-sky-600/15 rounded-lg flex items-center justify-center">
+                          <Icon className="h-5 w-5 text-sky-600" aria-hidden="true" />
                         </div>
                         <div className="flex gap-1.5 flex-wrap justify-end">
-                          <Badge className="bg-[--sky] text-white border-0 text-xs">Featured</Badge>
+                          <Badge className="bg-sky-600 text-white border-0 text-xs">Featured</Badge>
                           {r.free ? <Badge variant="outline" className="text-xs text-green-700 border-green-300">Free</Badge> : <Badge variant="outline" className="text-xs">Org Only</Badge>}
                         </div>
                       </div>
-                      <h3 className="font-semibold text-[--navy] mb-2">{r.title}</h3>
+                      <h3 className="font-semibold text-slate-900 mb-2">{r.title}</h3>
                       <p className="text-sm text-muted-foreground leading-relaxed flex-1">{r.description}</p>
                       <div className="flex flex-wrap gap-1.5 mt-3 mb-4">
                         {r.audience.map((a) => (
-                          <span key={a} className="text-xs bg-white border border-[--sky]/20 text-[--navy] px-2 py-0.5 rounded-full">{a}</span>
+                          <span key={a} className="text-xs bg-white border border-sky-600/20 text-slate-900 px-2 py-0.5 rounded-full">{a}</span>
                         ))}
                       </div>
-                      <Button asChild size="sm" className="bg-[--sky] text-white hover:bg-[--sky]/80 gap-2 w-full">
-                        <a href={r.file}>
-                          <Download className="h-4 w-4" aria-hidden="true" />
-                          Download
-                        </a>
+                      <Button size="sm" className="bg-sky-600 text-white hover:bg-sky-600/80 gap-2 w-full" onClick={() => handleDownload(r.file)}>
+                        <Download className="h-4 w-4" aria-hidden="true" />
+                        Download
                       </Button>
                     </div>
                   )
@@ -151,38 +157,36 @@ export default function ResourcesPage() {
           )}
 
           {/* All resources */}
-          <h2 className="text-lg font-bold text-[--navy] mb-4">
+          <h2 className="text-lg font-bold text-slate-900 mb-4">
             {filtered.length} resource{filtered.length !== 1 ? "s" : ""} found
           </h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {rest.map((r) => {
               const Icon = r.icon
               return (
-                <div key={r.title} className="bg-white rounded-2xl border border-[--sky]/20 p-5 flex flex-col hover:shadow-md transition-shadow">
+                <div key={r.title} className="bg-white rounded-2xl border border-sky-600/20 p-5 flex flex-col hover:shadow-md transition-shadow">
                   <div className="flex items-start justify-between mb-3">
-                    <div className="w-9 h-9 bg-[--sky]/10 rounded-lg flex items-center justify-center">
-                      <Icon className="h-4 w-4 text-[--sky]" aria-hidden="true" />
+                    <div className="w-9 h-9 bg-sky-600/10 rounded-lg flex items-center justify-center">
+                      <Icon className="h-4 w-4 text-sky-600" aria-hidden="true" />
                     </div>
                     <div className="flex gap-1.5">
                       {r.free
                         ? <Badge variant="outline" className="text-xs text-green-700 border-green-300">Free</Badge>
-                        : <Badge variant="outline" className="text-xs border-[--sky]/30 text-[--sky]">Org Only</Badge>
+                        : <Badge variant="outline" className="text-xs border-sky-600/30 text-sky-600">Org Only</Badge>
                       }
                     </div>
                   </div>
-                  <h3 className="font-semibold text-[--navy] text-sm mb-1">{r.title}</h3>
+                  <h3 className="font-semibold text-slate-900 text-sm mb-1">{r.title}</h3>
                   <p className="text-xs text-muted-foreground leading-relaxed flex-1">{r.description}</p>
                   <div className="flex flex-wrap gap-1 mt-3 mb-3">
-                    <span className="text-xs bg-[--sky-pale] text-[--navy] border border-[--sky]/15 px-2 py-0.5 rounded-full">{r.type}</span>
+                    <span className="text-xs bg-sky-50 text-slate-900 border border-sky-600/15 px-2 py-0.5 rounded-full">{r.type}</span>
                     {r.audience.map((a) => (
-                      <span key={a} className="text-xs bg-[--sky-pale] text-[--navy] border border-[--sky]/15 px-2 py-0.5 rounded-full">{a}</span>
+                      <span key={a} className="text-xs bg-sky-50 text-slate-900 border border-sky-600/15 px-2 py-0.5 rounded-full">{a}</span>
                     ))}
                   </div>
-                  <Button asChild size="sm" variant="outline" className="border-[--sky] text-[--sky] hover:bg-[--sky] hover:text-white gap-2">
-                    <a href={r.file}>
-                      {r.free ? <Download className="h-3.5 w-3.5" aria-hidden="true" /> : <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />}
-                      {r.free ? "Download" : "Request Access"}
-                    </a>
+                  <Button size="sm" variant="outline" className="border-sky-600 text-sky-600 hover:bg-sky-600 hover:text-white gap-2" onClick={() => r.free && handleDownload(r.file)}>
+                    {r.free ? <Download className="h-3.5 w-3.5" aria-hidden="true" /> : <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />}
+                    {r.free ? "Download" : "Request Access"}
                   </Button>
                 </div>
               )
@@ -191,16 +195,16 @@ export default function ResourcesPage() {
 
           {filtered.length === 0 && (
             <div className="text-center py-16 text-muted-foreground">
-              <BookOpen className="h-10 w-10 mx-auto mb-2 text-[--sky]/40" aria-hidden="true" />
+              <BookOpen className="h-10 w-10 mx-auto mb-2 text-sky-600/40" aria-hidden="true" />
               <p>No resources match your search. Try different filters.</p>
             </div>
           )}
 
           {/* CTA */}
-          <div className="mt-12 bg-[--navy] rounded-2xl p-8 text-white text-center">
+          <div className="mt-12 bg-slate-900 rounded-2xl p-8 text-white text-center">
             <h2 className="text-2xl font-bold mb-2 text-white">Need organizational access?</h2>
             <p className="text-slate-300 mb-5">Schools, clinics, and districts can access premium kits and request bulk materials.</p>
-            <Button asChild className="bg-[--sky] text-white hover:bg-[--sky]/80 gap-2">
+            <Button asChild className="bg-sky-600 text-white hover:bg-sky-600/80 gap-2">
               <a href="/organizations">View Organizational Offerings</a>
             </Button>
           </div>

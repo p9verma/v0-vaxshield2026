@@ -33,8 +33,8 @@ export default function ContactPage() {
       <Navbar />
       <main>
         {/* Hero */}
-        <section className="bg-[--navy] text-white py-14 px-4 text-center">
-          <p className="text-[--sky] text-sm font-semibold uppercase tracking-widest mb-2">Get In Touch</p>
+        <section className="bg-slate-900 text-white py-14 px-4 text-center">
+          <p className="text-sky-600 text-sm font-semibold uppercase tracking-widest mb-2">Get In Touch</p>
           <h1 className="text-4xl font-bold mb-4 text-balance">Let&apos;s build healthier communities together.</h1>
           <p className="text-white/70 text-lg max-w-xl mx-auto">
             Whether you&apos;re a school, clinic, donor, volunteer, or just curious — we&apos;d love to hear from you.
@@ -47,17 +47,17 @@ export default function ContactPage() {
             <div className="lg:col-span-2">
               {submitted ? (
                 <div className="flex flex-col items-center justify-center py-20 text-center">
-                  <CheckCircle2 className="h-16 w-16 text-[--sky] mb-4" aria-hidden="true" />
-                  <h2 className="text-2xl font-bold text-[--navy] mb-2">Message received!</h2>
+                  <CheckCircle2 className="h-16 w-16 text-sky-600 mb-4" aria-hidden="true" />
+                  <h2 className="text-2xl font-bold text-slate-900 mb-2">Message received!</h2>
                   <p className="text-muted-foreground max-w-sm">
                     Thank you for reaching out. A member of the VaxShield team will be in touch shortly.
                   </p>
-                  <Button className="mt-6 bg-[--sky] text-white hover:bg-[--sky]/80" onClick={() => setSubmitted(false)}>
+                  <Button className="mt-6 bg-sky-600 text-white hover:bg-sky-600/80" onClick={() => setSubmitted(false)}>
                     Send another message
                   </Button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="bg-white rounded-2xl border border-[--sky]/20 p-6 space-y-5">
+                <form onSubmit={handleSubmit} className="bg-white rounded-2xl border border-sky-600/20 p-6 space-y-5">
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div className="space-y-1.5">
                       <Label htmlFor="name">Your Name</Label>
@@ -96,7 +96,7 @@ export default function ContactPage() {
                       onChange={(e) => setForm({ ...form, message: e.target.value })}
                     />
                   </div>
-                  <Button type="submit" size="lg" className="w-full bg-[--sky] text-white hover:bg-[--sky]/80 font-semibold">
+                  <Button type="submit" size="lg" className="w-full bg-sky-600 text-white hover:bg-sky-600/80 font-semibold">
                     Send Message
                   </Button>
                 </form>
@@ -105,9 +105,9 @@ export default function ContactPage() {
 
             {/* Sidebar */}
             <div className="space-y-6">
-              <div className="bg-[--sky-pale] rounded-2xl p-5 border border-[--sky]/20">
-                <h2 className="font-bold text-[--navy] mb-4">Direct Contact</h2>
-                <a href="mailto:hello@vaxshield.org" className="flex items-center gap-2 text-[--sky] hover:underline text-sm font-medium">
+              <div className="bg-sky-50 rounded-2xl p-5 border border-sky-600/20">
+                <h2 className="font-bold text-slate-900 mb-4">Direct Contact</h2>
+                <a href="mailto:hello@vaxshield.org" className="flex items-center gap-2 text-sky-600 hover:underline text-sm font-medium">
                   <Mail className="h-4 w-4" aria-hidden="true" />
                   hello@vaxshield.org
                 </a>
@@ -116,8 +116,8 @@ export default function ContactPage() {
                 </p>
               </div>
 
-              <div className="bg-[--sky-pale] rounded-2xl p-5 border border-[--sky]/20">
-                <h2 className="font-bold text-[--navy] mb-4">Ways to Get Involved</h2>
+              <div className="bg-sky-50 rounded-2xl p-5 border border-sky-600/20">
+                <h2 className="font-bold text-slate-900 mb-4">Ways to Get Involved</h2>
                 <ul className="space-y-3 text-sm text-muted-foreground">
                   {[
                     "Volunteer as a health educator",
@@ -128,19 +128,19 @@ export default function ContactPage() {
                     "Donate to support education",
                   ].map((item) => (
                     <li key={item} className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[--sky] shrink-0" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-sky-600 shrink-0" />
                       {item}
                     </li>
                   ))}
                 </ul>
               </div>
 
-              <div className="bg-[--navy] rounded-2xl p-5 text-white">
+              <div className="bg-slate-900 rounded-2xl p-5 text-white">
                 <h2 className="font-bold mb-3">Follow VaxShield</h2>
                 <div className="flex gap-4">
-                  <a href="#" aria-label="Twitter" className="hover:text-[--sky] transition-colors"><Twitter className="h-5 w-5" /></a>
-                  <a href="#" aria-label="Instagram" className="hover:text-[--sky] transition-colors"><Instagram className="h-5 w-5" /></a>
-                  <a href="#" aria-label="LinkedIn" className="hover:text-[--sky] transition-colors"><Linkedin className="h-5 w-5" /></a>
+                  <a href="#" aria-label="Twitter" className="hover:text-sky-600 transition-colors"><Twitter className="h-5 w-5" /></a>
+                  <a href="#" aria-label="Instagram" className="hover:text-sky-600 transition-colors"><Instagram className="h-5 w-5" /></a>
+                  <a href="#" aria-label="LinkedIn" className="hover:text-sky-600 transition-colors"><Linkedin className="h-5 w-5" /></a>
                 </div>
               </div>
             </div>

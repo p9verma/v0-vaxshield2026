@@ -43,9 +43,9 @@ export default function VaxSearchPage() {
       <Navbar />
       <main>
         {/* Hero */}
-        <section className="bg-[--navy] text-white py-14 px-4">
+        <section className="bg-slate-900 text-white py-14 px-4">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-[--sky] text-sm font-semibold uppercase tracking-widest mb-2">VaxSearch</p>
+            <p className="text-sky-600 text-sm font-semibold uppercase tracking-widest mb-2">VaxSearch</p>
             <h1 className="text-4xl font-bold mb-4 text-balance">Find vaccines near you</h1>
             <p className="text-white/70 text-lg mb-8">
               Locate nearby clinics, free vaccine programs, and trusted resources in your community.
@@ -76,8 +76,8 @@ export default function VaxSearchPage() {
                     onClick={() => setSelectedType(type)}
                     className={`text-sm px-3 py-1.5 rounded-full border transition-colors font-medium ${
                       selectedType === type
-                        ? "bg-[--sky] text-white border-[--sky]"
-                        : "border-[--sky]/30 text-[--navy] hover:border-[--sky]"
+                        ? "bg-sky-700 text-white border-sky-700"
+                        : "border-sky-600/30 text-slate-900 hover:border-sky-600"
                     }`}
                     aria-pressed={selectedType === type}
                   >
@@ -87,7 +87,7 @@ export default function VaxSearchPage() {
                 <button
                   onClick={() => setShowFree(!showFree)}
                   className={`text-sm px-3 py-1.5 rounded-full border transition-colors font-medium ${
-                    showFree ? "bg-green-500 text-white border-green-500" : "border-[--sky]/30 text-[--navy] hover:border-[--sky]"
+                    showFree ? "bg-green-500 text-white border-green-500" : "border-sky-600/30 text-slate-900 hover:border-sky-600"
                   }`}
                   aria-pressed={showFree}
                 >
@@ -96,10 +96,10 @@ export default function VaxSearchPage() {
               </div>
 
               {/* Map placeholder */}
-              <div className="rounded-2xl overflow-hidden border border-[--sky]/20 bg-[--sky-pale] h-64 flex items-center justify-center mb-6">
+              <div className="rounded-2xl overflow-hidden border border-sky-600/20 bg-sky-50 h-64 flex items-center justify-center mb-6">
                 <div className="text-center">
-                  <MapPin className="h-10 w-10 text-[--sky] mx-auto mb-2" aria-hidden="true" />
-                  <p className="text-[--navy] font-semibold">Interactive Map</p>
+                  <MapPin className="h-10 w-10 text-sky-600 mx-auto mb-2" aria-hidden="true" />
+                  <p className="text-slate-900 font-semibold">Interactive Map</p>
                   <p className="text-sm text-muted-foreground mt-1">Map integration coming soon — use list view below</p>
                 </div>
               </div>
@@ -108,11 +108,11 @@ export default function VaxSearchPage() {
               <p className="text-sm text-muted-foreground mb-4">{filtered.length} locations found</p>
               <div className="space-y-4">
                 {filtered.map((clinic) => (
-                  <div key={clinic.name} className="bg-white rounded-2xl border border-[--sky]/20 p-5 hover:shadow-md transition-shadow">
+                  <div key={clinic.name} className="bg-white rounded-2xl border border-sky-600/20 p-5 hover:shadow-md transition-shadow">
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex-1">
                         <div className="flex flex-wrap items-center gap-2 mb-1">
-                          <h3 className="font-semibold text-[--navy]">{clinic.name}</h3>
+                          <h3 className="font-semibold text-slate-900">{clinic.name}</h3>
                           {clinic.free && (
                             <Badge className="bg-green-100 text-green-700 border-green-200 text-xs">Free</Badge>
                           )}
@@ -120,7 +120,7 @@ export default function VaxSearchPage() {
                         <p className="text-sm text-muted-foreground flex items-center gap-1 mb-1">
                           <MapPin className="h-3.5 w-3.5" aria-hidden="true" />
                           {clinic.address}
-                          <span className="text-[--sky] font-medium ml-1">· {clinic.distance}</span>
+                          <span className="text-sky-600 font-medium ml-1">· {clinic.distance}</span>
                         </p>
                         <p className="text-sm text-muted-foreground flex items-center gap-1 mb-1">
                           <Phone className="h-3.5 w-3.5" aria-hidden="true" />
@@ -132,13 +132,13 @@ export default function VaxSearchPage() {
                         </p>
                         <div className="flex flex-wrap gap-1.5">
                           {clinic.types.map((t) => (
-                            <span key={t} className="text-xs bg-[--sky-pale] text-[--navy] border border-[--sky]/20 px-2 py-0.5 rounded-full">
+                            <span key={t} className="text-xs bg-sky-50 text-slate-900 border border-sky-600/20 px-2 py-0.5 rounded-full">
                               {t}
                             </span>
                           ))}
                         </div>
                       </div>
-                      <Button size="sm" variant="ghost" className="text-[--sky] hover:bg-[--sky]/10 shrink-0 gap-1">
+                      <Button size="sm" variant="ghost" className="text-sky-600 hover:bg-sky-600/10 shrink-0 gap-1">
                         Directions
                         <ChevronRight className="h-4 w-4" aria-hidden="true" />
                       </Button>
@@ -147,7 +147,7 @@ export default function VaxSearchPage() {
                 ))}
                 {filtered.length === 0 && (
                   <div className="text-center py-12 text-muted-foreground">
-                    <MapPin className="h-10 w-10 mx-auto mb-2 text-[--sky]/40" aria-hidden="true" />
+                    <MapPin className="h-10 w-10 mx-auto mb-2 text-sky-600/40" aria-hidden="true" />
                     <p>No clinics match your search. Try adjusting filters.</p>
                   </div>
                 )}
@@ -156,9 +156,9 @@ export default function VaxSearchPage() {
 
             {/* Sidebar: Hotlines */}
             <div className="mt-10 lg:mt-0">
-              <div className="bg-[--navy] rounded-2xl p-6 text-white mb-6">
+              <div className="bg-slate-900 rounded-2xl p-6 text-white mb-6">
                 <div className="flex items-center gap-2 mb-4">
-                  <AlertCircle className="h-5 w-5 text-[--sky]" aria-hidden="true" />
+                  <AlertCircle className="h-5 w-5 text-sky-600" aria-hidden="true" />
                   <h2 className="font-bold text-lg">Vaccine Helplines</h2>
                 </div>
                 <p className="text-white/65 text-sm mb-5">
@@ -168,7 +168,7 @@ export default function VaxSearchPage() {
                   {hotlines.map((h) => (
                     <div key={h.name} className="border-t border-white/10 pt-4 first:border-t-0 first:pt-0">
                       <p className="font-semibold text-white text-sm">{h.name}</p>
-                      <a href={`tel:${h.number}`} className="text-[--sky] font-bold text-lg hover:underline">{h.number}</a>
+                      <a href={`tel:${h.number}`} className="text-sky-600 font-bold text-lg hover:underline">{h.number}</a>
                       <p className="text-white/50 text-xs mt-0.5">{h.hours}</p>
                       <p className="text-white/60 text-xs mt-1">{h.description}</p>
                     </div>
@@ -177,8 +177,8 @@ export default function VaxSearchPage() {
               </div>
 
               {/* Trusted resources */}
-              <div className="bg-[--sky-pale] rounded-2xl p-5 border border-[--sky]/20">
-                <h2 className="font-bold text-[--navy] mb-3">Trusted Resources</h2>
+              <div className="bg-sky-50 rounded-2xl p-5 border border-sky-600/20">
+                <h2 className="font-bold text-slate-900 mb-3">Trusted Resources</h2>
                 <ul className="space-y-2 text-sm">
                   {[
                     { label: "CDC Vaccines & Immunizations", href: "https://cdc.gov/vaccines" },
@@ -191,7 +191,7 @@ export default function VaxSearchPage() {
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-[--sky] hover:underline flex items-center gap-1"
+                        className="text-sky-600 hover:underline flex items-center gap-1"
                       >
                         <ChevronRight className="h-3.5 w-3.5" aria-hidden="true" />
                         {link.label}

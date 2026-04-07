@@ -88,16 +88,16 @@ export default function OrganizationsPage() {
       <Navbar />
       <main>
         {/* Hero */}
-        <section className="bg-[--navy] text-white py-16 px-4">
+        <section className="bg-slate-900 text-white py-16 px-4">
           <div className="mx-auto max-w-4xl text-center">
-            <p className="text-[--sky] text-sm font-semibold uppercase tracking-widest mb-2">For Organizations</p>
+            <p className="text-sky-600 text-sm font-semibold uppercase tracking-widest mb-2">For Organizations</p>
             <h1 className="text-4xl font-bold mb-4 text-balance">
               Bring VaxShield to your school, clinic, or organization.
             </h1>
             <p className="text-white/70 text-lg max-w-2xl mx-auto mb-8">
               VaxShield offers tailored educational kits, training materials, and implementation support for schools, clinics, districts, hospitals, and nonprofits.
             </p>
-            <Button asChild className="bg-[--sky] text-white hover:bg-[--sky]/80 font-semibold">
+            <Button asChild className="bg-sky-600 text-white hover:bg-sky-600/80 font-semibold">
               <Link href="#request">Request Materials or Demo</Link>
             </Button>
           </div>
@@ -107,16 +107,16 @@ export default function OrganizationsPage() {
         <section className="py-14 bg-white">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-10">
-              <p className="text-[--sky] text-sm font-semibold uppercase tracking-widest mb-2">Who We Work With</p>
-              <h2 className="text-3xl font-bold text-[--navy] text-balance">Built for institutional adoption</h2>
+              <p className="text-sky-600 text-sm font-semibold uppercase tracking-widest mb-2">Who We Work With</p>
+              <h2 className="text-3xl font-bold text-slate-900 text-balance">Built for institutional adoption</h2>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
               {orgTypes.map(({ icon: Icon, label, description }) => (
-                <div key={label} className="bg-[--sky-pale] rounded-2xl p-5 border border-[--sky]/20">
-                  <div className="w-10 h-10 rounded-full bg-[--sky]/15 flex items-center justify-center mb-3">
-                    <Icon className="h-5 w-5 text-[--sky]" aria-hidden="true" />
+                <div key={label} className="bg-sky-50 rounded-2xl p-5 border border-sky-600/20">
+                  <div className="w-10 h-10 rounded-full bg-sky-600/15 flex items-center justify-center mb-3">
+                    <Icon className="h-5 w-5 text-sky-600" aria-hidden="true" />
                   </div>
-                  <h3 className="font-semibold text-[--navy] mb-1">{label}</h3>
+                  <h3 className="font-semibold text-slate-900 mb-1">{label}</h3>
                   <p className="text-sm text-muted-foreground">{description}</p>
                 </div>
               ))}
@@ -128,28 +128,28 @@ export default function OrganizationsPage() {
         <section className="py-16 bg-[--sky-light]">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-10">
-              <p className="text-[--sky] text-sm font-semibold uppercase tracking-widest mb-2">What We Offer</p>
-              <h2 className="text-3xl font-bold text-[--navy] text-balance">Materials, training, and implementation support</h2>
+              <p className="text-sky-600 text-sm font-semibold uppercase tracking-widest mb-2">What We Offer</p>
+              <h2 className="text-3xl font-bold text-slate-900 text-balance">Materials, training, and implementation support</h2>
               <p className="text-muted-foreground mt-2 max-w-xl mx-auto">
                 VaxShield can support pilots, classroom use, clinic distribution, and full program implementation. Pricing is added as capacity grows.
               </p>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {offerings.map(({ icon: Icon, title, description, audiences, available }) => (
-                <div key={title} className="bg-white rounded-2xl border border-[--sky]/20 p-5 flex flex-col hover:shadow-md transition-shadow">
+                <div key={title} className="bg-white rounded-2xl border border-sky-600/20 p-5 flex flex-col hover:shadow-md transition-shadow">
                   <div className="flex items-start justify-between mb-3">
-                    <div className="w-10 h-10 rounded-lg bg-[--sky]/10 flex items-center justify-center">
-                      <Icon className="h-5 w-5 text-[--sky]" aria-hidden="true" />
+                    <div className="w-10 h-10 rounded-lg bg-sky-600/10 flex items-center justify-center">
+                      <Icon className="h-5 w-5 text-sky-600" aria-hidden="true" />
                     </div>
-                    <Badge variant={available ? "default" : "secondary"} className={available ? "bg-[--sky] text-white border-0" : ""}>
+                    <Badge variant={available ? "default" : "secondary"} className={available ? "bg-sky-600 text-white border-0" : ""}>
                       {available ? "Available" : "Coming Soon"}
                     </Badge>
                   </div>
-                  <h3 className="font-semibold text-[--navy] mb-2">{title}</h3>
+                  <h3 className="font-semibold text-slate-900 mb-2">{title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed flex-1">{description}</p>
                   <div className="flex flex-wrap gap-1.5 mt-3">
                     {audiences.map((a) => (
-                      <span key={a} className="text-xs border border-[--sky]/25 text-[--navy] px-2 py-0.5 rounded-full">{a}</span>
+                      <span key={a} className="text-xs border border-sky-600/25 text-slate-900 px-2 py-0.5 rounded-full">{a}</span>
                     ))}
                   </div>
                 </div>
@@ -162,16 +162,16 @@ export default function OrganizationsPage() {
         <section className="py-16 bg-white">
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-10">
-              <p className="text-[--sky] text-sm font-semibold uppercase tracking-widest mb-2">How It Works</p>
-              <h2 className="text-3xl font-bold text-[--navy] text-balance">From inquiry to implementation</h2>
+              <p className="text-sky-600 text-sm font-semibold uppercase tracking-widest mb-2">How It Works</p>
+              <h2 className="text-3xl font-bold text-slate-900 text-balance">From inquiry to implementation</h2>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {process.map(({ step, title, body }) => (
                 <div key={step} className="flex flex-col items-center text-center">
-                  <div className="w-12 h-12 rounded-full bg-[--sky] text-white font-bold text-lg flex items-center justify-center mb-4">
+                  <div className="w-12 h-12 rounded-full bg-sky-600 text-white font-bold text-lg flex items-center justify-center mb-4">
                     {step}
                   </div>
-                  <h3 className="font-semibold text-[--navy] mb-2">{title}</h3>
+                  <h3 className="font-semibold text-slate-900 mb-2">{title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{body}</p>
                 </div>
               ))}
@@ -180,7 +180,7 @@ export default function OrganizationsPage() {
         </section>
 
         {/* Value props */}
-        <section className="py-12 bg-[--navy] text-white">
+        <section className="py-12 bg-slate-900 text-white">
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
             <h2 className="text-xl font-bold text-center mb-6">Why organizations choose VaxShield</h2>
             <div className="grid sm:grid-cols-2 gap-4">
@@ -193,7 +193,7 @@ export default function OrganizationsPage() {
                 "Developed in partnership with UM and Michigan Medicine",
               ].map((item) => (
                 <div key={item} className="flex items-center gap-3">
-                  <CheckCircle className="h-5 w-5 text-[--sky] shrink-0" aria-hidden="true" />
+                  <CheckCircle className="h-5 w-5 text-sky-600 shrink-0" aria-hidden="true" />
                   <p className="text-sm text-white/80">{item}</p>
                 </div>
               ))}
@@ -202,24 +202,24 @@ export default function OrganizationsPage() {
         </section>
 
         {/* Request Form */}
-        <section id="request" className="py-16 bg-[--sky-pale]">
+        <section id="request" className="py-16 bg-sky-50">
           <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-8">
-              <p className="text-[--sky] text-sm font-semibold uppercase tracking-widest mb-2">Get Started</p>
-              <h2 className="text-3xl font-bold text-[--navy]">Request a demo or materials</h2>
+              <p className="text-sky-600 text-sm font-semibold uppercase tracking-widest mb-2">Get Started</p>
+              <h2 className="text-3xl font-bold text-slate-900">Request a demo or materials</h2>
               <p className="text-muted-foreground mt-2">No commitment required. We will reach out within 3 business days.</p>
             </div>
             {submitted ? (
-              <div className="bg-white rounded-2xl border border-[--sky]/20 p-10 text-center">
-                <CheckCircle2 className="h-14 w-14 text-[--sky] mx-auto mb-4" aria-hidden="true" />
-                <h3 className="text-xl font-bold text-[--navy] mb-2">Inquiry Received!</h3>
+              <div className="bg-white rounded-2xl border border-sky-600/20 p-10 text-center">
+                <CheckCircle2 className="h-14 w-14 text-sky-600 mx-auto mb-4" aria-hidden="true" />
+                <h3 className="text-xl font-bold text-slate-900 mb-2">Inquiry Received!</h3>
                 <p className="text-muted-foreground">We&apos;ll be in touch within 3 business days to set up a scoping conversation.</p>
-                <Button className="mt-6 bg-[--sky] text-white hover:bg-[--sky]/80" onClick={() => setSubmitted(false)}>
+                <Button className="mt-6 bg-sky-600 text-white hover:bg-sky-600/80" onClick={() => setSubmitted(false)}>
                   Submit another inquiry
                 </Button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="bg-white rounded-2xl border border-[--sky]/20 p-6 space-y-5">
+              <form onSubmit={handleSubmit} className="bg-white rounded-2xl border border-sky-600/20 p-6 space-y-5">
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div className="space-y-1.5">
                     <Label htmlFor="org-name">Your Name</Label>
@@ -268,7 +268,7 @@ export default function OrganizationsPage() {
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
                   />
                 </div>
-                <Button type="submit" size="lg" className="w-full bg-[--sky] text-white hover:bg-[--sky]/80 font-semibold">
+                <Button type="submit" size="lg" className="w-full bg-sky-600 text-white hover:bg-sky-600/80 font-semibold">
                   Submit Inquiry
                 </Button>
               </form>
