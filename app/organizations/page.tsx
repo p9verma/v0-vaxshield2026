@@ -326,7 +326,7 @@ export default function OrganizationsPage() {
                 Whether you are a student, parent, or healthcare provider, here is what you need to know about accessing vaccines.
               </p>
             </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div className="grid sm:grid-cols-2 gap-5 max-w-2xl mx-auto">
               <div className="bg-sky-50 rounded-2xl border border-sky-600/20 p-5">
                 <div className="w-10 h-10 rounded-full bg-sky-600/15 flex items-center justify-center mb-3">
                   <Syringe className="h-5 w-5 text-sky-600" aria-hidden="true" />
@@ -335,16 +335,6 @@ export default function OrganizationsPage() {
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   Vaccines are available at your doctor's office, community health clinics, pharmacies (CVS, Walgreens, Meijer), and local health departments. Use our{" "}
                   <Link href="/vaxsearch" className="text-sky-600 hover:underline">VaxSearch tool</Link> to find a location near you, including free options.
-                </p>
-              </div>
-              <div className="bg-sky-50 rounded-2xl border border-sky-600/20 p-5">
-                <div className="w-10 h-10 rounded-full bg-sky-600/15 flex items-center justify-center mb-3">
-                  <GraduationCap className="h-5 w-5 text-sky-600" aria-hidden="true" />
-                </div>
-                <h3 className="font-semibold text-slate-900 mb-2">Minor consent (under 18)</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  In Michigan, parental consent is generally required for routine vaccines. However, minors may consent on their own for certain vaccines related to communicable diseases or sexual health. Some school-based and clinic programs allow vaccination with consent forms on file. If unsure, call{" "}
-                  <a href="tel:1-888-535-6136" className="text-sky-600 hover:underline">Michigan DHHS at 1-888-535-6136</a>.
                 </p>
               </div>
               <div className="bg-sky-50 rounded-2xl border border-sky-600/20 p-5">
