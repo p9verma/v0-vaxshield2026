@@ -1,8 +1,29 @@
+"use client"
+
+import { useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { BookOpen, ExternalLink } from "lucide-react"
 
 export function SimulatorSection() {
+  const tracked = useRef(false)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !tracked.current) {
+          tracked.current = true
+          fetch("/api/track/simulator", { method: "POST" }).catch(() => {})
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.3 }
+    )
+    const el = document.getElementById("simulator")
+    if (el) observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
+
   return (
     <section id="simulator" className="py-16 bg-[--sky-pale]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

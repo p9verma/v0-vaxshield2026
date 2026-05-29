@@ -38,7 +38,7 @@ const types: ResourceType[] = ["All", "Lesson Plan", "Worksheet", "Infographic",
 const audiences: Audience[] = ["All", "Students", "Educators", "Parents", "Providers"]
 
 function handleDownload(file: string) {
-  window.open(file, "_blank", "noopener,noreferrer")
+  fetch("/api/track/download", { method: "POST" }).catch(() => {})
   const a = document.createElement("a")
   a.href = file
   a.download = ""
