@@ -40,7 +40,7 @@ const hotlines = [
 
 async function geocode(query: string): Promise<{ lat: number; lng: number } | null> {
   const res = await fetch(
-    `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(query)}&format=json&limit=1`,
+    `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(query)}&format=json&limit=1&countrycodes=us`,
     { headers: { "Accept-Language": "en" } }
   )
   const data = await res.json()
