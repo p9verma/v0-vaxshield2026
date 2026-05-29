@@ -175,11 +175,27 @@ function JoinForm() {
 
 export default function OrganizationsPage() {
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState("")
   const [form, setForm] = useState({ name: "", email: "", org: "", orgType: "school", size: "", message: "" })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault()
-    setSubmitted(true)
+    setLoading(true)
+    setError("")
+    try {
+      const res = await fetch("/api/inquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      })
+      if (!res.ok) throw new Error("Failed to send")
+      setSubmitted(true)
+    } catch {
+      setError("Something went wrong. Please try again or email us directly.")
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -447,8 +463,9 @@ export default function OrganizationsPage() {
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
                   />
                 </div>
-                <Button type="submit" size="lg" className="w-full bg-sky-600 text-white hover:bg-sky-600/80 font-semibold">
-                  Submit Inquiry
+                {error && <p className="text-sm text-red-500">{error}</p>}
+                <Button type="submit" size="lg" disabled={loading} className="w-full bg-sky-600 text-white hover:bg-sky-600/80 font-semibold">
+                  {loading ? "Sending…" : "Submit Inquiry"}
                 </Button>
               </form>
             )}
