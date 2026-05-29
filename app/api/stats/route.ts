@@ -9,13 +9,10 @@ const FALLBACK = {
 }
 
 async function getSheetStats(): Promise<{ people_reached: number; schools_engaged: number }> {
-  const sheetId = process.env.GOOGLE_SHEET_ID
-  if (!sheetId) return { people_reached: FALLBACK.people_reached, schools_engaged: FALLBACK.schools_engaged }
+  const csvUrl = process.env.GOOGLE_SHEET_CSV_URL
+  if (!csvUrl) return { people_reached: FALLBACK.people_reached, schools_engaged: FALLBACK.schools_engaged }
 
-  const res = await fetch(
-    `https://docs.google.com/spreadsheets/d/${sheetId}/export?format=csv`,
-    { next: { revalidate: 3600 } }
-  )
+  const res = await fetch(csvUrl, { next: { revalidate: 3600 } })
   if (!res.ok) return { people_reached: FALLBACK.people_reached, schools_engaged: FALLBACK.schools_engaged }
 
   const csv = await res.text()
