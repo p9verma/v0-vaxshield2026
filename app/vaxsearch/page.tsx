@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
 import { Search, MapPin, Phone, Clock, ChevronRight, Filter, AlertCircle } from "lucide-react"
-import { clinicLocations } from "@/components/clinic-map"
+import { clinicLocations } from "@/lib/clinic-data"
 
 const ClinicMap = dynamic(
   () => import("@/components/clinic-map").then((m) => m.ClinicMap),
