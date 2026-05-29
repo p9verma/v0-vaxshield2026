@@ -7,7 +7,15 @@ import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
-import { Search, MapPin, Phone, ChevronRight, AlertCircle, Navigation, Loader2 } from "lucide-react"
+import { Search, MapPin, Phone, ChevronRight, AlertCircle, Navigation, Loader2, Filter } from "lucide-react"
+
+type ProviderFilter = "All" | "pharmacy" | "clinic" | "hospital"
+const PROVIDER_FILTERS: { label: string; value: ProviderFilter }[] = [
+  { label: "All", value: "All" },
+  { label: "Pharmacy", value: "pharmacy" },
+  { label: "Clinic", value: "clinic" },
+  { label: "Hospital", value: "hospital" },
+]
 
 export interface FoundClinic {
   id: number
@@ -59,6 +67,11 @@ export default function VaxSearchPage() {
   const [locating, setLocating] = useState(false)
   const [searched, setSearched] = useState(false)
   const [error, setError] = useState("")
+  const [providerFilter, setProviderFilter] = useState<ProviderFilter>("All")
+
+  const filteredClinics = providerFilter === "All"
+    ? clinics
+    : clinics.filter((c) => c.type === providerFilter)
 
   const runSearch = async (lat: number, lng: number) => {
     setLoading(true)
@@ -153,8 +166,29 @@ export default function VaxSearchPage() {
 
               {/* Map */}
               <div className="rounded-2xl overflow-hidden border border-sky-600/20 h-80 mb-6">
-                <ClinicMap visibleClinics={clinics} center={mapCenter} />
+                <ClinicMap visibleClinics={filteredClinics} center={mapCenter} />
               </div>
+
+              {/* Provider type filters — only shown after a search */}
+              {searched && !loading && clinics.length > 0 && (
+                <div className="flex flex-wrap items-center gap-2 mb-5">
+                  <Filter className="h-4 w-4 text-muted-foreground shrink-0" aria-hidden="true" />
+                  {PROVIDER_FILTERS.map(({ label, value }) => (
+                    <button
+                      key={value}
+                      onClick={() => setProviderFilter(value)}
+                      className={`text-sm px-3 py-1.5 rounded-full border transition-colors font-medium ${
+                        providerFilter === value
+                          ? "bg-sky-600 text-white border-sky-600"
+                          : "border-sky-600/30 text-slate-900 hover:border-sky-600"
+                      }`}
+                      aria-pressed={providerFilter === value}
+                    >
+                      {label}
+                    </button>
+                  ))}
+                </div>
+              )}
 
               {/* Results */}
               {!searched && !loading && (
@@ -176,11 +210,11 @@ export default function VaxSearchPage() {
                 </div>
               )}
 
-              {!loading && clinics.length > 0 && (
+              {!loading && filteredClinics.length > 0 && (
                 <>
-                  <p className="text-sm text-muted-foreground mb-4">{clinics.length} locations found</p>
+                  <p className="text-sm text-muted-foreground mb-4">{filteredClinics.length} locations found</p>
                   <div className="space-y-4">
-                    {clinics.map((clinic) => (
+                    {filteredClinics.map((clinic) => (
                       <div key={clinic.id} className="bg-white rounded-2xl border border-sky-600/20 p-5 hover:shadow-md transition-shadow">
                         <div className="flex items-start justify-between gap-4">
                           <div className="flex-1">

@@ -3,7 +3,7 @@ import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { BarChart2, TrendingUp, Heart } from "lucide-react"
-import { ImpactCounter } from "@/components/home/impact-counter"
+import { LiveMetrics } from "@/components/impact/live-metrics"
 
 const caseStudies = [
   {
@@ -67,7 +67,21 @@ export default function ImpactPage() {
           </p>
         </section>
 
-        <ImpactCounter />
+        {/* Metrics */}
+        <section className="py-14 bg-white">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-10">
+              <p className="text-sky-600 text-sm font-semibold uppercase tracking-widest mb-2">Live Metrics</p>
+              <h2 className="text-3xl font-bold text-slate-900">Our reach, measured</h2>
+            </div>
+            <LiveMetrics />
+            <div className="mt-6 text-center">
+              <p className="text-xs text-muted-foreground">
+                Metrics updated regularly. Includes website visits, simulator usage, resource downloads, and community engagement events.
+              </p>
+            </div>
+          </div>
+        </section>
 
         {/* Case Studies */}
         <section className="py-16 bg-sky-50">
