@@ -38,47 +38,17 @@ const hotlines = [
   { name: "Poison Control Center", number: "1-800-222-1222", hours: "24/7 availability", description: "Concerns about medication or vaccine reactions." },
 ]
 
-async function geocode(query: string): Promise<{ lat: number; lng: number } | null> {
-  const res = await fetch(
-    `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(query)}&format=json&limit=1&countrycodes=us`,
-    { headers: { "Accept-Language": "en" } }
-  )
-  const data = await res.json()
-  if (!data.length) return null
-  return { lat: parseFloat(data[0].lat), lng: parseFloat(data[0].lon) }
+async function searchByQuery(query: string): Promise<{ lat: number; lng: number; clinics: FoundClinic[] } | null> {
+  const res = await fetch(`/api/vaxsearch?q=${encodeURIComponent(query)}`)
+  if (!res.ok) return null
+  return res.json()
 }
 
-async function fetchClinics(lat: number, lng: number): Promise<FoundClinic[]> {
-  const radius = 10000
-  const query = `
-    [out:json][timeout:25];
-    (
-      node["amenity"="pharmacy"](around:${radius},${lat},${lng});
-      node["amenity"="clinic"](around:${radius},${lat},${lng});
-      node["amenity"="hospital"](around:${radius},${lat},${lng});
-      node["healthcare"="centre"](around:${radius},${lat},${lng});
-    );
-    out body;
-  `
-  const res = await fetch("https://overpass-api.de/api/interpreter", {
-    method: "POST",
-    body: query,
-  })
+async function searchByCoords(lat: number, lng: number): Promise<FoundClinic[]> {
+  const res = await fetch(`/api/vaxsearch?lat=${lat}&lng=${lng}`)
+  if (!res.ok) throw new Error("Failed to fetch")
   const data = await res.json()
-
-  return data.elements
-    .filter((el: { tags?: { name?: string }; lat?: number; lon?: number }) => el.tags?.name && el.lat && el.lon)
-    .map((el: { id: number; tags: Record<string, string>; lat: number; lon: number }) => ({
-      id: el.id,
-      name: el.tags.name,
-      address: [el.tags["addr:housenumber"], el.tags["addr:street"], el.tags["addr:city"]]
-        .filter(Boolean)
-        .join(" ") || "Address not listed",
-      phone: el.tags.phone || el.tags["contact:phone"],
-      lat: el.lat,
-      lng: el.lon,
-      type: el.tags.amenity || el.tags.healthcare || "clinic",
-    }))
+  return data.clinics
 }
 
 export default function VaxSearchPage() {
@@ -96,7 +66,7 @@ export default function VaxSearchPage() {
     setSearched(true)
     setMapCenter({ lat, lng })
     try {
-      const results = await fetchClinics(lat, lng)
+      const results = await searchByCoords(lat, lng)
       setClinics(results)
       if (results.length === 0) setError("No clinics found nearby. Try a different location.")
     } catch {
@@ -111,13 +81,17 @@ export default function VaxSearchPage() {
     if (!query.trim()) return
     setLoading(true)
     setError("")
-    const coords = await geocode(query)
-    if (!coords) {
+    const result = await searchByQuery(query)
+    if (!result) {
       setError("Location not found. Try a city name or zip code.")
       setLoading(false)
       return
     }
-    await runSearch(coords.lat, coords.lng)
+    setSearched(true)
+    setMapCenter({ lat: result.lat, lng: result.lng })
+    setClinics(result.clinics)
+    if (result.clinics.length === 0) setError("No clinics found nearby. Try a different location.")
+    setLoading(false)
   }
 
   const handleGeolocate = () => {
