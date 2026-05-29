@@ -2,14 +2,8 @@ import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { Users, Activity, Download, School, BarChart2, TrendingUp, Heart } from "lucide-react"
-
-const metrics = [
-  { icon: Users, value: "14,800+", label: "People Reached", description: "Across website visits and community events" },
-  { icon: Activity, value: "6,200+", label: "Simulator Runs", description: "Students and educators using the herd immunity tool" },
-  { icon: Download, value: "3,400+", label: "Resources Downloaded", description: "Lesson plans, worksheets, and infographics" },
-  { icon: School, value: "28+", label: "Schools & Sites Engaged", description: "From Ann Arbor to Detroit and beyond" },
-]
+import { BarChart2, TrendingUp, Heart } from "lucide-react"
+import { ImpactCounter } from "@/components/home/impact-counter"
 
 const caseStudies = [
   {
@@ -73,32 +67,7 @@ export default function ImpactPage() {
           </p>
         </section>
 
-        {/* Metrics */}
-        <section className="py-14 bg-white">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-10">
-              <p className="text-sky-600 text-sm font-semibold uppercase tracking-widest mb-2">Live Metrics</p>
-              <h2 className="text-3xl font-bold text-slate-900">Our reach, measured</h2>
-            </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-              {metrics.map(({ icon: Icon, value, label, description }) => (
-                <div key={label} className="bg-sky-50 rounded-2xl p-6 border border-sky-600/20 text-center">
-                  <div className="w-12 h-12 rounded-full bg-sky-600/15 flex items-center justify-center mx-auto mb-3">
-                    <Icon className="h-6 w-6 text-sky-600" aria-hidden="true" />
-                  </div>
-                  <p className="text-4xl font-bold text-slate-900 mb-1">{value}</p>
-                  <p className="font-semibold text-slate-900 text-sm">{label}</p>
-                  <p className="text-xs text-muted-foreground mt-1">{description}</p>
-                </div>
-              ))}
-            </div>
-            <div className="mt-6 text-center">
-              <p className="text-xs text-muted-foreground">
-                Metrics updated regularly. Includes website visits, simulator usage, resource downloads, and community engagement events.
-              </p>
-            </div>
-          </div>
-        </section>
+        <ImpactCounter />
 
         {/* Case Studies */}
         <section className="py-16 bg-sky-50">
