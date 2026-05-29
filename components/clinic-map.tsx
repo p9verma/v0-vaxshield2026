@@ -1,17 +1,27 @@
 "use client"
 
-import { useRef } from "react"
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet"
+import { useRef, useEffect } from "react"
+import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet"
 import { Icon, type LatLngTuple } from "leaflet"
-import type { ClinicLocation } from "@/lib/clinic-data"
+import type { FoundClinic } from "@/app/vaxsearch/page"
 
-const center: LatLngTuple = [42.28, -83.74]
+const DEFAULT_CENTER: LatLngTuple = [39.5, -98.35]
+const DEFAULT_ZOOM = 4
 
-interface ClinicMapProps {
-  visibleClinics: ClinicLocation[]
+function RecenterMap({ center }: { center: { lat: number; lng: number } | null }) {
+  const map = useMap()
+  useEffect(() => {
+    if (center) map.setView([center.lat, center.lng], 12)
+  }, [center, map])
+  return null
 }
 
-export function ClinicMap({ visibleClinics }: ClinicMapProps) {
+interface ClinicMapProps {
+  visibleClinics: FoundClinic[]
+  center: { lat: number; lng: number } | null
+}
+
+export function ClinicMap({ visibleClinics, center }: ClinicMapProps) {
   const iconRef = useRef<Icon | null>(null)
   if (!iconRef.current) {
     iconRef.current = new Icon({
@@ -27,8 +37,8 @@ export function ClinicMap({ visibleClinics }: ClinicMapProps) {
 
   return (
     <MapContainer
-      center={center}
-      zoom={9}
+      center={DEFAULT_CENTER}
+      zoom={DEFAULT_ZOOM}
       style={{ height: "100%", width: "100%" }}
       scrollWheelZoom={false}
     >
@@ -36,19 +46,15 @@ export function ClinicMap({ visibleClinics }: ClinicMapProps) {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
+      <RecenterMap center={center} />
       {visibleClinics.map((clinic) => (
-        <Marker key={clinic.name} position={[clinic.lat, clinic.lng]} icon={iconRef.current!}>
+        <Marker key={clinic.id} position={[clinic.lat, clinic.lng]} icon={iconRef.current!}>
           <Popup>
             <div style={{ fontSize: "13px", lineHeight: "1.5" }}>
               <p style={{ fontWeight: 600, marginBottom: "4px" }}>{clinic.name}</p>
-              {clinic.free && (
-                <span style={{ display: "inline-block", background: "#dcfce7", color: "#15803d", fontSize: "11px", padding: "1px 6px", borderRadius: "4px", marginBottom: "4px" }}>
-                  Free
-                </span>
-              )}
+              <p style={{ color: "#4b5563", textTransform: "capitalize" }}>{clinic.type}</p>
               <p style={{ color: "#4b5563" }}>{clinic.address}</p>
-              <p style={{ color: "#4b5563" }}>{clinic.phone}</p>
-              <p style={{ color: "#6b7280", fontSize: "11px", marginTop: "4px" }}>{clinic.hours}</p>
+              {clinic.phone && <p style={{ color: "#4b5563" }}>{clinic.phone}</p>}
             </div>
           </Popup>
         </Marker>
