@@ -34,7 +34,7 @@ export function SimulatorSection() {
             src="https://herdimmunitysimulation.base44.app/"
             title="VaxImpact Herd Immunity Simulator"
             className="w-full"
-            style={{ height: "calc(100vh - 220px)" }}
+            style={{ height: "900px" }}
             allow="fullscreen"
             loading="lazy"
           />
