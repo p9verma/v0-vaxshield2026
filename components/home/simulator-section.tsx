@@ -6,22 +6,18 @@ import Link from "next/link"
 import { BookOpen, ExternalLink } from "lucide-react"
 
 export function SimulatorSection() {
+  const iframeRef = useRef<HTMLIFrameElement>(null)
   const tracked = useRef(false)
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !tracked.current) {
-          tracked.current = true
-          fetch("/api/track/simulator", { method: "POST" }).catch(() => {})
-          observer.disconnect()
-        }
-      },
-      { threshold: 0.3 }
-    )
-    const el = document.getElementById("simulator")
-    if (el) observer.observe(el)
-    return () => observer.disconnect()
+    const handleBlur = () => {
+      if (!tracked.current && document.activeElement === iframeRef.current) {
+        tracked.current = true
+        fetch("/api/track/simulator", { method: "POST" }).catch(() => {})
+      }
+    }
+    window.addEventListener("blur", handleBlur)
+    return () => window.removeEventListener("blur", handleBlur)
   }, [])
 
   return (
@@ -52,6 +48,7 @@ export function SimulatorSection() {
             </a>
           </div>
           <iframe
+            ref={iframeRef}
             src="https://herdimmunitysimulation.base44.app/"
             title="VaxImpact Herd Immunity Simulator"
             className="w-full"

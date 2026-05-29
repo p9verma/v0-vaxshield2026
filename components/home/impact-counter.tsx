@@ -78,7 +78,7 @@ export function ImpactCounter() {
 
   const metrics = [
     { icon: Users,     value: stats.people_reached,       label: "People Reached" },
-    { icon: Activity,  value: stats.simulator_runs,        label: "Simulator Runs" },
+    { icon: Activity,  value: stats.simulator_runs,        label: "Simulator Engagements" },
     { icon: Download,  value: stats.resources_downloaded,  label: "Resources Downloaded" },
     { icon: School,    value: stats.schools_engaged,       label: "Schools & Sites Engaged" },
   ]
