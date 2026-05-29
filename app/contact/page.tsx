@@ -107,9 +107,9 @@ export default function ContactPage() {
             <div className="space-y-6">
               <div className="bg-sky-50 rounded-2xl p-5 border border-sky-600/20">
                 <h2 className="font-bold text-slate-900 mb-4">Direct Contact</h2>
-                <a href="mailto:hello@vaxshield.org" className="flex items-center gap-2 text-sky-600 hover:underline text-sm font-medium">
+                <a href="mailto:vaxshieldteam@gmail.com" className="flex items-center gap-2 text-sky-600 hover:underline text-sm font-medium">
                   <Mail className="h-4 w-4" aria-hidden="true" />
-                  hello@vaxshield.org
+                  vaxshieldteam@gmail.com
                 </a>
                 <p className="text-xs text-muted-foreground mt-3">
                   For urgent inquiries or press requests, please email directly.

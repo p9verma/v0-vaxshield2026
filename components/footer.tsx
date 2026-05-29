@@ -48,9 +48,9 @@ export function Footer() {
           {/* Contact */}
           <div>
             <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-3">Get in Touch</h3>
-            <a href="mailto:hello@vaxshield.org" className="flex items-center gap-2 text-sm hover:text-sky-500 transition-colors">
+            <a href="mailto:vaxshieldteam@gmail.com" className="flex items-center gap-2 text-sm hover:text-sky-500 transition-colors">
               <Mail className="h-4 w-4" />
-              hello@vaxshield.org
+              vaxshieldteam@gmail.com
             </a>
             <p className="text-sm text-white/60 mt-3">
               University of Michigan<br />

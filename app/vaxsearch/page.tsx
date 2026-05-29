@@ -1,27 +1,29 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useMemo } from "react"
+import dynamic from "next/dynamic"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
 import { Search, MapPin, Phone, Clock, ChevronRight, Filter, AlertCircle } from "lucide-react"
+import { clinicLocations } from "@/components/clinic-map"
+
+const ClinicMap = dynamic(
+  () => import("@/components/clinic-map").then((m) => m.ClinicMap),
+  { ssr: false, loading: () => (
+    <div className="h-full flex items-center justify-center bg-sky-50 rounded-2xl">
+      <p className="text-sm text-muted-foreground">Loading map...</p>
+    </div>
+  )}
+)
 
 const hotlines = [
   { name: "CDC Vaccine Hotline", number: "1-800-232-4636", hours: "Mon–Fri, 8am–8pm ET", description: "Questions about vaccines, schedules, and safety." },
   { name: "Michigan DHHS Immunization", number: "1-888-535-6136", hours: "Mon–Fri, 8am–5pm ET", description: "Michigan-specific vaccine program inquiries." },
   { name: "Nurse Advice Line (24/7)", number: "1-800-942-5678", hours: "24/7 availability", description: "Talk to a registered nurse any time." },
   { name: "Poison Control Center", number: "1-800-222-1222", hours: "24/7 availability", description: "Concerns about medication or vaccine reactions." },
-]
-
-const clinics = [
-  { name: "Cass Clinic", address: "2727 Second Ave, Detroit, MI 48201", phone: "(313) 833-8500", distance: "0.3 mi", types: ["Flu", "COVID", "MMR", "Hepatitis"], free: true, hours: "Mon–Fri 9am–5pm" },
-  { name: "UM Health — South Main", address: "4260 Plymouth Rd, Ann Arbor, MI 48105", phone: "(734) 936-4000", distance: "1.2 mi", types: ["All vaccines", "Travel vaccines"], free: false, hours: "Mon–Sat 8am–6pm" },
-  { name: "Meijer Pharmacy — Washtenaw", address: "3145 Ann Arbor-Saline Rd, Ann Arbor", phone: "(734) 677-2300", distance: "2.0 mi", types: ["Flu", "COVID", "Tdap", "Shingles"], free: false, hours: "Daily 9am–9pm" },
-  { name: "Ypsilanti Community Health Center", address: "931 W Cross St, Ypsilanti, MI 48197", phone: "(734) 484-3100", distance: "3.5 mi", types: ["All childhood vaccines", "Flu", "COVID"], free: true, hours: "Mon–Fri 8am–5pm" },
-  { name: "CVS MinuteClinic — Ann Arbor", address: "2723 Carpenter Rd, Ann Arbor, MI 48108", phone: "(734) 677-5170", distance: "4.1 mi", types: ["Flu", "COVID", "Pneumonia", "Meningitis"], free: false, hours: "Daily 8:30am–7:30pm" },
-  { name: "Jackson County Health Dept.", address: "3030 Horton Rd, Jackson, MI 49203", phone: "(517) 788-4420", distance: "38 mi", types: ["All vaccines", "VFC program"], free: true, hours: "Mon–Thu 8am–4:30pm" },
 ]
 
 const vaccineTypes = ["All", "Flu", "COVID", "MMR", "Tdap", "Hepatitis", "Travel"]
@@ -31,12 +33,12 @@ export default function VaxSearchPage() {
   const [selectedType, setSelectedType] = useState("All")
   const [showFree, setShowFree] = useState(false)
 
-  const filtered = clinics.filter((c) => {
+  const filtered = useMemo(() => clinicLocations.filter((c) => {
     const matchQuery = query === "" || c.name.toLowerCase().includes(query.toLowerCase()) || c.address.toLowerCase().includes(query.toLowerCase())
     const matchType = selectedType === "All" || c.types.some((t) => t.toLowerCase().includes(selectedType.toLowerCase()))
     const matchFree = !showFree || c.free
     return matchQuery && matchType && matchFree
-  })
+  }), [query, selectedType, showFree])
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -95,13 +97,9 @@ export default function VaxSearchPage() {
                 </button>
               </div>
 
-              {/* Map placeholder */}
-              <div className="rounded-2xl overflow-hidden border border-sky-600/20 bg-sky-50 h-64 flex items-center justify-center mb-6">
-                <div className="text-center">
-                  <MapPin className="h-10 w-10 text-sky-600 mx-auto mb-2" aria-hidden="true" />
-                  <p className="text-slate-900 font-semibold">Interactive Map</p>
-                  <p className="text-sm text-muted-foreground mt-1">Map integration coming soon — use list view below</p>
-                </div>
+              {/* Interactive Map */}
+              <div className="rounded-2xl overflow-hidden border border-sky-600/20 h-72 mb-6">
+                <ClinicMap visibleClinics={filtered} />
               </div>
 
               {/* Clinic list */}
@@ -120,7 +118,6 @@ export default function VaxSearchPage() {
                         <p className="text-sm text-muted-foreground flex items-center gap-1 mb-1">
                           <MapPin className="h-3.5 w-3.5" aria-hidden="true" />
                           {clinic.address}
-                          <span className="text-sky-600 font-medium ml-1">· {clinic.distance}</span>
                         </p>
                         <p className="text-sm text-muted-foreground flex items-center gap-1 mb-1">
                           <Phone className="h-3.5 w-3.5" aria-hidden="true" />
@@ -182,8 +179,8 @@ export default function VaxSearchPage() {
                 <ul className="space-y-2 text-sm">
                   {[
                     { label: "CDC Vaccines & Immunizations", href: "https://cdc.gov/vaccines" },
-                    { label: "WHO Vaccine Safety", href: "https://who.int/vaccine_safety" },
-                    { label: "HealthMap Vaccine Finder", href: "https://vaccinefinder.org" },
+                    { label: "WHO Vaccine Safety", href: "https://www.who.int/health-topics/vaccines-and-immunization" },
+                    { label: "Vaccines.gov Finder", href: "https://www.vaccines.gov/" },
                     { label: "AAP Immunization", href: "https://aap.org" },
                   ].map((link) => (
                     <li key={link.label}>

@@ -12,7 +12,7 @@ import Link from "next/link"
 import {
   School, Stethoscope, Building2, Users,
   CheckCircle, Package, Presentation, BookOpen,
-  Video, Wrench, CheckCircle2
+  Video, Wrench, CheckCircle2, GraduationCap, Heart, Syringe, Info
 } from "lucide-react"
 
 const offerings = [
@@ -22,6 +22,7 @@ const offerings = [
     description: "Complete standards-aligned lesson plan sets with educator guides, worksheets, and simulator integration. Suitable for 1–5 classrooms.",
     audiences: ["Schools"],
     available: true,
+    longTerm: false,
   },
   {
     icon: Package,
@@ -29,6 +30,7 @@ const offerings = [
     description: "Hands-on kits for K–5 classrooms including germ-spread demonstrations, colorful worksheets, and teacher facilitator guides.",
     audiences: ["Schools", "Districts"],
     available: false,
+    longTerm: false,
   },
   {
     icon: BookOpen,
@@ -36,6 +38,7 @@ const offerings = [
     description: "Pamphlet sets, infographic bundles, and patient-facing materials for waiting rooms, intake conversations, and community health events.",
     audiences: ["Clinics", "Hospitals"],
     available: true,
+    longTerm: false,
   },
   {
     icon: Video,
@@ -43,6 +46,7 @@ const offerings = [
     description: "Short training modules for healthcare providers covering vaccine communication, addressing hesitancy, and using VaxShield materials with patients.",
     audiences: ["Clinics", "Hospitals"],
     available: false,
+    longTerm: true,
   },
   {
     icon: Wrench,
@@ -50,6 +54,7 @@ const offerings = [
     description: "Full curriculum support for school districts: lesson plans, teacher training, implementation guidance, and access to digital resources.",
     audiences: ["Districts", "Nonprofits"],
     available: false,
+    longTerm: true,
   },
   {
     icon: Users,
@@ -57,6 +62,7 @@ const offerings = [
     description: "Live or virtual workshops for community organizations, afterschool programs, and parent groups. Facilitation support available.",
     audiences: ["Nonprofits", "Community"],
     available: false,
+    longTerm: false,
   },
 ]
 
@@ -73,6 +79,99 @@ const process = [
   { step: "3", title: "Pilot or Implementation", body: "We provide materials, guidance, and implementation support. Pilots are typically free for qualifying organizations." },
   { step: "4", title: "Evaluate & Expand", body: "We collect feedback and outcomes, then work with you to refine the implementation and scale impact." },
 ]
+
+function JoinForm() {
+  const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState("")
+  const [form, setForm] = useState({ name: "", email: "", school: "", year: "", role: "student", message: "" })
+
+  const handleSubmit = async (e: React.SyntheticEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setLoading(true)
+    setError("")
+    try {
+      const res = await fetch("/api/join", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      })
+      if (!res.ok) throw new Error("Failed to send")
+      setSubmitted(true)
+    } catch {
+      setError("Something went wrong. Please try again or email us directly.")
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  if (submitted) {
+    return (
+      <div className="bg-white rounded-2xl border border-sky-600/20 p-10 text-center">
+        <CheckCircle2 className="h-14 w-14 text-sky-600 mx-auto mb-4" aria-hidden="true" />
+        <h3 className="text-xl font-bold text-slate-900 mb-2">You&apos;re in!</h3>
+        <p className="text-muted-foreground">We&apos;ll reach out soon with next steps for joining or starting your chapter.</p>
+        <Button className="mt-6 bg-sky-600 text-white hover:bg-sky-600/80" onClick={() => setSubmitted(false)}>
+          Submit another
+        </Button>
+      </div>
+    )
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="bg-white rounded-2xl border border-sky-600/20 p-6 space-y-4">
+      <div className="grid sm:grid-cols-2 gap-4">
+        <div className="space-y-1.5">
+          <Label htmlFor="join-name">Your Name</Label>
+          <Input id="join-name" placeholder="Jane Smith" required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} />
+        </div>
+        <div className="space-y-1.5">
+          <Label htmlFor="join-email">Email</Label>
+          <Input id="join-email" type="email" placeholder="jane@school.edu" required value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} />
+        </div>
+      </div>
+      <div className="space-y-1.5">
+        <Label htmlFor="join-role">I am a...</Label>
+        <select
+          id="join-role"
+          value={form.role}
+          onChange={(e) => setForm({ ...form, role: e.target.value })}
+          className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-ring"
+        >
+          <option value="student">High school student</option>
+          <option value="college">College student</option>
+          <option value="educator">Educator / Teacher</option>
+          <option value="volunteer">Community volunteer</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div className="grid sm:grid-cols-2 gap-4">
+        <div className="space-y-1.5">
+          <Label htmlFor="join-school">School / Institution</Label>
+          <Input id="join-school" placeholder="Huron High School" value={form.school} onChange={(e) => setForm({ ...form, school: e.target.value })} />
+        </div>
+        <div className="space-y-1.5">
+          <Label htmlFor="join-year">Graduation Year</Label>
+          <Input id="join-year" placeholder="2026" value={form.year} onChange={(e) => setForm({ ...form, year: e.target.value })} />
+        </div>
+      </div>
+      <div className="space-y-1.5">
+        <Label htmlFor="join-message">How do you want to get involved?</Label>
+        <Textarea
+          id="join-message"
+          placeholder="Tell us about your interest — starting a chapter, volunteering, spreading awareness at your school..."
+          rows={3}
+          value={form.message}
+          onChange={(e) => setForm({ ...form, message: e.target.value })}
+        />
+      </div>
+      {error && <p className="text-sm text-red-500">{error}</p>}
+      <Button type="submit" size="lg" disabled={loading} className="w-full bg-sky-600 text-white hover:bg-sky-600/80 font-semibold">
+        {loading ? "Sending…" : "Join VaxShield"}
+      </Button>
+    </form>
+  )
+}
 
 export default function OrganizationsPage() {
   const [submitted, setSubmitted] = useState(false)
@@ -135,14 +234,14 @@ export default function OrganizationsPage() {
               </p>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {offerings.map(({ icon: Icon, title, description, audiences, available }) => (
+              {offerings.map(({ icon: Icon, title, description, audiences, available, longTerm }) => (
                 <div key={title} className="bg-white rounded-2xl border border-sky-600/20 p-5 flex flex-col hover:shadow-md transition-shadow">
                   <div className="flex items-start justify-between mb-3">
                     <div className="w-10 h-10 rounded-lg bg-sky-600/10 flex items-center justify-center">
                       <Icon className="h-5 w-5 text-sky-600" aria-hidden="true" />
                     </div>
                     <Badge variant={available ? "default" : "secondary"} className={available ? "bg-sky-600 text-white border-0" : ""}>
-                      {available ? "Available" : "Coming Soon"}
+                      {available ? "Available" : longTerm ? "Long-term Goal" : "Coming Soon"}
                     </Badge>
                   </div>
                   <h3 className="font-semibold text-slate-900 mb-2">{title}</h3>
@@ -197,6 +296,86 @@ export default function OrganizationsPage() {
                   <p className="text-sm text-white/80">{item}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Getting Vaccinated / Minor Consent */}
+        <section className="py-16 bg-white">
+          <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-10">
+              <p className="text-sky-600 text-sm font-semibold uppercase tracking-widest mb-2">Getting Vaccinated</p>
+              <h2 className="text-3xl font-bold text-slate-900 text-balance">How to get vaccinated — at any age</h2>
+              <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
+                Whether you are a student, parent, or healthcare provider, here is what you need to know about accessing vaccines.
+              </p>
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              <div className="bg-sky-50 rounded-2xl border border-sky-600/20 p-5">
+                <div className="w-10 h-10 rounded-full bg-sky-600/15 flex items-center justify-center mb-3">
+                  <Syringe className="h-5 w-5 text-sky-600" aria-hidden="true" />
+                </div>
+                <h3 className="font-semibold text-slate-900 mb-2">Where to get vaccinated</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Vaccines are available at your doctor's office, community health clinics, pharmacies (CVS, Walgreens, Meijer), and local health departments. Use our{" "}
+                  <Link href="/vaxsearch" className="text-sky-600 hover:underline">VaxSearch tool</Link> to find a location near you, including free options.
+                </p>
+              </div>
+              <div className="bg-sky-50 rounded-2xl border border-sky-600/20 p-5">
+                <div className="w-10 h-10 rounded-full bg-sky-600/15 flex items-center justify-center mb-3">
+                  <GraduationCap className="h-5 w-5 text-sky-600" aria-hidden="true" />
+                </div>
+                <h3 className="font-semibold text-slate-900 mb-2">Minor consent (under 18)</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  In Michigan, parental consent is generally required for routine vaccines. However, minors may consent on their own for certain vaccines related to communicable diseases or sexual health. Some school-based and clinic programs allow vaccination with consent forms on file. If unsure, call{" "}
+                  <a href="tel:1-888-535-6136" className="text-sky-600 hover:underline">Michigan DHHS at 1-888-535-6136</a>.
+                </p>
+              </div>
+              <div className="bg-sky-50 rounded-2xl border border-sky-600/20 p-5">
+                <div className="w-10 h-10 rounded-full bg-sky-600/15 flex items-center justify-center mb-3">
+                  <Info className="h-5 w-5 text-sky-600" aria-hidden="true" />
+                </div>
+                <h3 className="font-semibold text-slate-900 mb-2">Preparing for your appointment</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Bring your vaccination record (or Michigan Care Improvement Registry number), your insurance card if applicable, and a list of any allergies or current medications. Let your provider know if you are immunocompromised or pregnant, as some vaccines have specific recommendations.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Join the Team */}
+        <section id="join" className="py-16 bg-[--sky-light]">
+          <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-10 items-center">
+              <div>
+                <p className="text-sky-600 text-sm font-semibold uppercase tracking-widest mb-2">Join the Team</p>
+                <h2 className="text-3xl font-bold text-slate-900 text-balance mb-4">
+                  Start or join a VaxShield chapter
+                </h2>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  We welcome passionate students, educators, and health advocates to join VaxShield — whether as an individual volunteer, a school chapter leader, or a college program partner.
+                </p>
+                <p className="text-muted-foreground leading-relaxed mb-6">
+                  If you are interested in starting a VaxShield chapter at your high school or college, fill out the form and tell us about your school and graduation year. We will provide materials, mentorship, and support to get your chapter off the ground.
+                </p>
+                <div className="space-y-3">
+                  {[
+                    { icon: Heart, text: "Volunteer as a youth health educator" },
+                    { icon: School, text: "Start a chapter at your high school or college" },
+                    { icon: GraduationCap, text: "Earn community service or leadership hours" },
+                    { icon: Users, text: "Join our national ambassador network" },
+                  ].map(({ icon: Icon, text }) => (
+                    <div key={text} className="flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-full bg-sky-600/10 flex items-center justify-center shrink-0">
+                        <Icon className="h-4 w-4 text-sky-600" aria-hidden="true" />
+                      </div>
+                      <p className="text-sm text-slate-700">{text}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <JoinForm />
             </div>
           </div>
         </section>
