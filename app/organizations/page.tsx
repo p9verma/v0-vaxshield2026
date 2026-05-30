@@ -12,7 +12,7 @@ import Link from "next/link"
 import {
   School, Stethoscope, Building2, Users,
   CheckCircle, Package, Presentation, BookOpen,
-  Video, Wrench, CheckCircle2, GraduationCap, Heart, Syringe, Info
+  Video, Wrench, CheckCircle2, GraduationCap, Heart
 } from "lucide-react"
 
 const offerings = [
@@ -312,40 +312,6 @@ export default function OrganizationsPage() {
                   <p className="text-sm text-white/80">{item}</p>
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Getting Vaccinated / Minor Consent */}
-        <section className="py-16 bg-white">
-          <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-10">
-              <p className="text-sky-600 text-sm font-semibold uppercase tracking-widest mb-2">Getting Vaccinated</p>
-              <h2 className="text-3xl font-bold text-slate-900 text-balance">How to get vaccinated — at any age</h2>
-              <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
-                Whether you are a student, parent, or healthcare provider, here is what you need to know about accessing vaccines.
-              </p>
-            </div>
-            <div className="grid sm:grid-cols-2 gap-5 max-w-2xl mx-auto">
-              <div className="bg-sky-50 rounded-2xl border border-sky-600/20 p-5">
-                <div className="w-10 h-10 rounded-full bg-sky-600/15 flex items-center justify-center mb-3">
-                  <Syringe className="h-5 w-5 text-sky-600" aria-hidden="true" />
-                </div>
-                <h3 className="font-semibold text-slate-900 mb-2">Where to get vaccinated</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  Vaccines are available at your doctor's office, community health clinics, pharmacies (CVS, Walgreens, Meijer), and local health departments. Use our{" "}
-                  <Link href="/vaxsearch" className="text-sky-600 hover:underline">VaxSearch tool</Link> to find a location near you, including free options.
-                </p>
-              </div>
-              <div className="bg-sky-50 rounded-2xl border border-sky-600/20 p-5">
-                <div className="w-10 h-10 rounded-full bg-sky-600/15 flex items-center justify-center mb-3">
-                  <Info className="h-5 w-5 text-sky-600" aria-hidden="true" />
-                </div>
-                <h3 className="font-semibold text-slate-900 mb-2">Preparing for your appointment</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  Bring your vaccination record (or Michigan Care Improvement Registry number), your insurance card if applicable, and a list of any allergies or current medications. Let your provider know if you are immunocompromised or pregnant, as some vaccines have specific recommendations.
-                </p>
-              </div>
             </div>
           </div>
         </section>

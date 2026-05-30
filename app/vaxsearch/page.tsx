@@ -7,7 +7,7 @@ import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
-import { Search, MapPin, Phone, ChevronRight, AlertCircle, Navigation, Loader2, Filter } from "lucide-react"
+import { Search, MapPin, Phone, ChevronRight, AlertCircle, Navigation, Loader2, Filter, Syringe, Info } from "lucide-react"
 
 type ProviderFilter = "All" | "pharmacy" | "clinic" | "hospital"
 const PROVIDER_FILTERS: { label: string; value: ProviderFilter }[] = [
@@ -296,6 +296,36 @@ export default function VaxSearchPage() {
             </div>
           </div>
         </div>
+
+        {/* How to get vaccinated */}
+        <section className="py-14 bg-sky-50 border-t border-sky-600/10">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-8">
+              <p className="text-sky-600 text-sm font-semibold uppercase tracking-widest mb-2">Getting Vaccinated</p>
+              <h2 className="text-2xl font-bold text-slate-900">Ready to go? Here&apos;s what to know</h2>
+            </div>
+            <div className="grid sm:grid-cols-2 gap-5 max-w-2xl mx-auto">
+              <div className="bg-white rounded-2xl border border-sky-600/20 p-5">
+                <div className="w-10 h-10 rounded-full bg-sky-600/15 flex items-center justify-center mb-3">
+                  <Syringe className="h-5 w-5 text-sky-600" aria-hidden="true" />
+                </div>
+                <h3 className="font-semibold text-slate-900 mb-2">Where to get vaccinated</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Vaccines are available at your doctor&apos;s office, community health clinics, pharmacies (CVS, Walgreens, Rite Aid), and local health departments. Use the map above to find a provider near you.
+                </p>
+              </div>
+              <div className="bg-white rounded-2xl border border-sky-600/20 p-5">
+                <div className="w-10 h-10 rounded-full bg-sky-600/15 flex items-center justify-center mb-3">
+                  <Info className="h-5 w-5 text-sky-600" aria-hidden="true" />
+                </div>
+                <h3 className="font-semibold text-slate-900 mb-2">Preparing for your appointment</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Bring your vaccination record or immunization history, your insurance card if applicable, and a list of any allergies or current medications. Let your provider know if you are immunocompromised or pregnant, as some vaccines have specific recommendations.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
       <Footer />
     </div>
