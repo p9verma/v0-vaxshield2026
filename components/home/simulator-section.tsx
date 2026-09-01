@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { BookOpen, ExternalLink, Info } from "lucide-react"
+import { MEDICAL_DISCLAIMER } from "@/lib/disclaimer"
 
 export function SimulatorSection() {
   const iframeRef = useRef<HTMLIFrameElement>(null)
@@ -57,6 +58,15 @@ export function SimulatorSection() {
               </p>
             </div>
           </div>
+        </div>
+
+        {/* Medical disclaimer, passive notice. Sits below the accuracy callout
+            so both are read before the simulator, but nothing gates the embed. */}
+        <div className="max-w-3xl mx-auto mb-8">
+          <p className="text-xs leading-relaxed text-muted-foreground">
+            <span className="font-semibold text-[--navy]">Disclaimer: </span>
+            {MEDICAL_DISCLAIMER}
+          </p>
         </div>
 
         <div className="bg-white rounded-2xl shadow-lg border border-[--sky]/20 overflow-hidden">

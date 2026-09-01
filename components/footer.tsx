@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { Shield, Mail, Linkedin } from "lucide-react"
+import { MEDICAL_DISCLAIMER } from "@/lib/disclaimer"
 
 export function Footer() {
   return (
@@ -56,7 +57,16 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/10 mt-10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-white/40">
+        {/* Medical disclaimer. Footer is rendered by all 7 pages, so this one
+            block satisfies the "strip of text on every page" requirement. */}
+        <div className="border-t border-white/10 mt-10 pt-6">
+          <p className="text-xs leading-relaxed text-white/50 max-w-4xl">
+            <span className="font-semibold text-white/70">Disclaimer: </span>
+            {MEDICAL_DISCLAIMER}
+          </p>
+        </div>
+
+        <div className="border-t border-white/10 mt-6 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-white/40">
           <p>&copy; {new Date().getFullYear()} VaxShield. All rights reserved.</p>
           <div className="flex gap-4">
             <Link href="#" className="hover:text-white/60 transition-colors">Privacy Policy</Link>

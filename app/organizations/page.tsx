@@ -10,9 +10,9 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import Link from "next/link"
 import {
-  School, Stethoscope, Building2, Users,
-  CheckCircle, Package, Presentation, BookOpen,
-  Video, Wrench, CheckCircle2, GraduationCap, Heart
+  School, Building2, Users,
+  CheckCircle, Package, Presentation,
+  Wrench, CheckCircle2, GraduationCap, Heart
 } from "lucide-react"
 
 const offerings = [
@@ -31,22 +31,6 @@ const offerings = [
     audiences: ["Schools", "Districts"],
     available: false,
     longTerm: false,
-  },
-  {
-    icon: BookOpen,
-    title: "Clinic Patient Education Kits",
-    description: "Pamphlet sets, infographic bundles, and patient-facing materials for waiting rooms, intake conversations, and community health events.",
-    audiences: ["Clinics", "Hospitals"],
-    available: true,
-    longTerm: false,
-  },
-  {
-    icon: Video,
-    title: "Provider Training Modules",
-    description: "Short training modules for healthcare providers covering vaccine communication, addressing hesitancy, and using VaxShield materials with patients.",
-    audiences: ["Clinics", "Hospitals"],
-    available: false,
-    longTerm: true,
   },
   {
     icon: Wrench,
@@ -68,7 +52,6 @@ const offerings = [
 
 const orgTypes = [
   { icon: School, label: "Schools & Districts", description: "Curriculum support, classroom kits, and district-scale rollout packages." },
-  { icon: Stethoscope, label: "Clinics & Hospitals", description: "Patient education materials, provider training, and clinic distribution programs." },
   { icon: Building2, label: "Nonprofits & Community Programs", description: "Workshops, outreach kits, and partnership programs for community organizations." },
   { icon: Users, label: "Afterschool & Youth Programs", description: "Age-appropriate materials and facilitation support for youth-serving organizations." },
 ]
@@ -223,10 +206,10 @@ export default function OrganizationsPage() {
           <div className="mx-auto max-w-4xl text-center">
             <p className="text-sky-600 text-sm font-semibold uppercase tracking-widest mb-2">For Organizations</p>
             <h1 className="text-4xl font-bold mb-4 text-balance">
-              Bring VaxShield to your school, clinic, or organization.
+              Bring VaxShield to your school, district, or organization.
             </h1>
             <p className="text-white/70 text-lg max-w-2xl mx-auto mb-8">
-              VaxShield offers tailored educational kits, training materials, and implementation support for schools, clinics, districts, hospitals, and nonprofits.
+              VaxShield offers tailored educational kits, training materials, and implementation support for schools, districts, nonprofits, and youth programs.
             </p>
             <Button asChild className="bg-sky-600 text-white hover:bg-sky-600/80 font-semibold">
               <Link href="#request">Request Materials or Demo</Link>
@@ -241,7 +224,7 @@ export default function OrganizationsPage() {
               <p className="text-sky-600 text-sm font-semibold uppercase tracking-widest mb-2">Who We Work With</p>
               <h2 className="text-3xl font-bold text-slate-900 text-balance">Built for institutional adoption</h2>
             </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {orgTypes.map(({ icon: Icon, label, description }) => (
                 <div key={label} className="bg-sky-50 rounded-2xl p-5 border border-sky-600/20">
                   <div className="w-10 h-10 rounded-full bg-sky-600/15 flex items-center justify-center mb-3">
@@ -262,10 +245,10 @@ export default function OrganizationsPage() {
               <p className="text-sky-600 text-sm font-semibold uppercase tracking-widest mb-2">What We Offer</p>
               <h2 className="text-3xl font-bold text-slate-900 text-balance">Materials, training, and implementation support</h2>
               <p className="text-muted-foreground mt-2 max-w-xl mx-auto">
-                VaxShield can support pilots, classroom use, clinic distribution, and full program implementation. Pricing is added as capacity grows.
+                VaxShield can support pilots, classroom use, and full program implementation. Pricing is added as capacity grows.
               </p>
             </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div className="grid sm:grid-cols-2 gap-5">
               {offerings.map(({ icon: Icon, title, description, audiences, available, longTerm }) => (
                 <div key={title} className="bg-white rounded-2xl border border-sky-600/20 p-5 flex flex-col hover:shadow-md transition-shadow">
                   <div className="flex items-start justify-between mb-3">
@@ -321,7 +304,7 @@ export default function OrganizationsPage() {
                 "Dedicated implementation support",
                 "Audience-specific materials (K–5 through adult)",
                 "Evidence-based, non-fear-based approach",
-                "Developed in partnership with UM and Michigan Medicine",
+                "Developed with feedback from educators, clinicians, and researchers",
               ].map((item) => (
                 <div key={item} className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-sky-600 shrink-0" aria-hidden="true" />
@@ -399,7 +382,7 @@ export default function OrganizationsPage() {
                 </div>
                 <div className="space-y-1.5">
                   <Label htmlFor="org-org">Organization Name</Label>
-                  <Input id="org-org" placeholder="Jefferson Middle School / City Health Clinic..." required value={form.org} onChange={(e) => setForm({ ...form, org: e.target.value })} />
+                  <Input id="org-org" placeholder="Jefferson Middle School / Ann Arbor Public Schools..." required value={form.org} onChange={(e) => setForm({ ...form, org: e.target.value })} />
                 </div>
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div className="space-y-1.5">
@@ -412,8 +395,6 @@ export default function OrganizationsPage() {
                     >
                       <option value="school">School</option>
                       <option value="district">School District</option>
-                      <option value="clinic">Clinic</option>
-                      <option value="hospital">Hospital</option>
                       <option value="nonprofit">Nonprofit</option>
                       <option value="community">Community Program</option>
                       <option value="other">Other</option>
@@ -421,7 +402,7 @@ export default function OrganizationsPage() {
                   </div>
                   <div className="space-y-1.5">
                     <Label htmlFor="org-size">Approximate Size</Label>
-                    <Input id="org-size" placeholder="e.g. 300 students, 5 clinicians..." value={form.size} onChange={(e) => setForm({ ...form, size: e.target.value })} />
+                    <Input id="org-size" placeholder="e.g. 300 students, 12 classrooms..." value={form.size} onChange={(e) => setForm({ ...form, size: e.target.value })} />
                   </div>
                 </div>
                 <div className="space-y-1.5">
