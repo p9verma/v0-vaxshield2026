@@ -4,10 +4,11 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { BarChart2, TrendingUp, Heart } from "lucide-react"
 import { LiveMetrics } from "@/components/impact/live-metrics"
+import { CATEGORY_LABELS, CATEGORY_ORDER, futureCollaboration, partnersByCategory } from "@/lib/partners"
 
 const caseStudies = [
   {
-    site: "Huron High School — Ann Arbor",
+    site: "Huron High School, Ann Arbor",
     type: "High School Classroom Pilot",
     summary: "Health science students completed both the Original and Case Study worksheets paired with the herd immunity simulator. Teachers reported significantly higher student engagement compared to traditional public health lectures.",
     outcome: "92% of students could explain herd immunity after the lesson.",
@@ -19,7 +20,7 @@ const caseStudies = [
     outcome: "Educators requested full implementation for the following semester.",
   },
   {
-    site: "Cass Clinic — Detroit",
+    site: "Cass Clinic, Detroit",
     type: "Community Clinic Distribution",
     summary: "Pamphlets and infographics were distributed in the clinic waiting area and during health education sessions. Clinic staff noted that patients referenced the materials during conversations about vaccine hesitancy.",
     outcome: "Materials well-received; clinic requested additional bilingual versions.",
@@ -35,22 +36,11 @@ const fundAllocation = [
 ]
 
 const partnerTypes = [
-  {
-    category: "Academic Partners",
-    partners: ["University of Michigan", "UM School of Public Health", "Michigan Medicine", "Ross Business School", "UM Optimize"],
-  },
-  {
-    category: "Clinical Partners",
-    partners: ["Cass Clinic — Detroit", "Ypsilanti Community Health Center"],
-  },
-  {
-    category: "School Partners",
-    partners: ["Huron High School — Ann Arbor", "Jackson Public School System"],
-  },
-  {
-    category: "Future Collaboration",
-    partners: ["Additional school districts", "Regional hospitals and clinic networks", "Public health nonprofits", "Corporate health sponsors"],
-  },
+  ...CATEGORY_ORDER.map((c) => ({
+    category: CATEGORY_LABELS[c],
+    partners: partnersByCategory(c).map((p) => p.name),
+  })),
+  { category: "Future Collaboration", partners: futureCollaboration },
 ]
 
 export default function ImpactPage() {
@@ -174,7 +164,7 @@ export default function ImpactPage() {
             <Heart className="h-10 w-10 text-sky-600 mx-auto mb-4" aria-hidden="true" />
             <h2 className="text-2xl font-bold text-slate-900 mb-3 text-balance">Help us grow this impact</h2>
             <p className="text-muted-foreground mb-6 leading-relaxed">
-              Whether you want to fund a classroom, partner with us as an organization, or spread the word — every action counts.
+              Whether you want to fund a classroom, partner with us as an organization, or spread the word, every action counts.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button asChild className="bg-sky-600 text-white hover:bg-sky-600/80">

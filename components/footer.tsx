@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Shield, Mail, Twitter, Instagram, Linkedin, Youtube } from "lucide-react"
+import { Shield, Mail, Linkedin } from "lucide-react"
 
 export function Footer() {
   return (
@@ -16,10 +16,7 @@ export function Footer() {
               Reducing vaccine misinformation through education, interactive tools, and community outreach.
             </p>
             <div className="flex gap-3 mt-4">
-              <a href="#" aria-label="Twitter" className="hover:text-sky-500 transition-colors"><Twitter className="h-5 w-5" /></a>
-              <a href="#" aria-label="Instagram" className="hover:text-sky-500 transition-colors"><Instagram className="h-5 w-5" /></a>
               <a href="https://linkedin.com/in/vaxshield-inc-5811143bb" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-sky-500 transition-colors"><Linkedin className="h-5 w-5" /></a>
-              <a href="#" aria-label="YouTube" className="hover:text-sky-500 transition-colors"><Youtube className="h-5 w-5" /></a>
             </div>
           </div>
 

@@ -3,21 +3,11 @@ import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { Shield, Target, Eye, Heart, Users, BookOpen } from "lucide-react"
-
-const partners = [
-  { name: "University of Michigan", role: "Academic home and Optimize program support" },
-  { name: "UM School of Public Health", role: "Advisors, research collaboration, and expert review" },
-  { name: "Michigan Medicine", role: "Clinician advisors and public health expertise" },
-  { name: "Ross Business School", role: "Strategy and organizational development support" },
-  { name: "Cass Clinic — Detroit", role: "Pilot site and community healthcare partner" },
-  { name: "Jackson Public School System", role: "Classroom pilot and student engagement partner" },
-  { name: "Huron High School — Ann Arbor", role: "Curriculum testing and educator feedback" },
-  { name: "UM Optimize Program", role: "Startup and nonprofit development support" },
-]
+import { partners } from "@/lib/partners"
 
 const values = [
   { icon: BookOpen, title: "Education, Not Fear", body: "We believe in empowering people with knowledge, not alarming them. Every resource is designed to build understanding, not anxiety." },
-  { icon: Users, title: "Community-Centered", body: "VaxShield is built around the communities most affected by vaccine hesitancy — with their voices, their stories, and their needs front and center." },
+  { icon: Users, title: "Community-Centered", body: "VaxShield is built around the communities most affected by vaccine hesitancy, with their voices, their stories, and their needs front and center." },
   { icon: Target, title: "Science-Backed", body: "Everything we create is grounded in public health evidence, reviewed by clinical and academic advisors, and updated as science evolves." },
   { icon: Heart, title: "Empowering Youth", body: "Young people are often left out of health conversations, yet directly affected by vaccine decisions. VaxShield puts them at the center." },
 ]
@@ -38,7 +28,7 @@ export default function AboutPage() {
               Rooted in community.<br />Built on science.
             </h1>
             <p className="text-white/70 text-lg leading-relaxed max-w-2xl mx-auto">
-              VaxShield is a digital and classroom resource designed to reduce vaccine stigma by teaching the science behind infectious diseases and vaccines — in a way that is accessible, engaging, and empowering.
+              VaxShield is a digital and classroom resource designed to reduce vaccine stigma by teaching the science behind infectious diseases and vaccines, in a way that is accessible, engaging, and empowering.
             </p>
           </div>
         </section>
@@ -54,7 +44,7 @@ export default function AboutPage() {
                   VaxShield was founded in communities where vaccine conversations are often shaped by hesitation, historical mistrust, and rapidly spreading misinformation. The founders recognized that existing resources were either too clinical, too fear-based, or simply not reaching the people who needed them most.
                 </p>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  The goal was never to lecture or alarm. It was to meet people where they are — with curiosity, with respect, and with tools that make complex public health science genuinely understandable and interesting.
+                  The goal was never to lecture or alarm. It was to meet people where they are, with curiosity, with respect, and with tools that make complex public health science genuinely understandable and interesting.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
                   From its roots at the University of Michigan, VaxShield has grown into a platform connecting students, educators, clinicians, and communities around a shared belief: that informed communities are healthier communities.
@@ -126,7 +116,7 @@ export default function AboutPage() {
         <section className="py-14 bg-slate-900 text-white text-center px-4">
           <h2 className="text-2xl font-bold mb-3 text-balance">Ready to get involved?</h2>
           <p className="text-white/65 mb-6 max-w-lg mx-auto">
-            Whether you want to partner, donate, volunteer, or bring VaxShield to your school or clinic — we want to hear from you.
+            Whether you want to partner, donate, volunteer, or bring VaxShield to your school or clinic, we want to hear from you.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button asChild className="bg-sky-600 text-white hover:bg-sky-700">

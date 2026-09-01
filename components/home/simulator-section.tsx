@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { BookOpen, ExternalLink } from "lucide-react"
+import { BookOpen, ExternalLink, Info } from "lucide-react"
 
 export function SimulatorSection() {
   const iframeRef = useRef<HTMLIFrameElement>(null)
@@ -32,6 +32,31 @@ export function SimulatorSection() {
           <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             Watch in real time how vaccination rates affect disease spread.
           </p>
+        </div>
+
+        <div className="max-w-3xl mx-auto mb-6 rounded-xl border border-[--sky]/30 bg-white p-4 sm:p-5">
+          <div className="flex gap-3">
+            <Info className="h-5 w-5 text-[--sky] shrink-0 mt-0.5" aria-hidden="true" />
+            <div className="text-sm leading-relaxed text-muted-foreground">
+              <p className="font-semibold text-[--navy] mb-1">Before you start: this is a teaching model.</p>
+              <p>
+                The simulator is a simplified illustration of how vaccination rates affect disease spread. It is
+                not a prediction of any real outbreak. Real transmission depends on many factors this model does
+                not include, such as age, population density, waning immunity, and how people actually move and
+                mix. Use it to build intuition for why herd immunity thresholds matter, not to estimate what will
+                happen in your community. For medical or public health guidance, consult the{" "}
+                <a
+                  href="https://www.cdc.gov/vaccines"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[--sky] font-medium underline underline-offset-2 hover:no-underline"
+                >
+                  CDC
+                </a>{" "}
+                or your healthcare provider.
+              </p>
+            </div>
+          </div>
         </div>
 
         <div className="bg-white rounded-2xl shadow-lg border border-[--sky]/20 overflow-hidden">

@@ -33,7 +33,7 @@ export function ProblemSection() {
             Misinformation is spreading. Education is the antidote.
           </h2>
           <p className="text-slate-300 max-w-2xl mx-auto leading-relaxed">
-            VaxShield exists because the problem is real — and because communities deserve better than fear, silence, or outdated materials. Our approach is rooted in science, built on empathy, and designed to empower.
+            VaxShield exists because the problem is real, and because communities deserve better than fear, silence, or outdated materials. Our approach is rooted in science, built on empathy, and designed to empower.
           </p>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">

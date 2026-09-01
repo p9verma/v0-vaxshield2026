@@ -1,39 +1,52 @@
 import { NextRequest, NextResponse } from "next/server"
-import nodemailer from "nodemailer"
+import { z } from "zod"
+import { esc, escMultiline, sendNotification, describeEmailFailure } from "@/lib/email"
 
-const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  port: 465,
-  secure: true,
-  auth: {
-    user: process.env.GMAIL_USER,
-    pass: process.env.GMAIL_APP_PASSWORD,
-  },
+const InquirySchema = z.object({
+  name: z.string({ required_error: "Name is required" }).trim().min(1, "Name is required").max(200),
+  email: z.string({ required_error: "Email is required" }).trim().min(1, "Email is required").email("Please enter a valid email address").max(320),
+  org: z.string().trim().max(300).optional().or(z.literal("")),
+  orgType: z.string().trim().max(100).default("other"),
+  size: z.string().trim().max(100).optional().or(z.literal("")),
+  message: z.string({ required_error: "Message is required" }).trim().min(1, "Message is required").max(5000),
 })
 
 export async function POST(req: NextRequest) {
-  const { name, email, org, orgType, size, message } = await req.json()
-
-  if (!name?.trim() || !email?.trim() || !message?.trim()) {
-    return NextResponse.json({ error: "Name, email, and message are required" }, { status: 400 })
+  let body: unknown
+  try {
+    body = await req.json()
+  } catch {
+    return NextResponse.json({ error: "Invalid request body" }, { status: 400 })
   }
 
-  await transporter.sendMail({
-    from: `"VaxShield Inquiries" <${process.env.GMAIL_USER}>`,
-    to: "vaxshieldteam@gmail.com",
-    subject: `Organization Inquiry: ${org || name}`,
-    html: `
-      <h2>New Organization Inquiry</h2>
-      <p><strong>Name:</strong> ${name}</p>
-      <p><strong>Email:</strong> ${email}</p>
-      <p><strong>Organization:</strong> ${org || "Not provided"}</p>
-      <p><strong>Organization Type:</strong> ${orgType}</p>
-      <p><strong>Approximate Size:</strong> ${size || "Not provided"}</p>
-      <hr />
-      <p><strong>What they're looking for:</strong></p>
-      <p>${message.replace(/\n/g, "<br/>")}</p>
-    `,
-  })
+  const parsed = InquirySchema.safeParse(body)
+  if (!parsed.success) {
+    const first = parsed.error.issues[0]
+    return NextResponse.json({ error: first?.message ?? "Invalid submission" }, { status: 400 })
+  }
+
+  const { name, email, org, orgType, size, message } = parsed.data
+
+  try {
+    await sendNotification({
+      fromLabel: "VaxShield Inquiries",
+      subject: `Organization Inquiry: ${org || name}`,
+      replyTo: email,
+      html: `
+        <h2>New Organization Inquiry</h2>
+        <p><strong>Name:</strong> ${esc(name)}</p>
+        <p><strong>Email:</strong> ${esc(email)}</p>
+        <p><strong>Organization:</strong> ${esc(org) || "Not provided"}</p>
+        <p><strong>Organization Type:</strong> ${esc(orgType)}</p>
+        <p><strong>Approximate Size:</strong> ${esc(size) || "Not provided"}</p>
+        <hr />
+        <p><strong>What they're looking for:</strong></p>
+        <p>${escMultiline(message)}</p>
+      `,
+    })
+  } catch (err) {
+    return NextResponse.json({ error: describeEmailFailure("inquiry", err) }, { status: 502 })
+  }
 
   return NextResponse.json({ ok: true })
 }

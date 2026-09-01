@@ -96,10 +96,18 @@ function JoinForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       })
-      if (!res.ok) throw new Error("Failed to send")
+      if (!res.ok) {
+        // The route returns a specific reason (validation message or delivery failure).
+        const data = await res.json().catch(() => null)
+        throw new Error(data?.error ?? "Failed to send")
+      }
       setSubmitted(true)
-    } catch {
-      setError("Something went wrong. Please try again or email us directly.")
+    } catch (err) {
+      setError(
+        err instanceof Error && err.message !== "Failed to send"
+          ? err.message
+          : "Something went wrong. Please try again or email vaxshieldteam@gmail.com directly."
+      )
     } finally {
       setLoading(false)
     }
@@ -159,7 +167,7 @@ function JoinForm() {
         <Label htmlFor="join-message">How do you want to get involved?</Label>
         <Textarea
           id="join-message"
-          placeholder="Tell us about your interest — starting a chapter, volunteering, spreading awareness at your school..."
+          placeholder="Tell us about your interest: starting a chapter, volunteering, spreading awareness at your school..."
           rows={3}
           value={form.message}
           onChange={(e) => setForm({ ...form, message: e.target.value })}
@@ -189,10 +197,18 @@ export default function OrganizationsPage() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       })
-      if (!res.ok) throw new Error("Failed to send")
+      if (!res.ok) {
+        // The route returns a specific reason (validation message or delivery failure).
+        const data = await res.json().catch(() => null)
+        throw new Error(data?.error ?? "Failed to send")
+      }
       setSubmitted(true)
-    } catch {
-      setError("Something went wrong. Please try again or email us directly.")
+    } catch (err) {
+      setError(
+        err instanceof Error && err.message !== "Failed to send"
+          ? err.message
+          : "Something went wrong. Please try again or email vaxshieldteam@gmail.com directly."
+      )
     } finally {
       setLoading(false)
     }
@@ -326,7 +342,7 @@ export default function OrganizationsPage() {
                   Start or join a VaxShield chapter
                 </h2>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  We welcome passionate students, educators, and health advocates to join VaxShield — whether as an individual volunteer, a school chapter leader, or a college program partner.
+                  We welcome passionate students, educators, and health advocates to join VaxShield, whether as an individual volunteer, a school chapter leader, or a college program partner.
                 </p>
                 <p className="text-muted-foreground leading-relaxed mb-6">
                   If you are interested in starting a VaxShield chapter at your high school or college, fill out the form and tell us about your school and graduation year. We will provide materials, mentorship, and support to get your chapter off the ground.

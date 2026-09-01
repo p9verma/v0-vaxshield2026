@@ -23,10 +23,18 @@ export function FeedbackSection() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       })
-      if (!res.ok) throw new Error("Failed to send")
+      if (!res.ok) {
+        // The route returns a specific reason (validation message or delivery failure).
+        const data = await res.json().catch(() => null)
+        throw new Error(data?.error ?? "Failed to send")
+      }
       setSubmitted(true)
-    } catch {
-      setError("Something went wrong. Please try again or email us directly.")
+    } catch (err) {
+      setError(
+        err instanceof Error && err.message !== "Failed to send"
+          ? err.message
+          : "Something went wrong. Please try again or email vaxshieldteam@gmail.com directly."
+      )
     } finally {
       setLoading(false)
     }
