@@ -1,78 +1,117 @@
 import { NextRequest, NextResponse } from "next/server"
+import { z } from "zod"
+import { geocode } from "@/lib/vaxsearch/geocode"
+import { searchProviders } from "@/lib/vaxsearch/search"
+import { OverpassUnavailableError } from "@/lib/vaxsearch/overpass"
+import type { VaxSearchResponse, VaxSearchError } from "@/lib/vaxsearch/types"
 
-const UA = "VaxShield/1.0 (vaxshieldteam@gmail.com)"
+export const runtime = "nodejs"
+export const maxDuration = 30
 
-async function geocode(query: string): Promise<{ lat: number; lng: number } | null> {
-  const url = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(query)}&format=json&limit=1&countrycodes=us`
-  const res = await fetch(url, {
-    headers: { "User-Agent": UA, "Accept-Language": "en" },
-  })
-  if (!res.ok) return null
-  const data = await res.json()
-  if (!data.length) return null
-  return { lat: parseFloat(data[0].lat), lng: parseFloat(data[0].lon) }
+const BUDGET_MS = 22_000
+
+const CoordsSchema = z.object({
+  lat: z.coerce.number().finite().min(-90).max(90),
+  lng: z.coerce.number().finite().min(-180).max(180),
+})
+const QuerySchema = z.string().trim().min(2).max(120)
+
+function errorResponse(err: VaxSearchError, httpStatus: number): NextResponse<VaxSearchResponse> {
+  const res = NextResponse.json<VaxSearchResponse>(err, { status: httpStatus })
+  // Never cache a failure, or one brief outage becomes a long one.
+  res.headers.set("Cache-Control", "no-store")
+  if (err.retryable) res.headers.set("Retry-After", "5")
+  return res
 }
 
-async function fetchClinics(lat: number, lng: number) {
-  const radius = 10000
-  const query = `
-    [out:json][timeout:25];
-    (
-      node["amenity"="pharmacy"](around:${radius},${lat},${lng});
-      node["amenity"="clinic"](around:${radius},${lat},${lng});
-      node["amenity"="hospital"](around:${radius},${lat},${lng});
-      node["healthcare"="centre"](around:${radius},${lat},${lng});
-    );
-    out body;
-  `
-  const res = await fetch("https://overpass-api.de/api/interpreter", {
-    method: "POST",
-    headers: { "Content-Type": "text/plain", "User-Agent": UA },
-    body: query,
-  })
-  if (!res.ok) throw new Error(`Overpass error: ${res.status}`)
-  const data = await res.json()
-
-  return data.elements
-    .filter((el: { tags?: { name?: string }; lat?: number; lon?: number }) => el.tags?.name && el.lat && el.lon)
-    .map((el: { id: number; tags: Record<string, string>; lat: number; lon: number }) => ({
-      id: el.id,
-      name: el.tags.name,
-      address: [el.tags["addr:housenumber"], el.tags["addr:street"], el.tags["addr:city"]]
-        .filter(Boolean)
-        .join(" ") || "Address not listed",
-      phone: el.tags.phone || el.tags["contact:phone"],
-      lat: el.lat,
-      lng: el.lon,
-      type: el.tags.amenity || el.tags.healthcare || "clinic",
-    }))
-}
-
-export async function GET(req: NextRequest) {
+export async function GET(req: NextRequest): Promise<NextResponse<VaxSearchResponse>> {
+  const deadline = Date.now() + BUDGET_MS
   const { searchParams } = new URL(req.url)
   const q = searchParams.get("q")
   const latParam = searchParams.get("lat")
   const lngParam = searchParams.get("lng")
 
-  try {
-    let lat: number
-    let lng: number
+  let lat: number
+  let lng: number
+  let placeLabel: string | undefined
 
-    if (latParam && lngParam) {
-      lat = parseFloat(latParam)
-      lng = parseFloat(lngParam)
-    } else if (q) {
-      const coords = await geocode(q)
-      if (!coords) return NextResponse.json({ error: "Location not found" }, { status: 404 })
-      lat = coords.lat
-      lng = coords.lng
-    } else {
-      return NextResponse.json({ error: "Missing query or coordinates" }, { status: 400 })
+  if (latParam !== null || lngParam !== null) {
+    // Coordinate search (browser geolocation). Validate: parseFloat on garbage
+    // yields NaN, which would be interpolated straight into the Overpass query.
+    const parsed = CoordsSchema.safeParse({ lat: latParam, lng: lngParam })
+    if (!parsed.success) {
+      return errorResponse({ status: "error", code: "invalid_request", retryable: false }, 400)
+    }
+    lat = parsed.data.lat
+    lng = parsed.data.lng
+  } else if (q !== null) {
+    const parsedQuery = QuerySchema.safeParse(q)
+    if (!parsedQuery.success) {
+      return errorResponse(
+        { status: "error", code: "geocode_not_found", query: q, retryable: false },
+        200
+      )
     }
 
-    const clinics = await fetchClinics(lat, lng)
-    return NextResponse.json({ lat, lng, clinics })
-  } catch {
-    return NextResponse.json({ error: "Failed to fetch results" }, { status: 500 })
+    const result = await geocode(parsedQuery.data, deadline)
+    switch (result.kind) {
+      case "not_found":
+        return errorResponse(
+          { status: "error", code: "geocode_not_found", query: q, retryable: false },
+          200
+        )
+      case "too_broad":
+        return errorResponse(
+          {
+            status: "error",
+            code: "geocode_too_broad",
+            query: q,
+            matchedPlace: result.label,
+            matchedKind: result.placeKind,
+            retryable: false,
+          },
+          200
+        )
+      case "unavailable":
+        return errorResponse(
+          { status: "error", code: "geocode_unavailable", query: q, retryable: true },
+          503
+        )
+      case "found":
+        lat = result.lat
+        lng = result.lng
+        placeLabel = result.label
+        break
+    }
+  } else {
+    return errorResponse({ status: "error", code: "invalid_request", retryable: false }, 400)
+  }
+
+  try {
+    const outcome = await searchProviders(lat, lng, deadline)
+    const res = NextResponse.json<VaxSearchResponse>({
+      status: "ok",
+      center: { lat, lng },
+      placeLabel,
+      radiusMeters: outcome.radiusMeters,
+      widened: outcome.widened,
+      clinics: outcome.clinics,
+      totalMatched: outcome.totalMatched,
+    })
+    res.headers.set("Cache-Control", "public, s-maxage=900, stale-while-revalidate=3600")
+    return res
+  } catch (err) {
+    if (err instanceof OverpassUnavailableError) {
+      console.error(`[vaxsearch] upstream unavailable: ${err.message}`)
+      return errorResponse(
+        { status: "error", code: "upstream_unavailable", query: q ?? undefined, retryable: true },
+        503
+      )
+    }
+    console.error("[vaxsearch] unexpected failure:", err)
+    return errorResponse(
+      { status: "error", code: "upstream_unavailable", query: q ?? undefined, retryable: true },
+      503
+    )
   }
 }

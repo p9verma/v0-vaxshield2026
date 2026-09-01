@@ -28,7 +28,7 @@ export function HeroSection() {
             <span className="text-[--sky]">Start with knowledge.</span>
           </h1>
           <p className="text-lg md:text-xl text-white/75 leading-relaxed mb-8 max-w-2xl">
-            VaxShield reduces vaccine misinformation through interactive education, accessible resources, and community outreach — helping students, families, and clinics make informed public health decisions.
+            VaxShield reduces vaccine misinformation through interactive education, accessible resources, and community outreach, helping students, families, and clinics make informed public health decisions.
           </p>
           <div className="flex flex-wrap gap-4">
             <Button asChild size="lg" className="bg-[--sky] text-white hover:bg-[--sky]/80 font-semibold gap-2">

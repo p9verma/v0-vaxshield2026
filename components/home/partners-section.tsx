@@ -1,15 +1,5 @@
 import { Shield } from "lucide-react"
-
-const partners = [
-  "University of Michigan",
-  "UM School of Public Health",
-  "Michigan Medicine",
-  "Ross Business School",
-  "Cass Clinic",
-  "Jackson Public Schools",
-  "Huron High School",
-  "UM Optimize",
-]
+import { featuredPartners } from "@/lib/partners"
 
 export function PartnersSection() {
   return (
@@ -22,13 +12,13 @@ export function PartnersSection() {
           </h2>
         </div>
         <div className="flex flex-wrap justify-center gap-4">
-          {partners.map((partner) => (
+          {featuredPartners.map(({ name }) => (
             <div
-              key={partner}
+              key={name}
               className="flex items-center gap-2 bg-white/10 rounded-full px-5 py-2.5 border border-white/20 text-white text-sm font-medium"
             >
               <Shield className="h-4 w-4 text-sky-500" aria-hidden="true" />
-              {partner}
+              {name}
             </div>
           ))}
         </div>

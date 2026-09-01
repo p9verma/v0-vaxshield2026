@@ -1,31 +1,25 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useMemo, useRef } from "react"
 import dynamic from "next/dynamic"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
-import { Search, MapPin, Phone, ChevronRight, AlertCircle, Navigation, Loader2, Filter, Syringe, Info } from "lucide-react"
-
-type ProviderFilter = "All" | "pharmacy" | "clinic" | "hospital"
-const PROVIDER_FILTERS: { label: string; value: ProviderFilter }[] = [
-  { label: "All", value: "All" },
-  { label: "Pharmacy", value: "pharmacy" },
-  { label: "Clinic", value: "clinic" },
-  { label: "Hospital", value: "hospital" },
-]
-
-export interface FoundClinic {
-  id: number
-  name: string
-  address: string
-  phone?: string
-  lat: number
-  lng: number
-  type: string
-}
+import {
+  Search, MapPin, Phone, ChevronRight, AlertCircle, Navigation,
+  Loader2, Filter, Syringe, Info, RotateCw,
+} from "lucide-react"
+import {
+  PROVIDER_LABELS,
+  errorMessage,
+  type FoundClinic,
+  type ProviderType,
+  type VaxSearchOk,
+  type VaxSearchError,
+  type VaxSearchResponse,
+} from "@/lib/vaxsearch/types"
 
 const ClinicMap = dynamic(
   () => import("@/components/clinic-map").then((m) => m.ClinicMap),
@@ -46,83 +40,108 @@ const hotlines = [
   { name: "Poison Control Center", number: "1-800-222-1222", hours: "24/7 availability", description: "Concerns about medication or vaccine reactions." },
 ]
 
-async function searchByQuery(query: string): Promise<{ lat: number; lng: number; clinics: FoundClinic[] } | null> {
-  const res = await fetch(`/api/vaxsearch?q=${encodeURIComponent(query)}`)
-  if (!res.ok) return null
-  return res.json()
-}
+type ProviderFilter = "All" | ProviderType
 
-async function searchByCoords(lat: number, lng: number): Promise<FoundClinic[]> {
-  const res = await fetch(`/api/vaxsearch?lat=${lat}&lng=${lng}`)
-  if (!res.ok) throw new Error("Failed to fetch")
-  const data = await res.json()
-  return data.clinics
+/** What the page is currently showing. One atom, so the states cannot disagree. */
+type ViewState =
+  | { phase: "idle" }
+  | { phase: "loading" }
+  | { phase: "results"; data: VaxSearchOk }
+  | { phase: "error"; err: VaxSearchError }
+  /** Browser denied or failed geolocation. Distinct from an API failure. */
+  | { phase: "geo_denied" }
+
+/** The search that produced the current view, so Retry can repeat it. */
+type LastSearch = { kind: "query"; q: string } | { kind: "coords"; lat: number; lng: number }
+
+/**
+ * Always parse the body, regardless of res.ok. The route deliberately returns a
+ * typed reason on failure; branching on res.ok would throw that away and is what
+ * caused a busy upstream to be reported as "Location not found".
+ */
+async function fetchSearch(params: URLSearchParams): Promise<VaxSearchResponse> {
+  try {
+    const res = await fetch(`/api/vaxsearch?${params}`)
+    return (await res.json()) as VaxSearchResponse
+  } catch {
+    // Network failure, or a non-JSON body such as a platform error page.
+    return { status: "error", code: "upstream_unavailable", retryable: true }
+  }
 }
 
 export default function VaxSearchPage() {
   const [query, setQuery] = useState("")
-  const [clinics, setClinics] = useState<FoundClinic[]>([])
-  const [mapCenter, setMapCenter] = useState<{ lat: number; lng: number } | null>(null)
-  const [loading, setLoading] = useState(false)
+  const [view, setView] = useState<ViewState>({ phase: "idle" })
   const [locating, setLocating] = useState(false)
-  const [searched, setSearched] = useState(false)
-  const [error, setError] = useState("")
   const [providerFilter, setProviderFilter] = useState<ProviderFilter>("All")
+  const lastSearch = useRef<LastSearch | null>(null)
 
-  const filteredClinics = providerFilter === "All"
-    ? clinics
-    : clinics.filter((c) => c.type === providerFilter)
+  const data = view.phase === "results" ? view.data : null
+  const clinics = useMemo<FoundClinic[]>(() => data?.clinics ?? [], [data])
 
-  const runSearch = async (lat: number, lng: number) => {
-    setLoading(true)
-    setError("")
-    setSearched(true)
-    setMapCenter({ lat, lng })
-    try {
-      const results = await searchByCoords(lat, lng)
-      setClinics(results)
-      if (results.length === 0) setError("No clinics found nearby. Try a different location.")
-    } catch {
-      setError("Failed to load results. Please try again.")
-    } finally {
-      setLoading(false)
-    }
+  // Counts drive the filter chips: a bucket with zero results is never offered,
+  // so it is not possible to select a filter that yields a blank page.
+  const counts = useMemo(() => {
+    const m = new Map<ProviderType, number>()
+    for (const c of clinics) m.set(c.type, (m.get(c.type) ?? 0) + 1)
+    return m
+  }, [clinics])
+
+  const filteredClinics = useMemo(
+    () => (providerFilter === "All" ? clinics : clinics.filter((c) => c.type === providerFilter)),
+    [clinics, providerFilter]
+  )
+
+  const runSearch = async (target: LastSearch) => {
+    lastSearch.current = target
+    setProviderFilter("All") // never carry a stale filter into a new city
+    setView({ phase: "loading" })
+
+    const params =
+      target.kind === "query"
+        ? new URLSearchParams({ q: target.q })
+        : new URLSearchParams({ lat: String(target.lat), lng: String(target.lng) })
+
+    const res = await fetchSearch(params)
+    setView(res.status === "ok" ? { phase: "results", data: res } : { phase: "error", err: res })
   }
 
-  const handleSearch = async (e: React.SyntheticEvent<HTMLFormElement>) => {
+  const handleSearch = (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault()
     if (!query.trim()) return
-    setLoading(true)
-    setError("")
-    const result = await searchByQuery(query)
-    if (!result) {
-      setError("Location not found. Try a city name or zip code.")
-      setLoading(false)
-      return
-    }
-    setSearched(true)
-    setMapCenter({ lat: result.lat, lng: result.lng })
-    setClinics(result.clinics)
-    if (result.clinics.length === 0) setError("No clinics found nearby. Try a different location.")
-    setLoading(false)
+    void runSearch({ kind: "query", q: query.trim() })
   }
 
-  const handleGeolocate = () => {
+  /**
+   * `userInitiated` distinguishes the button from the on-mount attempt. A denied
+   * permission prompt on page load should leave the page in its normal empty
+   * state, not show a red error before the user has done anything.
+   */
+  const handleGeolocate = (userInitiated: boolean) => {
     if (!navigator.geolocation) return
     setLocating(true)
     navigator.geolocation.getCurrentPosition(
-      async (pos) => {
+      (pos) => {
         setLocating(false)
-        await runSearch(pos.coords.latitude, pos.coords.longitude)
+        void runSearch({ kind: "coords", lat: pos.coords.latitude, lng: pos.coords.longitude })
       },
       () => {
         setLocating(false)
-        setError("Could not access your location.")
+        if (userInitiated) setView({ phase: "geo_denied" })
       }
     )
   }
 
-  useEffect(() => { handleGeolocate() }, []) // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => { handleGeolocate(false) }, []) // eslint-disable-line react-hooks/exhaustive-deps
+
+  const retry = () => { if (lastSearch.current) void runSearch(lastSearch.current) }
+
+  const chips: { label: string; value: ProviderFilter; count: number }[] = [
+    { label: "All", value: "All", count: clinics.length },
+    ...(Object.keys(PROVIDER_LABELS) as ProviderType[])
+      .filter((t) => (counts.get(t) ?? 0) > 0)
+      .map((t) => ({ label: PROVIDER_LABELS[t], value: t as ProviderFilter, count: counts.get(t) ?? 0 })),
+  ]
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -147,12 +166,12 @@ export default function VaxSearchPage() {
                   aria-label="Search for vaccine locations"
                 />
               </div>
-              <Button type="submit" className="h-12 px-5 bg-sky-600 hover:bg-sky-600/80 text-white rounded-xl shrink-0" disabled={loading}>
-                {loading ? <Loader2 className="h-5 w-5 animate-spin" /> : "Search"}
+              <Button type="submit" className="h-12 px-5 bg-sky-600 hover:bg-sky-600/80 text-white rounded-xl shrink-0" disabled={view.phase === "loading"}>
+                {view.phase === "loading" ? <Loader2 className="h-5 w-5 animate-spin" /> : "Search"}
               </Button>
             </form>
             <button
-              onClick={handleGeolocate}
+              onClick={() => handleGeolocate(true)}
               disabled={locating}
               className="mt-3 text-sm text-white/60 hover:text-white flex items-center gap-1.5 mx-auto transition-colors"
             >
@@ -168,14 +187,18 @@ export default function VaxSearchPage() {
 
               {/* Map */}
               <div className="rounded-2xl overflow-hidden border border-sky-600/20 h-80 mb-6">
-                <ClinicMap visibleClinics={filteredClinics} center={mapCenter} />
+                <ClinicMap
+                  visibleClinics={filteredClinics}
+                  center={data?.center ?? null}
+                  radiusMeters={data?.radiusMeters}
+                />
               </div>
 
-              {/* Provider type filters — only shown after a search */}
-              {searched && !loading && clinics.length > 0 && (
+              {/* Filters, derived from what the search actually returned */}
+              {view.phase === "results" && clinics.length > 0 && (
                 <div className="flex flex-wrap items-center gap-2 mb-5">
                   <Filter className="h-4 w-4 text-muted-foreground shrink-0" aria-hidden="true" />
-                  {PROVIDER_FILTERS.map(({ label, value }) => (
+                  {chips.map(({ label, value, count }) => (
                     <button
                       key={value}
                       onClick={() => setProviderFilter(value)}
@@ -186,69 +209,136 @@ export default function VaxSearchPage() {
                       }`}
                       aria-pressed={providerFilter === value}
                     >
-                      {label}
+                      {label} ({count})
                     </button>
                   ))}
                 </div>
               )}
 
-              {/* Results */}
-              {!searched && !loading && (
+              {/* Idle */}
+              {view.phase === "idle" && (
                 <div className="text-center py-12 text-muted-foreground">
                   <MapPin className="h-10 w-10 mx-auto mb-2 text-sky-600/40" aria-hidden="true" />
                   <p>Search a location above to find vaccine providers near you.</p>
                 </div>
               )}
 
-              {error && (
-                <div className="text-center py-8 text-muted-foreground">
-                  <p className="text-red-500">{error}</p>
-                </div>
-              )}
-
-              {loading && (
+              {view.phase === "loading" && (
                 <div className="flex justify-center py-12">
                   <Loader2 className="h-8 w-8 text-sky-600 animate-spin" />
                 </div>
               )}
 
-              {!loading && filteredClinics.length > 0 && (
-                <>
-                  <p className="text-sm text-muted-foreground mb-4">{filteredClinics.length} locations found</p>
-                  <div className="space-y-4">
-                    {filteredClinics.map((clinic) => (
-                      <div key={clinic.id} className="bg-white rounded-2xl border border-sky-600/20 p-5 hover:shadow-md transition-shadow">
-                        <div className="flex items-start justify-between gap-4">
-                          <div className="flex-1">
-                            <div className="flex flex-wrap items-center gap-2 mb-1">
-                              <h3 className="font-semibold text-slate-900">{clinic.name}</h3>
-                              <Badge variant="secondary" className="text-xs capitalize">{clinic.type}</Badge>
-                            </div>
-                            <p className="text-sm text-muted-foreground flex items-center gap-1 mb-1">
-                              <MapPin className="h-3.5 w-3.5" aria-hidden="true" />
-                              {clinic.address}
-                            </p>
-                            {clinic.phone && (
-                              <p className="text-sm text-muted-foreground flex items-center gap-1">
-                                <Phone className="h-3.5 w-3.5" aria-hidden="true" />
-                                <a href={`tel:${clinic.phone}`} className="hover:text-sky-600">{clinic.phone}</a>
-                              </p>
-                            )}
-                          </div>
-                          <a
-                            href={`https://www.google.com/maps/dir/?api=1&destination=${clinic.lat},${clinic.lng}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <Button size="sm" variant="ghost" className="text-sky-600 hover:bg-sky-600/10 shrink-0 gap-1">
-                              Directions
-                              <ChevronRight className="h-4 w-4" aria-hidden="true" />
-                            </Button>
-                          </a>
-                        </div>
-                      </div>
-                    ))}
+              {/* Geolocation denied (only ever from an explicit button press) */}
+              {view.phase === "geo_denied" && (
+                <div className="rounded-2xl border border-amber-300 bg-amber-50 p-6 text-center">
+                  <Navigation className="h-8 w-8 text-amber-600 mx-auto mb-3" aria-hidden="true" />
+                  <p className="text-slate-900 font-medium">
+                    We could not access your location. Check your browser&apos;s location permission, or search by
+                    city or ZIP code instead.
+                  </p>
+                </div>
+              )}
+
+              {/* Error */}
+              {view.phase === "error" && (
+                <div className="rounded-2xl border border-amber-300 bg-amber-50 p-6 text-center">
+                  <AlertCircle className="h-8 w-8 text-amber-600 mx-auto mb-3" aria-hidden="true" />
+                  <p className="text-slate-900 font-medium mb-1">{errorMessage(view.err)}</p>
+                  <div className="flex flex-wrap gap-2 justify-center mt-4">
+                    {view.err.retryable && (
+                      <Button size="sm" onClick={retry} className="bg-sky-600 text-white hover:bg-sky-600/80 gap-1.5">
+                        <RotateCw className="h-4 w-4" aria-hidden="true" />
+                        Try again
+                      </Button>
+                    )}
+                    {view.err.code === "geocode_too_broad" && (
+                      <Button size="sm" variant="outline" onClick={() => handleGeolocate(true)} className="border-sky-600 text-sky-600 hover:bg-sky-600 hover:text-white gap-1.5">
+                        <Navigation className="h-4 w-4" aria-hidden="true" />
+                        Use my current location
+                      </Button>
+                    )}
                   </div>
+                </div>
+              )}
+
+              {/* Genuinely empty result: neutral, not an error */}
+              {view.phase === "results" && clinics.length === 0 && (
+                <div className="text-center py-12 text-muted-foreground">
+                  <MapPin className="h-10 w-10 mx-auto mb-2 text-sky-600/40" aria-hidden="true" />
+                  <p>
+                    No vaccine providers are listed within {Math.round(data!.radiusMeters / 1000)} km
+                    {data!.placeLabel ? ` of ${data!.placeLabel}` : ""}. Try a nearby city.
+                  </p>
+                </div>
+              )}
+
+              {/* Results */}
+              {view.phase === "results" && clinics.length > 0 && (
+                <>
+                  {data!.widened && (
+                    <div className="rounded-xl border border-sky-600/30 bg-sky-50 px-4 py-3 mb-4 text-sm text-slate-900 flex gap-2">
+                      <Info className="h-4 w-4 text-sky-600 shrink-0 mt-0.5" aria-hidden="true" />
+                      <span>
+                        No providers within 12 km{data!.placeLabel ? ` of ${data!.placeLabel}` : ""}, so we widened
+                        the search to {Math.round(data!.radiusMeters / 1000)} km.
+                      </span>
+                    </div>
+                  )}
+
+                  <p className="text-sm text-muted-foreground mb-4">
+                    {filteredClinics.length} location{filteredClinics.length !== 1 ? "s" : ""} shown
+                    {data!.totalMatched > clinics.length && providerFilter === "All"
+                      ? ` (closest ${clinics.length} of ${data!.totalMatched})`
+                      : ""}
+                  </p>
+
+                  {filteredClinics.length === 0 ? (
+                    <div className="text-center py-8 text-muted-foreground">
+                      <p>No {providerFilter} locations in these results.</p>
+                      <Button size="sm" variant="outline" className="mt-3 border-sky-600 text-sky-600 hover:bg-sky-600 hover:text-white" onClick={() => setProviderFilter("All")}>
+                        Show all {clinics.length}
+                      </Button>
+                    </div>
+                  ) : (
+                    <div className="space-y-4">
+                      {filteredClinics.map((clinic) => (
+                        <div key={clinic.id} className="bg-white rounded-2xl border border-sky-600/20 p-5 hover:shadow-md transition-shadow">
+                          <div className="flex items-start justify-between gap-4">
+                            <div className="flex-1">
+                              <div className="flex flex-wrap items-center gap-2 mb-1">
+                                <h3 className="font-semibold text-slate-900">{clinic.name}</h3>
+                                <Badge variant="secondary" className="text-xs">{PROVIDER_LABELS[clinic.type]}</Badge>
+                                <span className="text-xs text-muted-foreground">
+                                  {(clinic.distanceMeters / 1000).toFixed(1)} km away
+                                </span>
+                              </div>
+                              <p className="text-sm text-muted-foreground flex items-center gap-1 mb-1">
+                                <MapPin className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
+                                {clinic.address}
+                              </p>
+                              {clinic.phone && (
+                                <p className="text-sm text-muted-foreground flex items-center gap-1">
+                                  <Phone className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
+                                  <a href={`tel:${clinic.phone}`} className="hover:text-sky-600">{clinic.phone}</a>
+                                </p>
+                              )}
+                            </div>
+                            <a
+                              href={`https://www.google.com/maps/dir/?api=1&destination=${clinic.lat},${clinic.lng}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              <Button size="sm" variant="ghost" className="text-sky-600 hover:bg-sky-600/10 shrink-0 gap-1">
+                                Directions
+                                <ChevronRight className="h-4 w-4" aria-hidden="true" />
+                              </Button>
+                            </a>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </>
               )}
             </div>

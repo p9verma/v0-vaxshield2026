@@ -12,12 +12,12 @@ const faqs = [
   {
     question: "Do vaccines cause autism?",
     answer:
-      "No. This claim originated from a 1998 study that has since been fully retracted due to fraud and ethical violations. Decades of research involving millions of children across dozens of countries have found no link between vaccines and autism. Major health organizations worldwide — including the CDC, WHO, and AAP — confirm this conclusion.",
+      "No. This claim originated from a 1998 study that has since been fully retracted due to fraud and ethical violations. Decades of research involving millions of children across dozens of countries have found no link between vaccines and autism. Major health organizations worldwide, including the CDC, WHO, and AAP, confirm this conclusion.",
   },
   {
     question: "Can I get the disease from the vaccine?",
     answer:
-      "No. Most vaccines use inactivated (killed) viruses, protein subunits, or mRNA — none of which can cause infection. Some vaccines use a weakened live virus, but the virus is too weakened to cause disease in healthy individuals. You may experience mild symptoms like soreness or low fever, which are signs your immune system is building protection — not signs of infection.",
+      "No. Most vaccines use inactivated (killed) viruses, protein subunits, or mRNA, none of which can cause infection. Some vaccines use a weakened live virus, but the virus is too weakened to cause disease in healthy individuals. You may experience mild symptoms like soreness or low fever, which are signs your immune system is building protection, not signs of infection.",
   },
   {
     question: "Why do we need multiple doses or annual boosters?",
@@ -27,12 +27,12 @@ const faqs = [
   {
     question: "What are common vaccine side effects?",
     answer:
-      "Common side effects include soreness at the injection site, mild fever, fatigue, and headache. These typically resolve within 1–2 days and are signs that your immune system is responding. Serious allergic reactions (anaphylaxis) are very rare — roughly 1–2 per million doses — and vaccination sites are equipped to respond if they occur.",
+      "Common side effects include soreness at the injection site, mild fever, fatigue, and headache. These typically resolve within 1–2 days and are signs that your immune system is responding. Serious allergic reactions (anaphylaxis) are very rare, roughly 1–2 per million doses, and vaccination sites are equipped to respond if they occur.",
   },
   {
     question: "Can minors get vaccinated without parental consent?",
     answer:
-      "This varies by state and vaccine type. In Michigan, minors may consent to certain vaccines — particularly those related to sexual health or communicable diseases — without a parent's permission. For routine childhood vaccines, parental consent is generally required. Some clinics and school programs offer vaccination with parental consent on file. If you are a minor with questions about your specific situation, speak with a healthcare provider or call the Michigan DHHS Immunization line at 1-888-535-6136.",
+      "This varies by state and vaccine type. In Michigan, minors may consent to certain vaccines (particularly those related to sexual health or communicable diseases) without a parent's permission. For routine childhood vaccines, parental consent is generally required. Some clinics and school programs offer vaccination with parental consent on file. If you are a minor with questions about your specific situation, speak with a healthcare provider or call the Michigan DHHS Immunization line at 1-888-535-6136.",
   },
   {
     question: "What if I have allergies or a weakened immune system?",
@@ -42,7 +42,7 @@ const faqs = [
   {
     question: "Why should I get vaccinated if others around me are?",
     answer:
-      "Herd immunity only works when enough people are vaccinated. When vaccination rates drop — even slightly — diseases that were nearly eliminated can return. Some people (infants, immunocompromised individuals, those with medical exemptions) cannot be vaccinated and depend on the community around them for protection. Getting vaccinated protects not just yourself, but those who can't protect themselves.",
+      "Herd immunity only works when enough people are vaccinated. When vaccination rates drop, even slightly, diseases that were nearly eliminated can return. Some people (infants, immunocompromised individuals, those with medical exemptions) cannot be vaccinated and depend on the community around them for protection. Getting vaccinated protects not just yourself, but those who can't protect themselves.",
   },
   {
     question: "Where can I get vaccinated for free?",

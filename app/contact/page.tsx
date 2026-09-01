@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
-import { Mail, Twitter, Instagram, Linkedin, CheckCircle2 } from "lucide-react"
+import { Mail, Linkedin, CheckCircle2 } from "lucide-react"
 
 const inquiryTypes = [
   { value: "school", label: "School Partnership" },
@@ -37,7 +37,7 @@ export default function ContactPage() {
           <p className="text-sky-600 text-sm font-semibold uppercase tracking-widest mb-2">Get In Touch</p>
           <h1 className="text-4xl font-bold mb-4 text-balance">Let&apos;s build healthier communities together.</h1>
           <p className="text-white/70 text-lg max-w-xl mx-auto">
-            Whether you&apos;re a school, clinic, donor, volunteer, or just curious — we&apos;d love to hear from you.
+            Whether you&apos;re a school, clinic, donor, volunteer, or just curious, we&apos;d love to hear from you.
           </p>
         </section>
 
@@ -138,8 +138,6 @@ export default function ContactPage() {
               <div className="bg-slate-900 rounded-2xl p-5 text-white">
                 <h2 className="font-bold mb-3">Follow VaxShield</h2>
                 <div className="flex gap-4">
-                  <a href="#" aria-label="Twitter" className="hover:text-sky-600 transition-colors"><Twitter className="h-5 w-5" /></a>
-                  <a href="#" aria-label="Instagram" className="hover:text-sky-600 transition-colors"><Instagram className="h-5 w-5" /></a>
                   <a href="https://linkedin.com/in/vaxshield-inc-5811143bb" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-sky-600 transition-colors"><Linkedin className="h-5 w-5" /></a>
                 </div>
               </div>

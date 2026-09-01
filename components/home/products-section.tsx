@@ -15,7 +15,7 @@ const products = [
   {
     icon: FileText,
     title: "Worksheets",
-    description: "Worksheet 1: Original and Worksheet 2: Case Study — the longer version judges loved.",
+    description: "Worksheet 1: Original and Worksheet 2: Case Study, the longer version judges loved.",
     tag: "Available",
     tagVariant: "default" as const,
     href: "/resources",
@@ -63,7 +63,7 @@ const products = [
   {
     icon: Package,
     title: "Organizational Kits",
-    description: "Full educational kits for schools, clinics, and districts — including printable and digital materials.",
+    description: "Full educational kits for schools, clinics, and districts, including printable and digital materials.",
     tag: "For Organizations",
     tagVariant: "outline" as const,
     href: "/organizations",

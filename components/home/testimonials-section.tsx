@@ -2,12 +2,12 @@ import { Quote } from "lucide-react"
 
 const testimonials = [
   {
-    quote: "VaxShield gave us materials we could actually use in the classroom. Students were engaged in a way we hadn't seen with other health content — they were asking real questions.",
+    quote: "VaxShield gave us materials we could actually use in the classroom. Students were engaged in a way we hadn't seen with other health content. They were asking real questions.",
     author: "Educator",
     role: "Huron High School, Ann Arbor",
   },
   {
-    quote: "As a clinic, we needed something we could hand to parents who were skeptical. VaxShield's pamphlets were clear, respectful, and grounded in science — exactly what our patients needed.",
+    quote: "As a clinic, we needed something we could hand to parents who were skeptical. VaxShield's pamphlets were clear, respectful, and grounded in science: exactly what our patients needed.",
     author: "Healthcare Provider",
     role: "Cass Clinic, Detroit",
   },
