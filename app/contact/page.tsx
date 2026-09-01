@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
@@ -11,7 +11,6 @@ import { Mail, Linkedin, CheckCircle2 } from "lucide-react"
 
 const inquiryTypes = [
   { value: "school", label: "School Partnership" },
-  { value: "clinic", label: "Clinic Partnership" },
   { value: "sponsor", label: "Sponsorship" },
   { value: "media", label: "Media / Press" },
   { value: "volunteer", label: "Volunteer" },
@@ -19,15 +18,119 @@ const inquiryTypes = [
   { value: "general", label: "General Question" },
 ]
 
-export default function ContactPage() {
+const VALID_TYPES = new Set(inquiryTypes.map((t) => t.value))
+
+function ContactForm() {
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState("")
   const [form, setForm] = useState({ name: "", email: "", org: "", type: "general", message: "" })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // Donate buttons across the site link to /contact?type=donate. Honour it so a
+  // donation enquiry arrives labelled as one instead of "General Question".
+  //
+  // Read from window rather than useSearchParams: this page is statically
+  // prerendered, and useSearchParams would force its Suspense boundary to stay
+  // in the fallback, leaving the form unhydrated and silently falling back to a
+  // native GET submit.
+  useEffect(() => {
+    const requested = new URLSearchParams(window.location.search).get("type")
+    if (requested && VALID_TYPES.has(requested)) {
+      setForm((f) => ({ ...f, type: requested }))
+    }
+  }, [])
+
+  const handleSubmit = async (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault()
-    setSubmitted(true)
+    setLoading(true)
+    setError("")
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      })
+      if (!res.ok) {
+        // The route returns a specific reason (validation message or delivery failure).
+        const data = await res.json().catch(() => null)
+        throw new Error(data?.error ?? "Failed to send")
+      }
+      setSubmitted(true)
+    } catch (err) {
+      setError(
+        err instanceof Error && err.message !== "Failed to send"
+          ? err.message
+          : "Something went wrong. Please try again or email vaxshieldteam@gmail.com directly."
+      )
+    } finally {
+      setLoading(false)
+    }
   }
 
+  if (submitted) {
+    return (
+      <div className="flex flex-col items-center justify-center py-20 text-center">
+        <CheckCircle2 className="h-16 w-16 text-sky-600 mb-4" aria-hidden="true" />
+        <h2 className="text-2xl font-bold text-slate-900 mb-2">Message received!</h2>
+        <p className="text-muted-foreground max-w-sm">
+          Thank you for reaching out. A member of the VaxShield team will be in touch shortly.
+        </p>
+        <Button className="mt-6 bg-sky-600 text-white hover:bg-sky-600/80" onClick={() => setSubmitted(false)}>
+          Send another message
+        </Button>
+      </div>
+    )
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="bg-white rounded-2xl border border-sky-600/20 p-6 space-y-5">
+      <div className="grid sm:grid-cols-2 gap-4">
+        <div className="space-y-1.5">
+          <Label htmlFor="name">Your Name</Label>
+          <Input id="name" placeholder="Jane Smith" required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} />
+        </div>
+        <div className="space-y-1.5">
+          <Label htmlFor="email">Email Address</Label>
+          <Input id="email" type="email" placeholder="jane@example.com" required value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} />
+        </div>
+      </div>
+      <div className="space-y-1.5">
+        <Label htmlFor="org">Organization (optional)</Label>
+        <Input id="org" placeholder="School, district, company..." value={form.org} onChange={(e) => setForm({ ...form, org: e.target.value })} />
+      </div>
+      <div className="space-y-1.5">
+        <Label htmlFor="type">Type of Inquiry</Label>
+        <select
+          id="type"
+          value={form.type}
+          onChange={(e) => setForm({ ...form, type: e.target.value })}
+          className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus:outline-none focus:ring-2 focus:ring-ring"
+        >
+          {inquiryTypes.map((t) => (
+            <option key={t.value} value={t.value}>{t.label}</option>
+          ))}
+        </select>
+      </div>
+      <div className="space-y-1.5">
+        <Label htmlFor="message">Message</Label>
+        <Textarea
+          id="message"
+          placeholder="Tell us how we can help or how you want to get involved..."
+          rows={5}
+          required
+          value={form.message}
+          onChange={(e) => setForm({ ...form, message: e.target.value })}
+        />
+      </div>
+      {error && <p className="text-sm text-red-500">{error}</p>}
+      <Button type="submit" size="lg" disabled={loading} className="w-full bg-sky-600 text-white hover:bg-sky-600/80 font-semibold">
+        {loading ? "Sending…" : "Send Message"}
+      </Button>
+    </form>
+  )
+}
+
+export default function ContactPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
@@ -45,62 +148,7 @@ export default function ContactPage() {
           <div className="grid lg:grid-cols-3 gap-10">
             {/* Form */}
             <div className="lg:col-span-2">
-              {submitted ? (
-                <div className="flex flex-col items-center justify-center py-20 text-center">
-                  <CheckCircle2 className="h-16 w-16 text-sky-600 mb-4" aria-hidden="true" />
-                  <h2 className="text-2xl font-bold text-slate-900 mb-2">Message received!</h2>
-                  <p className="text-muted-foreground max-w-sm">
-                    Thank you for reaching out. A member of the VaxShield team will be in touch shortly.
-                  </p>
-                  <Button className="mt-6 bg-sky-600 text-white hover:bg-sky-600/80" onClick={() => setSubmitted(false)}>
-                    Send another message
-                  </Button>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="bg-white rounded-2xl border border-sky-600/20 p-6 space-y-5">
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <div className="space-y-1.5">
-                      <Label htmlFor="name">Your Name</Label>
-                      <Input id="name" placeholder="Jane Smith" required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} />
-                    </div>
-                    <div className="space-y-1.5">
-                      <Label htmlFor="email">Email Address</Label>
-                      <Input id="email" type="email" placeholder="jane@example.com" required value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} />
-                    </div>
-                  </div>
-                  <div className="space-y-1.5">
-                    <Label htmlFor="org">Organization (optional)</Label>
-                    <Input id="org" placeholder="School, clinic, hospital, company..." value={form.org} onChange={(e) => setForm({ ...form, org: e.target.value })} />
-                  </div>
-                  <div className="space-y-1.5">
-                    <Label htmlFor="type">Type of Inquiry</Label>
-                    <select
-                      id="type"
-                      value={form.type}
-                      onChange={(e) => setForm({ ...form, type: e.target.value })}
-                      className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus:outline-none focus:ring-2 focus:ring-ring"
-                    >
-                      {inquiryTypes.map((t) => (
-                        <option key={t.value} value={t.value}>{t.label}</option>
-                      ))}
-                    </select>
-                  </div>
-                  <div className="space-y-1.5">
-                    <Label htmlFor="message">Message</Label>
-                    <Textarea
-                      id="message"
-                      placeholder="Tell us how we can help or how you want to get involved..."
-                      rows={5}
-                      required
-                      value={form.message}
-                      onChange={(e) => setForm({ ...form, message: e.target.value })}
-                    />
-                  </div>
-                  <Button type="submit" size="lg" className="w-full bg-sky-600 text-white hover:bg-sky-600/80 font-semibold">
-                    Send Message
-                  </Button>
-                </form>
-              )}
+              <ContactForm />
             </div>
 
             {/* Sidebar */}

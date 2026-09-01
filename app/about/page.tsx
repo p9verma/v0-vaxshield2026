@@ -95,10 +95,10 @@ export default function AboutPage() {
         <section className="py-16 bg-white">
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <p className="text-sky-600 text-sm font-semibold uppercase tracking-widest mb-2">Our Partners</p>
-              <h2 className="text-3xl font-bold text-slate-900 text-balance">Collaborative, advisor-informed, expert-connected</h2>
+              <p className="text-sky-600 text-sm font-semibold uppercase tracking-widest mb-2">Our Collaborators</p>
+              <h2 className="text-3xl font-bold text-slate-900 text-balance">Built with feedback from people who do this work</h2>
               <p className="text-muted-foreground mt-2 max-w-xl mx-auto">
-                VaxShield is student-led but never alone. We are built with and supported by a network of public health professionals, clinicians, educators, and institutions.
+                VaxShield is student-led. Along the way we have gathered feedback from public health professionals, clinicians, educators, and people at the institutions below. Their input shaped our materials; it does not represent an endorsement by their organizations.
               </p>
             </div>
             <div className="space-y-3">

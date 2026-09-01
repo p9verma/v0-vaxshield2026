@@ -7,11 +7,6 @@ const testimonials = [
     role: "Huron High School, Ann Arbor",
   },
   {
-    quote: "As a clinic, we needed something we could hand to parents who were skeptical. VaxShield's pamphlets were clear, respectful, and grounded in science: exactly what our patients needed.",
-    author: "Healthcare Provider",
-    role: "Cass Clinic, Detroit",
-  },
-  {
     quote: "I didn't know much about herd immunity before. The simulator made it click for me. I actually showed my parents after class.",
     author: "Student",
     role: "Jackson Public School System",
@@ -26,7 +21,7 @@ export function TestimonialsSection() {
           <p className="text-[--sky] text-sm font-semibold uppercase tracking-widest mb-2">Community Stories</p>
           <h2 className="text-3xl font-bold text-[--navy] text-balance">Real voices. Real impact.</h2>
         </div>
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {testimonials.map(({ quote, author, role }) => (
             <figure key={author} className="bg-[--sky-pale] rounded-2xl p-6 border border-[--sky]/20">
               <Quote className="h-8 w-8 text-[--sky]/30 mb-3" aria-hidden="true" />
