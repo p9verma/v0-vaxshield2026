@@ -1,8 +1,10 @@
+import { STATE_LARGEST_CITY } from "./us-states"
+
 const UA = "VaxShield/1.0 (vaxshieldteam@gmail.com)"
 const NOMINATIM = "https://nominatim.openstreetmap.org/search"
 
 export type GeocodeResult =
-  | { kind: "found"; lat: number; lng: number; label: string }
+  | { kind: "found"; lat: number; lng: number; label: string; redirectedFromState?: string }
   | { kind: "too_broad"; label: string; placeKind: string }
   | { kind: "not_found" }
   | { kind: "unavailable" }
@@ -32,7 +34,9 @@ function normalizeQuery(q: string): string {
  * Typing a bare state ("VA", "Virginia") geocodes to the state centroid, which
  * for Virginia is empty farmland in Prince Edward County. Searching a normal
  * radius there legitimately returns nothing, which the user reads as "the app
- * is broken". Better to detect it and ask them to narrow.
+ * is broken". Detecting it lets the caller redirect to the state's largest
+ * city instead (see the state-redirect block in `geocode`), or, for the rare
+ * case of a whole country, ask the user to narrow.
  *
  * The reliable discriminator is `addresstype`, not `place_rank`. Virginia's
  * independent cities are county-equivalents and rank 12 (Richmond,
@@ -69,7 +73,19 @@ function shortLabel(hit: NominatimHit): string {
   return trimmed.slice(0, 2).join(", ") || full
 }
 
-export async function geocode(rawQuery: string, deadline: number): Promise<GeocodeResult> {
+/** Nominatim's `name` is the bare state name ("Virginia") for a state-level
+ *  hit; display_name's first segment is the same thing as a fallback. */
+function stateNameOf(hit: NominatimHit): string | null {
+  if (hit.name) return hit.name
+  return hit.display_name?.split(",")[0]?.trim() || null
+}
+
+export async function geocode(
+  rawQuery: string,
+  deadline: number,
+  // Internal: prevents a redirected city search from being redirected again.
+  allowStateRedirect = true
+): Promise<GeocodeResult> {
   const q = normalizeQuery(rawQuery)
   const url = `${NOMINATIM}?q=${encodeURIComponent(q)}&format=jsonv2&limit=1&countrycodes=us&addressdetails=0`
 
@@ -106,6 +122,25 @@ export async function geocode(rawQuery: string, deadline: number): Promise<Geoco
       if (!Number.isFinite(lat) || !Number.isFinite(lng)) return { kind: "not_found" }
 
       if (isTooBroad(hit)) {
+        const stateName = allowStateRedirect ? stateNameOf(hit) : null
+        const redirectCity = stateName ? STATE_LARGEST_CITY[stateName] : undefined
+
+        // A bare state ("VA", "Virginia") is real intent -- the user wants
+        // "somewhere in this state", not an error. Redirect to the state's
+        // largest city (real provider density) rather than the geometric
+        // centroid (often empty farmland) or a dead end telling them to type
+        // something more specific. Countries aren't redirected: there's no
+        // single sane city to guess, so that case still reports too_broad.
+        if (redirectCity) {
+          const inner = await geocode(redirectCity, deadline, false)
+          if (inner.kind === "found") {
+            return { ...inner, redirectedFromState: stateName ?? undefined }
+          }
+          // Redirect target failed to geocode (shouldn't happen -- it's a
+          // real city we chose) or Nominatim/network hiccuped: fall through
+          // to the original too_broad response rather than lose the search.
+        }
+
         return {
           kind: "too_broad",
           label: shortLabel(hit).split(",")[0]?.trim() || rawQuery,

@@ -34,6 +34,7 @@ export async function GET(req: NextRequest): Promise<NextResponse<VaxSearchRespo
   let lat: number
   let lng: number
   let placeLabel: string | undefined
+  let redirectedFromState: string | undefined
 
   if (latParam !== null || lngParam !== null) {
     // Coordinate search (browser geolocation). Validate: parseFloat on garbage
@@ -81,6 +82,7 @@ export async function GET(req: NextRequest): Promise<NextResponse<VaxSearchRespo
         lat = result.lat
         lng = result.lng
         placeLabel = result.label
+        redirectedFromState = result.redirectedFromState
         break
     }
   } else {
@@ -93,6 +95,7 @@ export async function GET(req: NextRequest): Promise<NextResponse<VaxSearchRespo
       status: "ok",
       center: { lat, lng },
       placeLabel,
+      redirectedFromState,
       radiusMeters: outcome.radiusMeters,
       widened: outcome.widened,
       clinics: outcome.clinics,

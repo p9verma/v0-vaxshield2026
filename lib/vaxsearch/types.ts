@@ -38,6 +38,11 @@ export type VaxSearchOk = {
   center: { lat: number; lng: number }
   /** Human-readable match from the geocoder. Absent for coordinate searches. */
   placeLabel?: string
+  /** Set when the query was a bare state ("Virginia") and we redirected the
+   *  search to that state's largest city instead of erroring. Holds the state
+   *  name so the UI can say "showing results near <placeLabel>, Virginia's
+   *  largest city". */
+  redirectedFromState?: string
   radiusMeters: number
   /** True when the first pass was thin and the radius was escalated. */
   widened: boolean

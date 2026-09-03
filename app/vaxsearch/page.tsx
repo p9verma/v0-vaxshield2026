@@ -266,6 +266,12 @@ export default function VaxSearchPage() {
               {view.phase === "results" && clinics.length === 0 && (
                 <div className="text-center py-12 text-muted-foreground">
                   <MapPin className="h-10 w-10 mx-auto mb-2 text-sky-600/40" aria-hidden="true" />
+                  {data!.redirectedFromState && (
+                    <p className="mb-1">
+                      You searched all of {data!.redirectedFromState}, so we looked near {data!.placeLabel}, its
+                      largest city.
+                    </p>
+                  )}
                   <p>
                     No vaccine providers are listed within {Math.round(data!.radiusMeters / 1000)} km
                     {data!.placeLabel ? ` of ${data!.placeLabel}` : ""}. Try a nearby city.
@@ -276,6 +282,16 @@ export default function VaxSearchPage() {
               {/* Results */}
               {view.phase === "results" && clinics.length > 0 && (
                 <>
+                  {data!.redirectedFromState && (
+                    <div className="rounded-xl border border-sky-600/30 bg-sky-50 px-4 py-3 mb-4 text-sm text-slate-900 flex gap-2">
+                      <Info className="h-4 w-4 text-sky-600 shrink-0 mt-0.5" aria-hidden="true" />
+                      <span>
+                        You searched all of {data!.redirectedFromState}, so we&apos;re showing results near{" "}
+                        {data!.placeLabel}, its largest city. Search a specific city or ZIP for more precise results.
+                      </span>
+                    </div>
+                  )}
+
                   {data!.widened && (
                     <div className="rounded-xl border border-sky-600/30 bg-sky-50 px-4 py-3 mb-4 text-sm text-slate-900 flex gap-2">
                       <Info className="h-4 w-4 text-sky-600 shrink-0 mt-0.5" aria-hidden="true" />
