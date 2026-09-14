@@ -32,6 +32,39 @@ const resources = [
     featured: true,
     file: "/downloads/VaxImpact-Simulator-Case-Study.pdf",
   },
+  {
+  title: "NGSS-Aligned Worksheet: Printed Version",
+  description:
+    "A printable, NGSS-aligned investigation where students use the VaxImpact simulator to explore disease transmission, collect and analyze data, graph results, and evaluate how vaccination rates affect outbreaks.",
+  type: "Worksheet" as ResourceType,
+  audience: ["Students", "Educators"] as Audience[],
+  icon: FileText,
+  free: true,
+  featured: true,
+  file: "/downloads/VaxImpact_NGSS_Printed_Version_Document.pdf",
+  },
+  {
+  title: "NGSS-Aligned Worksheet: Online Version",
+  description:
+    "A digital-friendly, NGSS-aligned investigation where students use computational modeling to test vaccination rates, analyze repeated trials, graph outbreak data, make predictions, and evaluate model limitations.",
+  type: "Worksheet" as ResourceType,
+  audience: ["Students", "Educators"] as Audience[],
+  icon: FileText,
+  free: true,
+  featured: true,
+  file: "/downloads/VaxImpact_NGSS_Colored_Online_Version.pdf",
+  },
+  {
+  title: "VaxImpact Teacher Quick Guide",
+  description:
+    "A concise educator guide covering lesson goals, simulator controls, student workflow, classroom activity options, facilitation strategies, and important model limitations.",
+  type: "Lesson Plan" as ResourceType,
+  audience: ["Educators"] as Audience[],
+  icon: BookOpen,
+  free: true,
+  featured: true,
+  file: "/downloads/VaxImpact_Teacher_Quick_Guide.pdf",
+  },
 ]
 
 const types: ResourceType[] = ["All", "Lesson Plan", "Worksheet", "Infographic", "Video", "Kit", "Pamphlet"]
