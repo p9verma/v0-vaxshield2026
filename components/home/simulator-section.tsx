@@ -43,7 +43,7 @@ export function SimulatorSection() {
               <p>
                 The simulator is a simplified illustration of how vaccination rates affect disease spread. It is
                 not a prediction of any real outbreak. Real transmission depends on many factors this model does
-                not include, such as age, population density, waning immunity, and how people actually move and
+                not include, such as age, waning immunity, and how people actually move and
                 mix. Use it to build intuition for why herd immunity thresholds matter, not to estimate what will
                 happen in your community. For medical or public health guidance, consult the{" "}
                 <a
