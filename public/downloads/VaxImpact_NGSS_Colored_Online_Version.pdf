@@ -1,0 +1,2734 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<<
+/Producer (pypdf)
+>>
+endobj
+2 0 obj
+<<
+/Type /Pages
+/Count 8
+/Kids [ 4 0 R 12 0 R 15 0 R 18 0 R 21 0 R 24 0 R 27 0 R 30 0 R ]
+>>
+endobj
+3 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+>>
+endobj
+4 0 obj
+<<
+/Contents 5 0 R
+/MediaBox [ 0 0 612 792 ]
+/Resources <<
+/Font <<
+/F1 6 0 R
+/F1-0 7 0 R
+/F2 8 0 R
+/F3 9 0 R
+/F4 10 0 R
+/F5 11 0 R
+>>
+/ProcSet [ /ImageB /ImageC /ImageI /PDF /Text ]
+>>
+/Rotate 0
+/Trans <<
+>>
+/Type /Page
+/Annots [ ]
+/Parent 2 0 R
+>>
+endobj
+5 0 obj
+<<
+/Length 5885
+>>
+stream
+q
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+BT /F1 7 Tf 8.4 TL ET
+.419608 .466667 .521569 rg
+BT 1 0 0 1 46.8 25.92 Tm (VaxImpact Simulator \177 NGSS-aligned investigation) Tj T* ET
+BT 1 0 0 1 543.017 25.92 Tm (Page 1) Tj T* ET
+Q
+q
+1 0 0 1 52.8 722 cm
+q
+.090196 .211765 .364706 rg
+BT 1 0 0 1 0 4 Tm /F2 24 Tf 28 TL 134.496 0 Td (VaxImpact Simulator) Tj T* -134.496 0 Td ET
+Q
+Q
+q
+1 0 0 1 52.8 702 cm
+q
+BT 1 0 0 1 0 3 Tm 89.366 0 Td 14 TL /F1 11 Tf .141176 .192157 .247059 rg (A Data-Driven Investigation of Disease Transmission & Vaccination) Tj T* -89.366 0 Td ET
+Q
+Q
+q
+1 0 0 1 52.8 690 cm
+q
+2 w
+1 J
+.184314 .560784 .615686 RG
+n 0 0 m 506.4 0 l S
+Q
+Q
+q
+1 0 0 1 59.4 659 cm
+q
+.184314 .560784 .615686 rg
+n 0 22 493.2 -22 re f*
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 8 5 cm
+q
+1 1 1 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL (PHENOMENON ) Tj /F3 10 Tf 12 TL (\256) Tj /F2 10 Tf 12 TL ( What happens when community vaccination changes?) Tj T* ET
+Q
+Q
+q
+1 J
+1 j
+.184314 .560784 .615686 RG
+.5 w
+n 0 22 m 493.2 22 l S
+n 0 0 m 493.2 0 l S
+n 0 0 m 0 22 l S
+n 493.2 0 m 493.2 22 l S
+Q
+Q
+Q
+q
+1 0 0 1 52.8 655 cm
+Q
+q
+1 0 0 1 52.8 624.8 cm
+q
+BT 1 0 0 1 0 15.3 Tm 12.1 TL /F2 8.9 Tf .141176 .192157 .247059 rg (Scenario:) Tj /F1 8.9 Tf ( A contagious disease enters a community such as a school. Some people are vaccinated and some are not. Use a) Tj T* (computational model to investigate how changing vaccination coverage changes the pattern and size of an outbreak.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 59.4 576.8 cm
+q
+.917647 .952941 .972549 rg
+n 0 44 493.2 -44 re f*
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 8 25 cm
+q
+.090196 .211765 .364706 rg
+BT 1 0 0 1 0 2.5 Tm /F2 11.5 Tf 14 TL (Driving Question) Tj T* ET
+Q
+Q
+q
+1 0 0 1 8 5 cm
+q
+.141176 .192157 .247059 rg
+BT 1 0 0 1 0 2.3 Tm /F2 7.7 Tf 10 TL (How does changing vaccination coverage affect the spread of an infectious disease in a community?) Tj T* ET
+Q
+Q
+q
+1 J
+1 j
+.623529 .772549 .909804 RG
+.7 w
+n 0 44 m 493.2 44 l S
+n 0 0 m 493.2 0 l S
+n 0 0 m 0 44 l S
+n 493.2 0 m 493.2 44 l S
+Q
+Q
+Q
+q
+1 0 0 1 52.8 570.8 cm
+Q
+q
+1 0 0 1 59.4 548.8 cm
+q
+.090196 .211765 .364706 rg
+n 0 22 493.2 -22 re f*
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 8 5 cm
+q
+1 1 1 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL (NGSS 3-DIMENSIONAL LEARNING TARGETS) Tj T* ET
+Q
+Q
+q
+1 J
+1 j
+.090196 .211765 .364706 RG
+.5 w
+n 0 22 m 493.2 22 l S
+n 0 0 m 493.2 0 l S
+n 0 0 m 0 22 l S
+n 493.2 0 m 493.2 22 l S
+Q
+Q
+Q
+q
+1 0 0 1 52.8 544.8 cm
+Q
+q
+1 0 0 1 59.76 455.52 cm
+q
+.184314 .458824 .709804 rg
+n 0 89.28 164.16 -23.04 re f*
+.929412 .490196 .192157 rg
+n 164.16 89.28 164.16 -23.04 re f*
+.439216 .678431 .278431 rg
+n 328.32 89.28 164.16 -23.04 re f*
+.917647 .952941 .972549 rg
+n 0 66.24 164.16 -66.24 re f*
+.992157 .941176 .905882 rg
+n 164.16 66.24 164.16 -66.24 re f*
+.933333 .964706 .913725 rg
+n 328.32 66.24 164.16 -66.24 re f*
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 77.28 cm
+q
+BT 1 0 0 1 0 1.3 Tm 15.40145 0 Td 8 TL /F2 6.7 Tf 1 1 1 rg (SCIENCE & ENGINEERING PRACTICE) Tj T* -15.40145 0 Td ET
+Q
+Q
+q
+1 0 0 1 170.16 77.28 cm
+q
+1 1 1 rg
+BT 1 0 0 1 0 1.3 Tm /F2 6.7 Tf 8 TL 32.8985 0 Td (DISCIPLINARY CORE IDEA) Tj T* -32.8985 0 Td ET
+Q
+Q
+q
+1 0 0 1 334.32 77.28 cm
+q
+1 1 1 rg
+BT 1 0 0 1 0 1.3 Tm /F2 6.7 Tf 8 TL 31.97055 0 Td (CROSSCUTTING CONCEPT) Tj T* -31.97055 0 Td ET
+Q
+Q
+q
+1 0 0 1 6 22.24 cm
+q
+BT 1 0 0 1 0 32.3 Tm 10 TL /F2 7.7 Tf .141176 .192157 .247059 rg (Developing & Using Models) Tj /F1 7.7 Tf  T* (Use a computational model to generate) Tj T* (data, test relationships, and consider) Tj T* (limitations.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 170.16 12.24 cm
+q
+BT 1 0 0 1 0 42.3 Tm 10 TL /F2 7.7 Tf .141176 .192157 .247059 rg (LS2.A: Interdependent Relationships in) Tj T* (Ecosystems) Tj /F1 7.7 Tf  T* (Disease is one challenge that can affect) Tj T* (populations; interactions among organisms) Tj T* (help shape population patterns.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 334.32 32.24 cm
+q
+BT 1 0 0 1 0 22.3 Tm 10 TL /F2 7.7 Tf .141176 .192157 .247059 rg (Cause & Effect) Tj /F1 7.7 Tf  T* (Use evidence to explain how changing one) Tj T* (component of a system can change another.) Tj T* ET
+Q
+Q
+q
+1 J
+1 j
+.85098 .878431 .901961 RG
+.55 w
+n 0 89.28 m 492.48 89.28 l S
+n 0 0 m 492.48 0 l S
+n 0 0 m 0 89.28 l S
+n 492.48 0 m 492.48 89.28 l S
+n 0 66.24 m 492.48 66.24 l S
+n 164.16 0 m 164.16 89.28 l S
+n 328.32 0 m 328.32 89.28 l S
+Q
+Q
+Q
+q
+1 0 0 1 52.8 449.52 cm
+Q
+q
+1 0 0 1 52.8 419.32 cm
+q
+BT 1 0 0 1 0 15.3 Tm 12.1 TL /F2 8.9 Tf .141176 .192157 .247059 rg (Your investigation pathway:) Tj /F1 8.9 Tf ( Ask a testable question ) Tj /F3 8.9 Tf 12.1 TL (\256) Tj /F1 8.9 Tf 12.1 TL ( make a prediction ) Tj /F3 8.9 Tf 12.1 TL (\256) Tj /F1 8.9 Tf 12.1 TL ( use the model ) Tj /F3 8.9 Tf 12.1 TL (\256) Tj /F1 8.9 Tf 12.1 TL ( collect repeated data ) Tj /F3 8.9 Tf 12.1 TL (\256) Tj /F1 8.9 Tf 12.1 TL ( graph) Tj T* (the pattern ) Tj /F3 8.9 Tf 12.1 TL (\256) Tj /F1 8.9 Tf 12.1 TL ( explain what the evidence shows ) Tj /F3 8.9 Tf 12.1 TL (\256) Tj /F1 8.9 Tf 12.1 TL ( consider model limitations.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 59.4 361.32 cm
+q
+1 .94902 .94902 rg
+n 0 54 493.2 -54 re f*
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 8 35 cm
+q
+.090196 .211765 .364706 rg
+BT 1 0 0 1 0 2.5 Tm /F2 11.5 Tf 14 TL (Model Limitation) Tj T* ET
+Q
+Q
+q
+1 0 0 1 8 5 cm
+q
+.141176 .192157 .247059 rg
+BT 1 0 0 1 0 12.3 Tm /F1 7.7 Tf 10 TL (This simulation is a simplified model. Its numerical outputs are not medical recommendations and should not be used to determine a) Tj T* (real-world herd-immunity cutoff. The purpose is to investigate relationships under the model's assumptions.) Tj T* ET
+Q
+Q
+q
+1 J
+1 j
+.901961 .65098 .65098 RG
+.7 w
+n 0 54 m 493.2 54 l S
+n 0 0 m 493.2 0 l S
+n 0 0 m 0 54 l S
+n 493.2 0 m 493.2 54 l S
+Q
+Q
+Q
+ 
+
+Q
+
+q
+0.0 0.0 612 792 re
+W
+n
+1 0 0 1 0 0 cm
+BT
+/F1-0 12 Tf
+14.4 TL
+ET
+1 1 1 rg
+n
+507.6 16.56 64.8 15.84 re
+f*
+0.419608 0.466667 0.521569 rg
+BT
+/F1-0 7 Tf
+8.4 TL
+ET
+BT
+1 0 0 1 543.017 25.92 Tm
+(Page 1) Tj
+T*
+ET
+Q
+
+
+endstream
+endobj
+6 0 obj
+<<
+/BaseFont /Helvetica
+/Encoding /WinAnsiEncoding
+/Name /F1
+/Subtype /Type1
+/Type /Font
+>>
+endobj
+7 0 obj
+<<
+/BaseFont /Helvetica
+/Encoding /WinAnsiEncoding
+/Name /F1
+/Subtype /Type1
+/Type /Font
+>>
+endobj
+8 0 obj
+<<
+/BaseFont /Helvetica-Bold
+/Encoding /WinAnsiEncoding
+/Name /F2
+/Subtype /Type1
+/Type /Font
+>>
+endobj
+9 0 obj
+<<
+/BaseFont /Symbol
+/Name /F3
+/Subtype /Type1
+/Type /Font
+>>
+endobj
+10 0 obj
+<<
+/BaseFont /Helvetica-Oblique
+/Encoding /WinAnsiEncoding
+/Name /F4
+/Subtype /Type1
+/Type /Font
+>>
+endobj
+11 0 obj
+<<
+/BaseFont /ZapfDingbats
+/Name /F5
+/Subtype /Type1
+/Type /Font
+>>
+endobj
+12 0 obj
+<<
+/Contents 13 0 R
+/MediaBox [ 0 0 612 792 ]
+/Resources <<
+/Font <<
+/F1 6 0 R
+/F1-0 14 0 R
+/F2 8 0 R
+/F3 9 0 R
+/F4 10 0 R
+/F5 11 0 R
+>>
+/ProcSet [ /ImageB /ImageC /ImageI /PDF /Text ]
+>>
+/Rotate 0
+/Trans <<
+>>
+/Type /Page
+/Annots [ ]
+/Parent 2 0 R
+>>
+endobj
+13 0 obj
+<<
+/Length 7727
+>>
+stream
+q
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+BT /F1 7 Tf 8.4 TL ET
+.419608 .466667 .521569 rg
+BT 1 0 0 1 46.8 25.92 Tm (VaxImpact Simulator \177 NGSS-aligned investigation) Tj T* ET
+BT 1 0 0 1 543.017 25.92 Tm (Page 2) Tj T* ET
+Q
+q
+1 0 0 1 52.8 732 cm
+q
+BT 1 0 0 1 0 3 Tm 18 TL /F2 15 Tf .090196 .211765 .364706 rg (Part I \227 Explore the Simulation & Ask a Testable Question) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 716 cm
+q
+BT 1 0 0 1 0 2.3 Tm 10 TL /F1 7.7 Tf .141176 .192157 .247059 rg (NGSS focus: Asking Questions \177 Developing & Using Models) Tj T* ET
+Q
+Q
+q
+1 0 0 1 59.4 691 cm
+q
+.184314 .560784 .615686 rg
+n 0 22 493.2 -22 re f*
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 8 5 cm
+q
+1 1 1 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL (1. WHAT IS INCLUDED IN THE SIMULATION?) Tj T* ET
+Q
+Q
+q
+1 J
+1 j
+.184314 .560784 .615686 RG
+.5 w
+n 0 22 m 493.2 22 l S
+n 0 0 m 493.2 0 l S
+n 0 0 m 0 22 l S
+n 493.2 0 m 493.2 22 l S
+Q
+Q
+Q
+q
+1 0 0 1 52.8 648.7 cm
+q
+BT 1 0 0 1 0 27.4 Tm 12.1 TL /F1 8.9 Tf .141176 .192157 .247059 rg (The simulator represents a simplified community in which disease can spread among people. You can change selected ) Tj /F2 8.9 Tf (input) Tj T* (variables) Tj /F1 8.9 Tf ( and observe how the outbreak changes. The main simulation panel shows the modeled spread, and the ) Tj /F2 8.9 Tf (Epidemic) Tj T* (Timeline) Tj /F1 8.9 Tf ( shows how cases change over time.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 59.4 457.5 cm
+q
+.184314 .560784 .615686 rg
+n 0 187.2 493.2 -20.16 re f*
+1 1 1 rg
+BT /F2 10 Tf 12 TL ET
+q
+1 0 0 1 5 176.2 cm
+q
+1 1 1 rg
+BT 1 0 0 1 0 1.3 Tm /F2 6.7 Tf 8 TL 39.0126 0 Td (Input) Tj T* -39.0126 0 Td ET
+Q
+Q
+q
+1 0 0 1 109.4 176.2 cm
+q
+1 1 1 rg
+BT 1 0 0 1 0 1.3 Tm /F2 6.7 Tf 8 TL 68.562 0 Td (What you can change) Tj T* -68.562 0 Td ET
+Q
+Q
+q
+1 0 0 1 325.4 176.2 cm
+q
+1 1 1 rg
+BT 1 0 0 1 0 1.3 Tm /F2 6.7 Tf 8 TL 55.90315 0 Td (What to look for) Tj T* -55.90315 0 Td ET
+Q
+Q
+0 0 0 rg
+BT /F1 7.1 Tf 12 TL ET
+BT 1 0 0 1 5 156.94 Tm (Transmission rate) Tj T* ET
+BT 1 0 0 1 109.4 156.94 Tm (How readily infection spreads in the model.) Tj T* ET
+BT 1 0 0 1 325.4 156.94 Tm (Does the outbreak become faster/larger or slower/smaller?) Tj T* ET
+BT 1 0 0 1 5 129.58 Tm (Recovery time) Tj T* ET
+BT 1 0 0 1 109.4 129.58 Tm (How long infected people remain infected in the model.) Tj T* ET
+BT 1 0 0 1 325.4 129.58 Tm (Does the outbreak last longer or shorter?) Tj T* ET
+BT 1 0 0 1 5 102.22 Tm (Mortality rate) Tj T* ET
+BT 1 0 0 1 109.4 102.22 Tm (The proportion of infected people who die in the model.) Tj T* ET
+BT 1 0 0 1 325.4 102.22 Tm (How does this change deaths without necessarily changing transmission?) Tj T* ET
+BT 1 0 0 1 5 74.86 Tm (Population density) Tj T* ET
+BT 1 0 0 1 109.4 74.86 Tm (How closely/frequently people are modeled as interacting.) Tj T* ET
+BT 1 0 0 1 325.4 74.86 Tm (Does increased contact opportunity change the outbreak?) Tj T* ET
+BT 1 0 0 1 5 47.5 Tm (Vaccine effectiveness) Tj T* ET
+BT 1 0 0 1 109.4 47.5 Tm (How well vaccination protects vaccinated people in the model.) Tj T* ET
+BT 1 0 0 1 325.4 47.5 Tm (How does protection affect infection among vaccinated people and the wider outbreak?) Tj T* ET
+BT 1 0 0 1 5 17.26 Tm (Vaccination rate) Tj T* ET
+BT 1 0 0 1 109.4 17.26 Tm (The percentage of the community that is vaccinated.) Tj T* ET
+BT 1 0 0 1 325.4 17.26 Tm (How does changing coverage affect outbreak size?) Tj T* ET
+q
+1 J
+1 j
+.85098 .878431 .901961 RG
+.45 w
+n 0 187.2 m 493.2 187.2 l S
+n 0 0 m 493.2 0 l S
+n 0 0 m 0 187.2 l S
+n 493.2 0 m 493.2 187.2 l S
+n 0 167.04 m 493.2 167.04 l S
+n 0 139.68 m 493.2 139.68 l S
+n 0 112.32 m 493.2 112.32 l S
+n 0 84.96 m 493.2 84.96 l S
+n 0 57.6 m 493.2 57.6 l S
+n 0 27.36 m 493.2 27.36 l S
+n 104.4 0 m 104.4 187.2 l S
+n 320.4 0 m 320.4 187.2 l S
+Q
+Q
+Q
+q
+1 0 0 1 52.8 453.5 cm
+Q
+q
+1 0 0 1 52.8 427.5 cm
+q
+BT 1 0 0 1 0 12.3 Tm 10 TL /F2 7.7 Tf .141176 .192157 .247059 rg (Outputs you can observe:) Tj /F1 7.7 Tf ( the visual simulation and the Epidemic Timeline, which displays currently infected, total infected, and susceptible cases) Tj T* (over time. Use the ) Tj /F2 7.7 Tf (Learn More) Tj /F1 7.7 Tf ( feature for additional information about the controls.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 409.5 cm
+q
+.090196 .211765 .364706 rg
+BT 1 0 0 1 0 2.5 Tm /F2 11.5 Tf 14 TL (2. Explore before you test) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 383.5 cm
+q
+BT 1 0 0 1 0 12.3 Tm 10 TL /F1 7.7 Tf .141176 .192157 .247059 rg (Change ) Tj /F2 7.7 Tf (one input variable at a time) Tj /F1 7.7 Tf (. Complete two short explorations and record what happened. These are observations, not yet your formal) Tj T* (experiment.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 366.3 cm
+q
+.141176 .192157 .247059 rg
+BT 1 0 0 1 0 2.4 Tm /F2 8.8 Tf 11.2 TL (Exploration A \227 What did you change? What happened to the outbreak?) Tj T* ET
+Q
+Q
+q
+1 0 0 1 59.4 328.3 cm
+q
+1 1 1 rg
+n 0 36 493.2 -36 re f*
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 5 5 Tm  T* ET
+q
+1 J
+1 j
+.85098 .878431 .901961 RG
+.55 w
+n 0 36 m 493.2 36 l S
+n 0 0 m 493.2 0 l S
+n 0 0 m 0 36 l S
+n 493.2 0 m 493.2 36 l S
+Q
+Q
+Q
+q
+1 0 0 1 52.8 311.1 cm
+q
+.141176 .192157 .247059 rg
+BT 1 0 0 1 0 2.4 Tm /F2 8.8 Tf 11.2 TL (Exploration B \227 What did you change? What happened to the outbreak?) Tj T* ET
+Q
+Q
+q
+1 0 0 1 59.4 273.1 cm
+q
+1 1 1 rg
+n 0 36 493.2 -36 re f*
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 5 5 Tm  T* ET
+q
+1 J
+1 j
+.85098 .878431 .901961 RG
+.55 w
+n 0 36 m 493.2 36 l S
+n 0 0 m 493.2 0 l S
+n 0 0 m 0 36 l S
+n 493.2 0 m 493.2 36 l S
+Q
+Q
+Q
+q
+1 0 0 1 52.8 255.1 cm
+q
+.090196 .211765 .364706 rg
+BT 1 0 0 1 0 2.5 Tm /F2 11.5 Tf 14 TL (3. Write a testable question) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 229.1 cm
+q
+BT 1 0 0 1 0 12.3 Tm 10 TL /F1 7.7 Tf .141176 .192157 .247059 rg (A testable question identifies ) Tj /F2 7.7 Tf (one independent variable) Tj /F1 7.7 Tf ( you will change and at least ) Tj /F2 7.7 Tf (one dependent variable) Tj /F1 7.7 Tf ( you will measure. Use this structure:) Tj T* /F2 7.7 Tf (How does ______ affect ______?) Tj T* ET
+Q
+Q
+q
+1 0 0 1 59.4 191.54 cm
+q
+1 1 1 rg
+n 0 34.56 493.2 -34.56 re f*
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 5 5 Tm  T* ET
+q
+1 J
+1 j
+.85098 .878431 .901961 RG
+.55 w
+n 0 34.56 m 493.2 34.56 l S
+n 0 0 m 493.2 0 l S
+n 0 0 m 0 34.56 l S
+n 493.2 0 m 493.2 34.56 l S
+Q
+Q
+Q
+q
+1 0 0 1 52.8 174.34 cm
+q
+.141176 .192157 .247059 rg
+BT 1 0 0 1 0 2.4 Tm /F2 8.8 Tf 11.2 TL (Now identify the parts of your question:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 59.4 98.9 cm
+q
+.184314 .458824 .709804 rg
+n 0 73.44 493.2 -28.8 re f*
+1 1 1 rg
+BT /F2 10 Tf 12 TL ET
+q
+1 0 0 1 6 50.44 cm
+q
+BT 1 0 0 1 0 12.3 Tm 10 TL /F1 7.7 Tf .141176 .192157 .247059 rg (Independent variable) Tj  T* /F4 7.7 Tf (What will I change?) Tj T* ET
+Q
+Q
+q
+1 0 0 1 157.2 50.44 cm
+q
+BT 1 0 0 1 0 12.3 Tm 10 TL /F1 7.7 Tf .141176 .192157 .247059 rg (Dependent variable\(s\)) Tj  T* /F4 7.7 Tf (What will I measure?) Tj T* ET
+Q
+Q
+q
+1 0 0 1 319.2 50.44 cm
+q
+BT 1 0 0 1 0 12.3 Tm 10 TL /F1 7.7 Tf .141176 .192157 .247059 rg (Controls) Tj  T* /F4 7.7 Tf (What will stay the same?) Tj T* ET
+Q
+Q
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 6 31.64 Tm  T* ET
+BT 1 0 0 1 157.2 31.64 Tm  T* ET
+BT 1 0 0 1 319.2 31.64 Tm  T* ET
+q
+1 J
+1 j
+.85098 .878431 .901961 RG
+.5 w
+n 0 73.44 m 493.2 73.44 l S
+n 0 0 m 493.2 0 l S
+n 0 0 m 0 73.44 l S
+n 493.2 0 m 493.2 73.44 l S
+n 0 44.64 m 493.2 44.64 l S
+n 151.2 0 m 151.2 73.44 l S
+n 313.2 0 m 313.2 73.44 l S
+Q
+Q
+Q
+q
+1 0 0 1 52.8 93.9 cm
+Q
+q
+1 0 0 1 52.8 76.7 cm
+q
+.141176 .192157 .247059 rg
+BT 1 0 0 1 0 2.4 Tm /F2 8.8 Tf 11.2 TL (4. Why should you change only one independent variable at a time in a fair test?) Tj T* ET
+Q
+Q
+ 
+
+Q
+
+q
+0.0 0.0 612 792 re
+W
+n
+1 0 0 1 0 0 cm
+BT
+/F1-0 12 Tf
+14.4 TL
+ET
+1 1 1 rg
+n
+507.6 16.56 64.8 15.84 re
+f*
+0.419608 0.466667 0.521569 rg
+BT
+/F1-0 7 Tf
+8.4 TL
+ET
+BT
+1 0 0 1 543.017 25.92 Tm
+(Page 2) Tj
+T*
+ET
+Q
+
+
+endstream
+endobj
+14 0 obj
+<<
+/BaseFont /Helvetica
+/Encoding /WinAnsiEncoding
+/Name /F1
+/Subtype /Type1
+/Type /Font
+>>
+endobj
+15 0 obj
+<<
+/Contents 16 0 R
+/MediaBox [ 0 0 612 792 ]
+/Resources <<
+/Font <<
+/F1 6 0 R
+/F1-0 17 0 R
+/F2 8 0 R
+/F3 9 0 R
+/F4 10 0 R
+/F5 11 0 R
+>>
+/ProcSet [ /ImageB /ImageC /ImageI /PDF /Text ]
+>>
+/Rotate 0
+/Trans <<
+>>
+/Type /Page
+/Annots [ ]
+/Parent 2 0 R
+>>
+endobj
+16 0 obj
+<<
+/Length 9879
+>>
+stream
+q
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+BT /F1 7 Tf 8.4 TL ET
+.419608 .466667 .521569 rg
+BT 1 0 0 1 46.8 25.92 Tm (VaxImpact Simulator \177 NGSS-aligned investigation) Tj T* ET
+BT 1 0 0 1 543.017 25.92 Tm (Page 4) Tj T* ET
+Q
+q
+1 0 0 1 52.8 732 cm
+q
+BT 1 0 0 1 0 3 Tm 18 TL /F2 15 Tf .090196 .211765 .364706 rg (Part II \227 Plan & Carry Out a Controlled Investigation) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 713.9 cm
+q
+.141176 .192157 .247059 rg
+BT 1 0 0 1 0 3.2 Tm /F1 8.9 Tf 12.1 TL (Change vaccination rate while keeping the other simulator settings constant.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 59.4 687.9 cm
+q
+.090196 .211765 .364706 rg
+n 0 22 493.2 -22 re f*
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 8 5 cm
+q
+1 1 1 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL (BASELINE SETTINGS) Tj T* ET
+Q
+Q
+q
+1 J
+1 j
+.090196 .211765 .364706 RG
+.5 w
+n 0 22 m 493.2 22 l S
+n 0 0 m 493.2 0 l S
+n 0 0 m 0 22 l S
+n 493.2 0 m 493.2 22 l S
+Q
+Q
+Q
+q
+1 0 0 1 59.4 623.1 cm
+q
+.956863 .964706 .972549 rg
+n 0 64.8 493.2 -64.8 re f*
+0 0 0 rg
+BT /F1 7.5 Tf 12 TL ET
+BT 1 0 0 1 6 52.5 Tm (Transmission rate) Tj T* ET
+BT 1 0 0 1 106.8 52.5 Tm (90%) Tj T* ET
+BT 1 0 0 1 178.8 52.5 Tm (Recovery time) Tj T* ET
+BT 1 0 0 1 290.4 52.5 Tm (14 days) Tj T* ET
+BT 1 0 0 1 6 30.9 Tm (Mortality rate) Tj T* ET
+BT 1 0 0 1 106.8 30.9 Tm (1%) Tj T* ET
+BT 1 0 0 1 178.8 30.9 Tm (Population density) Tj T* ET
+BT 1 0 0 1 290.4 30.9 Tm (80%) Tj T* ET
+BT 1 0 0 1 6 9.3 Tm (Vaccine effectiveness) Tj T* ET
+BT 1 0 0 1 106.8 9.3 Tm (97%) Tj T* ET
+BT 1 0 0 1 178.8 9.3 Tm (Independent variable) Tj T* ET
+BT 1 0 0 1 290.4 9.3 Tm (Vaccination rate) Tj T* ET
+q
+1 J
+1 j
+.85098 .878431 .901961 RG
+.45 w
+n 0 64.8 m 493.2 64.8 l S
+n 0 0 m 493.2 0 l S
+n 0 0 m 0 64.8 l S
+n 493.2 0 m 493.2 64.8 l S
+n 0 43.2 m 493.2 43.2 l S
+n 0 21.6 m 493.2 21.6 l S
+n 100.8 0 m 100.8 64.8 l S
+n 172.8 0 m 172.8 64.8 l S
+n 284.4 0 m 284.4 64.8 l S
+Q
+Q
+Q
+q
+1 0 0 1 52.8 618.1 cm
+Q
+q
+1 0 0 1 52.8 600.1 cm
+q
+.090196 .211765 .364706 rg
+BT 1 0 0 1 0 2.5 Tm /F2 11.5 Tf 14 TL (1. Make your prediction) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 569.9 cm
+q
+BT 1 0 0 1 0 15.3 Tm 12.1 TL /F2 8.9 Tf .141176 .192157 .247059 rg (I predict the peak infections will) Tj /F1 8.9 Tf (  ) Tj (  ) Tj /F5 8.9 Tf 12.1 TL (n) Tj /F1 8.9 Tf 12.1 TL ( increase  ) Tj (  ) Tj /F5 8.9 Tf 12.1 TL (n) Tj /F1 8.9 Tf 12.1 TL ( decrease) Tj  T* /F2 8.9 Tf (I predict the total infections will) Tj /F1 8.9 Tf (  ) Tj (  ) Tj /F5 8.9 Tf 12.1 TL (n) Tj /F1 8.9 Tf 12.1 TL ( increase  ) Tj (  ) Tj /F5 8.9 Tf 12.1 TL (n) Tj /F1 8.9 Tf 12.1 TL ( decrease) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 552.7 cm
+q
+.141176 .192157 .247059 rg
+BT 1 0 0 1 0 2.4 Tm /F2 8.8 Tf 11.2 TL (because\205) Tj T* ET
+Q
+Q
+q
+1 0 0 1 59.4 508.94 cm
+q
+1 1 1 rg
+n 0 41.76 493.2 -41.76 re f*
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 5 5 Tm  T* ET
+q
+1 J
+1 j
+.85098 .878431 .901961 RG
+.55 w
+n 0 41.76 m 493.2 41.76 l S
+n 0 0 m 493.2 0 l S
+n 0 0 m 0 41.76 l S
+n 493.2 0 m 493.2 41.76 l S
+Q
+Q
+Q
+q
+1 0 0 1 52.8 482.94 cm
+q
+.141176 .192157 .247059 rg
+BT 1 0 0 1 0 12.3 Tm /F1 7.7 Tf 10 TL (2. Run 3 trials at each vaccination rate. Record the same outcome measures each time. Repeated trials help you identify patterns despite) Tj T* (randomness in the model.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 464.94 cm
+q
+.090196 .211765 .364706 rg
+BT 1 0 0 1 0 2.5 Tm /F2 11.5 Tf 14 TL (Experiment: 65% vaccination) Tj T* ET
+Q
+Q
+q
+1 0 0 1 83.88 367.34 cm
+q
+.090196 .211765 .364706 rg
+n 0 93.6 444.24 -23.04 re f*
+.917647 .952941 .972549 rg
+n 0 18.72 444.24 -18.72 re f*
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 3 78.08 cm
+q
+1 1 1 rg
+BT 1 0 0 1 0 1.3 Tm /F2 6.7 Tf 8 TL 7.2048 0 Td (Trial) Tj T* -7.2048 0 Td ET
+Q
+Q
+q
+1 0 0 1 37.56 74.08 cm
+q
+BT 1 0 0 1 0 9.3 Tm 32.5444 0 Td 8 TL /F2 6.7 Tf 1 1 1 rg (Peak infections) Tj  T* -5.7687 0 Td (\(most sick at once\)) Tj T* -26.7757 0 Td ET
+Q
+Q
+q
+1 0 0 1 157.8 78.08 cm
+q
+1 1 1 rg
+BT 1 0 0 1 0 1.3 Tm /F2 6.7 Tf 8 TL 14.82165 0 Td (Total infected) Tj T* -14.82165 0 Td ET
+Q
+Q
+q
+1 0 0 1 237 74.08 cm
+q
+BT 1 0 0 1 0 9.3 Tm 28.3344 0 Td 8 TL /F2 6.7 Tf 1 1 1 rg (% vaccinated) Tj  T* 14.7065 0 Td (sick) Tj T* -43.0409 0 Td ET
+Q
+Q
+q
+1 0 0 1 342.12 74.08 cm
+q
+BT 1 0 0 1 0 9.3 Tm 24.2407 0 Td 8 TL /F2 6.7 Tf 1 1 1 rg (% unvaccinated) Tj  T* 18.8002 0 Td (sick) Tj T* -43.0409 0 Td ET
+Q
+Q
+BT /F1 7 Tf 12 TL ET
+BT 1 0 0 1 15.334 60.92 Tm (1) Tj T* ET
+BT 1 0 0 1 94.68 60.92 Tm  T* ET
+BT 1 0 0 1 194.4 60.92 Tm  T* ET
+BT 1 0 0 1 286.56 60.92 Tm  T* ET
+BT 1 0 0 1 391.68 60.92 Tm  T* ET
+BT 1 0 0 1 15.334 43.64 Tm (2) Tj T* ET
+BT 1 0 0 1 94.68 43.64 Tm  T* ET
+BT 1 0 0 1 194.4 43.64 Tm  T* ET
+BT 1 0 0 1 286.56 43.64 Tm  T* ET
+BT 1 0 0 1 391.68 43.64 Tm  T* ET
+BT 1 0 0 1 15.334 26.36 Tm (3) Tj T* ET
+BT 1 0 0 1 94.68 26.36 Tm  T* ET
+BT 1 0 0 1 194.4 26.36 Tm  T* ET
+BT 1 0 0 1 286.56 26.36 Tm  T* ET
+BT 1 0 0 1 391.68 26.36 Tm  T* ET
+BT /F2 7 Tf 12 TL ET
+BT 1 0 0 1 3.469 8.36 Tm (Average) Tj T* ET
+BT 1 0 0 1 94.68 8.36 Tm  T* ET
+BT 1 0 0 1 194.4 8.36 Tm  T* ET
+BT 1 0 0 1 286.56 8.36 Tm  T* ET
+BT 1 0 0 1 391.68 8.36 Tm  T* ET
+q
+1 J
+1 j
+.85098 .878431 .901961 RG
+.45 w
+n 0 93.6 m 444.24 93.6 l S
+n 0 0 m 444.24 0 l S
+n 0 0 m 0 93.6 l S
+n 444.24 0 m 444.24 93.6 l S
+n 0 70.56 m 444.24 70.56 l S
+n 0 53.28 m 444.24 53.28 l S
+n 0 36 m 444.24 36 l S
+n 0 18.72 m 444.24 18.72 l S
+n 34.56 0 m 34.56 93.6 l S
+n 154.8 0 m 154.8 93.6 l S
+n 234 0 m 234 93.6 l S
+n 339.12 0 m 339.12 93.6 l S
+Q
+Q
+Q
+q
+1 0 0 1 52.8 365.34 cm
+Q
+q
+1 0 0 1 52.8 347.34 cm
+q
+.090196 .211765 .364706 rg
+BT 1 0 0 1 0 2.5 Tm /F2 11.5 Tf 14 TL (Experiment: 80% vaccination) Tj T* ET
+Q
+Q
+q
+1 0 0 1 83.88 249.74 cm
+q
+.090196 .211765 .364706 rg
+n 0 93.6 444.24 -23.04 re f*
+.917647 .952941 .972549 rg
+n 0 18.72 444.24 -18.72 re f*
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 3 78.08 cm
+q
+1 1 1 rg
+BT 1 0 0 1 0 1.3 Tm /F2 6.7 Tf 8 TL 7.2048 0 Td (Trial) Tj T* -7.2048 0 Td ET
+Q
+Q
+q
+1 0 0 1 37.56 74.08 cm
+q
+BT 1 0 0 1 0 9.3 Tm 32.5444 0 Td 8 TL /F2 6.7 Tf 1 1 1 rg (Peak infections) Tj  T* -5.7687 0 Td (\(most sick at once\)) Tj T* -26.7757 0 Td ET
+Q
+Q
+q
+1 0 0 1 157.8 78.08 cm
+q
+1 1 1 rg
+BT 1 0 0 1 0 1.3 Tm /F2 6.7 Tf 8 TL 14.82165 0 Td (Total infected) Tj T* -14.82165 0 Td ET
+Q
+Q
+q
+1 0 0 1 237 74.08 cm
+q
+BT 1 0 0 1 0 9.3 Tm 28.3344 0 Td 8 TL /F2 6.7 Tf 1 1 1 rg (% vaccinated) Tj  T* 14.7065 0 Td (sick) Tj T* -43.0409 0 Td ET
+Q
+Q
+q
+1 0 0 1 342.12 74.08 cm
+q
+BT 1 0 0 1 0 9.3 Tm 24.2407 0 Td 8 TL /F2 6.7 Tf 1 1 1 rg (% unvaccinated) Tj  T* 18.8002 0 Td (sick) Tj T* -43.0409 0 Td ET
+Q
+Q
+BT /F1 7 Tf 12 TL ET
+BT 1 0 0 1 15.334 60.92 Tm (1) Tj T* ET
+BT 1 0 0 1 94.68 60.92 Tm  T* ET
+BT 1 0 0 1 194.4 60.92 Tm  T* ET
+BT 1 0 0 1 286.56 60.92 Tm  T* ET
+BT 1 0 0 1 391.68 60.92 Tm  T* ET
+BT 1 0 0 1 15.334 43.64 Tm (2) Tj T* ET
+BT 1 0 0 1 94.68 43.64 Tm  T* ET
+BT 1 0 0 1 194.4 43.64 Tm  T* ET
+BT 1 0 0 1 286.56 43.64 Tm  T* ET
+BT 1 0 0 1 391.68 43.64 Tm  T* ET
+BT 1 0 0 1 15.334 26.36 Tm (3) Tj T* ET
+BT 1 0 0 1 94.68 26.36 Tm  T* ET
+BT 1 0 0 1 194.4 26.36 Tm  T* ET
+BT 1 0 0 1 286.56 26.36 Tm  T* ET
+BT 1 0 0 1 391.68 26.36 Tm  T* ET
+BT /F2 7 Tf 12 TL ET
+BT 1 0 0 1 3.469 8.36 Tm (Average) Tj T* ET
+BT 1 0 0 1 94.68 8.36 Tm  T* ET
+BT 1 0 0 1 194.4 8.36 Tm  T* ET
+BT 1 0 0 1 286.56 8.36 Tm  T* ET
+BT 1 0 0 1 391.68 8.36 Tm  T* ET
+q
+1 J
+1 j
+.85098 .878431 .901961 RG
+.45 w
+n 0 93.6 m 444.24 93.6 l S
+n 0 0 m 444.24 0 l S
+n 0 0 m 0 93.6 l S
+n 444.24 0 m 444.24 93.6 l S
+n 0 70.56 m 444.24 70.56 l S
+n 0 53.28 m 444.24 53.28 l S
+n 0 36 m 444.24 36 l S
+n 0 18.72 m 444.24 18.72 l S
+n 34.56 0 m 34.56 93.6 l S
+n 154.8 0 m 154.8 93.6 l S
+n 234 0 m 234 93.6 l S
+n 339.12 0 m 339.12 93.6 l S
+Q
+Q
+Q
+q
+1 0 0 1 52.8 247.74 cm
+Q
+q
+1 0 0 1 52.8 229.74 cm
+q
+.090196 .211765 .364706 rg
+BT 1 0 0 1 0 2.5 Tm /F2 11.5 Tf 14 TL (Experiment: 95% vaccination) Tj T* ET
+Q
+Q
+q
+1 0 0 1 83.88 132.14 cm
+q
+.090196 .211765 .364706 rg
+n 0 93.6 444.24 -23.04 re f*
+.917647 .952941 .972549 rg
+n 0 18.72 444.24 -18.72 re f*
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 3 78.08 cm
+q
+1 1 1 rg
+BT 1 0 0 1 0 1.3 Tm /F2 6.7 Tf 8 TL 7.2048 0 Td (Trial) Tj T* -7.2048 0 Td ET
+Q
+Q
+q
+1 0 0 1 37.56 74.08 cm
+q
+BT 1 0 0 1 0 9.3 Tm 32.5444 0 Td 8 TL /F2 6.7 Tf 1 1 1 rg (Peak infections) Tj  T* -5.7687 0 Td (\(most sick at once\)) Tj T* -26.7757 0 Td ET
+Q
+Q
+q
+1 0 0 1 157.8 78.08 cm
+q
+1 1 1 rg
+BT 1 0 0 1 0 1.3 Tm /F2 6.7 Tf 8 TL 14.82165 0 Td (Total infected) Tj T* -14.82165 0 Td ET
+Q
+Q
+q
+1 0 0 1 237 74.08 cm
+q
+BT 1 0 0 1 0 9.3 Tm 28.3344 0 Td 8 TL /F2 6.7 Tf 1 1 1 rg (% vaccinated) Tj  T* 14.7065 0 Td (sick) Tj T* -43.0409 0 Td ET
+Q
+Q
+q
+1 0 0 1 342.12 74.08 cm
+q
+BT 1 0 0 1 0 9.3 Tm 24.2407 0 Td 8 TL /F2 6.7 Tf 1 1 1 rg (% unvaccinated) Tj  T* 18.8002 0 Td (sick) Tj T* -43.0409 0 Td ET
+Q
+Q
+BT /F1 7 Tf 12 TL ET
+BT 1 0 0 1 15.334 60.92 Tm (1) Tj T* ET
+BT 1 0 0 1 94.68 60.92 Tm  T* ET
+BT 1 0 0 1 194.4 60.92 Tm  T* ET
+BT 1 0 0 1 286.56 60.92 Tm  T* ET
+BT 1 0 0 1 391.68 60.92 Tm  T* ET
+BT 1 0 0 1 15.334 43.64 Tm (2) Tj T* ET
+BT 1 0 0 1 94.68 43.64 Tm  T* ET
+BT 1 0 0 1 194.4 43.64 Tm  T* ET
+BT 1 0 0 1 286.56 43.64 Tm  T* ET
+BT 1 0 0 1 391.68 43.64 Tm  T* ET
+BT 1 0 0 1 15.334 26.36 Tm (3) Tj T* ET
+BT 1 0 0 1 94.68 26.36 Tm  T* ET
+BT 1 0 0 1 194.4 26.36 Tm  T* ET
+BT 1 0 0 1 286.56 26.36 Tm  T* ET
+BT 1 0 0 1 391.68 26.36 Tm  T* ET
+BT /F2 7 Tf 12 TL ET
+BT 1 0 0 1 3.469 8.36 Tm (Average) Tj T* ET
+BT 1 0 0 1 94.68 8.36 Tm  T* ET
+BT 1 0 0 1 194.4 8.36 Tm  T* ET
+BT 1 0 0 1 286.56 8.36 Tm  T* ET
+BT 1 0 0 1 391.68 8.36 Tm  T* ET
+q
+1 J
+1 j
+.85098 .878431 .901961 RG
+.45 w
+n 0 93.6 m 444.24 93.6 l S
+n 0 0 m 444.24 0 l S
+n 0 0 m 0 93.6 l S
+n 444.24 0 m 444.24 93.6 l S
+n 0 70.56 m 444.24 70.56 l S
+n 0 53.28 m 444.24 53.28 l S
+n 0 36 m 444.24 36 l S
+n 0 18.72 m 444.24 18.72 l S
+n 34.56 0 m 34.56 93.6 l S
+n 154.8 0 m 154.8 93.6 l S
+n 234 0 m 234 93.6 l S
+n 339.12 0 m 339.12 93.6 l S
+Q
+Q
+Q
+q
+1 0 0 1 52.8 130.14 cm
+Q
+ 
+
+Q
+
+q
+0.0 0.0 612 792 re
+W
+n
+1 0 0 1 0 0 cm
+BT
+/F1-0 12 Tf
+14.4 TL
+ET
+1 1 1 rg
+n
+507.6 16.56 64.8 15.84 re
+f*
+0.419608 0.466667 0.521569 rg
+BT
+/F1-0 7 Tf
+8.4 TL
+ET
+BT
+1 0 0 1 543.017 25.92 Tm
+(Page 3) Tj
+T*
+ET
+Q
+
+
+endstream
+endobj
+17 0 obj
+<<
+/BaseFont /Helvetica
+/Encoding /WinAnsiEncoding
+/Name /F1
+/Subtype /Type1
+/Type /Font
+>>
+endobj
+18 0 obj
+<<
+/Contents 19 0 R
+/MediaBox [ 0 0 612 792 ]
+/Resources <<
+/Font <<
+/F1 6 0 R
+/F1-0 20 0 R
+/F2 8 0 R
+/F3 9 0 R
+/F4 10 0 R
+/F5 11 0 R
+>>
+/ProcSet [ /ImageB /ImageC /ImageI /PDF /Text ]
+>>
+/Rotate 0
+/Trans <<
+>>
+/Type /Page
+/Annots [ ]
+/Parent 2 0 R
+>>
+endobj
+19 0 obj
+<<
+/Length 4278
+>>
+stream
+q
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+BT /F1 7 Tf 8.4 TL ET
+.419608 .466667 .521569 rg
+BT 1 0 0 1 46.8 25.92 Tm (VaxImpact Simulator \177 NGSS-aligned investigation) Tj T* ET
+BT 1 0 0 1 543.017 25.92 Tm (Page 5) Tj T* ET
+Q
+q
+1 0 0 1 52.8 732 cm
+q
+.090196 .211765 .364706 rg
+BT 1 0 0 1 0 3 Tm /F2 15 Tf 18 TL (Part III \227 Analyze the Data) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 716 cm
+q
+BT 1 0 0 1 0 2.3 Tm 10 TL /F1 7.7 Tf .141176 .192157 .247059 rg (NGSS focus: Analyzing & Interpreting Data \177 Using Mathematics & Computational Thinking) Tj T* ET
+Q
+Q
+q
+1 0 0 1 59.4 691 cm
+q
+.184314 .458824 .709804 rg
+n 0 22 493.2 -22 re f*
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 8 5 cm
+q
+1 1 1 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL (STEP 1 \227 ORGANIZE YOUR AVERAGES) Tj T* ET
+Q
+Q
+q
+1 J
+1 j
+.184314 .458824 .709804 RG
+.5 w
+n 0 22 m 493.2 22 l S
+n 0 0 m 493.2 0 l S
+n 0 0 m 0 22 l S
+n 493.2 0 m 493.2 22 l S
+Q
+Q
+Q
+q
+1 0 0 1 52.8 672.9 cm
+q
+.141176 .192157 .247059 rg
+BT 1 0 0 1 0 3.2 Tm /F1 8.9 Tf 12.1 TL (You already calculated the averages in Part II. Use your completed tables/results to enter the three values below.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 70.2 557.3 cm
+q
+.184314 .458824 .709804 rg
+n 0 111.6 471.6 -20.88 re f*
+1 1 1 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 97.16 cm
+q
+1 1 1 rg
+BT 1 0 0 1 0 1.3 Tm /F2 6.7 Tf 8 TL 14.92125 0 Td (Vaccination rate) Tj T* -14.92125 0 Td ET
+Q
+Q
+q
+1 0 0 1 99.6 97.16 cm
+q
+1 1 1 rg
+BT 1 0 0 1 0 1.3 Tm /F2 6.7 Tf 8 TL 38.2616 0 Td (Average peak infections) Tj T* -38.2616 0 Td ET
+Q
+Q
+q
+1 0 0 1 265.2 97.16 cm
+q
+1 1 1 rg
+BT 1 0 0 1 0 1.3 Tm /F2 6.7 Tf 8 TL 65.20255 0 Td (Average total infected) Tj T* -65.20255 0 Td ET
+Q
+Q
+0 0 0 rg
+BT 1 0 0 1 6 71.6 Tm (65%) Tj T* ET
+BT 1 0 0 1 99.6 71.6 Tm  T* ET
+BT 1 0 0 1 265.2 71.6 Tm  T* ET
+BT 1 0 0 1 6 41.36 Tm (80%) Tj T* ET
+BT 1 0 0 1 99.6 41.36 Tm  T* ET
+BT 1 0 0 1 265.2 41.36 Tm  T* ET
+BT 1 0 0 1 6 11.12 Tm (95%) Tj T* ET
+BT 1 0 0 1 99.6 11.12 Tm  T* ET
+BT 1 0 0 1 265.2 11.12 Tm  T* ET
+q
+1 J
+1 j
+.85098 .878431 .901961 RG
+.5 w
+n 0 111.6 m 471.6 111.6 l S
+n 0 0 m 471.6 0 l S
+n 0 0 m 0 111.6 l S
+n 471.6 0 m 471.6 111.6 l S
+n 0 90.72 m 471.6 90.72 l S
+n 0 60.48 m 471.6 60.48 l S
+n 0 30.24 m 471.6 30.24 l S
+n 93.6 0 m 93.6 111.6 l S
+n 259.2 0 m 259.2 111.6 l S
+Q
+Q
+Q
+q
+1 0 0 1 52.8 552.3 cm
+Q
+q
+1 0 0 1 59.4 530.3 cm
+q
+.184314 .458824 .709804 rg
+n 0 22 493.2 -22 re f*
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 8 5 cm
+q
+1 1 1 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL (STEP 2 \227 GRAPH YOUR RESULTS ONLINE) Tj T* ET
+Q
+Q
+q
+1 J
+1 j
+.184314 .458824 .709804 RG
+.5 w
+n 0 22 m 493.2 22 l S
+n 0 0 m 493.2 0 l S
+n 0 0 m 0 22 l S
+n 493.2 0 m 493.2 22 l S
+Q
+Q
+Q
+q
+1 0 0 1 52.8 500.1 cm
+q
+BT 1 0 0 1 0 15.3 Tm 12.1 TL /F1 8.9 Tf .141176 .192157 .247059 rg (Open the graphing link provided by your teacher. Enter your three vaccination-rate averages, then take a ) Tj /F2 8.9 Tf (screenshot) Tj /F1 8.9 Tf ( of your) Tj T* (completed graph and submit it with the worksheet.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 59.4 442.1 cm
+q
+.956863 .964706 .972549 rg
+n 0 54 493.2 -54 re f*
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 8 35 cm
+q
+.090196 .211765 .364706 rg
+BT 1 0 0 1 0 2.5 Tm /F2 11.5 Tf 14 TL (Recommended graph) Tj T* ET
+Q
+Q
+q
+1 0 0 1 8 5 cm
+q
+BT 1 0 0 1 0 12.3 Tm 10 TL /F1 7.7 Tf .141176 .192157 .247059 rg (x-axis = vaccination rate \(%\)  ) Tj (  y-axis = average total infected. Your graph should have a clear title, labeled axes, units, and all three) Tj T* (conditions.) Tj T* ET
+Q
+Q
+q
+1 J
+1 j
+.85098 .878431 .901961 RG
+.7 w
+n 0 54 m 493.2 54 l S
+n 0 0 m 493.2 0 l S
+n 0 0 m 0 54 l S
+n 493.2 0 m 493.2 54 l S
+Q
+Q
+Q
+q
+1 0 0 1 52.8 438.1 cm
+Q
+q
+1 0 0 1 52.8 406.1 cm
+q
+.090196 .211765 .364706 rg
+BT 1 0 0 1 0 16.5 Tm /F2 11.5 Tf 14 TL (3. Describe the trend you see in the graph. What happens to outbreak size as vaccination) Tj T* (rate changes?) Tj T* ET
+Q
+Q
+q
+1 0 0 1 59.4 333.7 cm
+q
+1 1 1 rg
+n 0 68.4 493.2 -68.4 re f*
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 5 5 Tm  T* ET
+q
+1 J
+1 j
+.85098 .878431 .901961 RG
+.55 w
+n 0 68.4 m 493.2 68.4 l S
+n 0 0 m 493.2 0 l S
+n 0 0 m 0 68.4 l S
+n 493.2 0 m 493.2 68.4 l S
+Q
+Q
+Q
+ 
+
+Q
+
+q
+0.0 0.0 612 792 re
+W
+n
+1 0 0 1 0 0 cm
+BT
+/F1-0 12 Tf
+14.4 TL
+ET
+1 1 1 rg
+n
+507.6 16.56 64.8 15.84 re
+f*
+0.419608 0.466667 0.521569 rg
+BT
+/F1-0 7 Tf
+8.4 TL
+ET
+BT
+1 0 0 1 543.017 25.92 Tm
+(Page 4) Tj
+T*
+ET
+Q
+
+
+endstream
+endobj
+20 0 obj
+<<
+/BaseFont /Helvetica
+/Encoding /WinAnsiEncoding
+/Name /F1
+/Subtype /Type1
+/Type /Font
+>>
+endobj
+21 0 obj
+<<
+/Contents 22 0 R
+/MediaBox [ 0 0 612 792 ]
+/Resources <<
+/Font <<
+/F1 6 0 R
+/F1-0 23 0 R
+/F2 8 0 R
+/F3 9 0 R
+/F4 10 0 R
+/F5 11 0 R
+>>
+/ProcSet [ /ImageB /ImageC /ImageI /PDF /Text ]
+>>
+/Rotate 0
+/Trans <<
+>>
+/Type /Page
+/Annots [ ]
+/Parent 2 0 R
+>>
+endobj
+22 0 obj
+<<
+/Length 5029
+>>
+stream
+q
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+BT /F1 7 Tf 8.4 TL ET
+.419608 .466667 .521569 rg
+BT 1 0 0 1 46.8 25.92 Tm (VaxImpact Simulator \177 NGSS-aligned investigation) Tj T* ET
+BT 1 0 0 1 543.017 25.92 Tm (Page 6) Tj T* ET
+Q
+q
+1 0 0 1 52.8 732 cm
+q
+BT 1 0 0 1 0 3 Tm 18 TL /F2 15 Tf .090196 .211765 .364706 rg (Part IV \227 Predict, Compare & Explain) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 713.9 cm
+q
+.141176 .192157 .247059 rg
+BT 1 0 0 1 0 3.2 Tm /F1 8.9 Tf 12.1 TL (Use the pattern in your data to make a prediction at 90% vaccination.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 59.4 687.9 cm
+q
+.439216 .678431 .278431 rg
+n 0 22 493.2 -22 re f*
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 8 5 cm
+q
+1 1 1 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL (90% PREDICTION) Tj T* ET
+Q
+Q
+q
+1 J
+1 j
+.439216 .678431 .278431 RG
+.5 w
+n 0 22 m 493.2 22 l S
+n 0 0 m 493.2 0 l S
+n 0 0 m 0 22 l S
+n 493.2 0 m 493.2 22 l S
+Q
+Q
+Q
+q
+1 0 0 1 52.8 661.9 cm
+q
+BT 1 0 0 1 0 12.3 Tm 10 TL /F1 7.7 Tf .141176 .192157 .247059 rg (These benchmark values were generated from the simulation under the same baseline settings used in Part II. Use them to judge the ) Tj /F2 7.7 Tf (scale) Tj /F1 7.7 Tf ( of your) Tj T* (prediction, not to copy an answer.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 66.6 513.46 cm
+q
+.439216 .678431 .278431 rg
+n 0 145.44 478.8 -21.6 re f*
+.956863 .964706 .972549 rg
+n 169.2 123.84 165.6 -123.84 re f*
+1 1 1 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 130.64 cm
+q
+1 1 1 rg
+BT 1 0 0 1 0 1.3 Tm /F2 6.7 Tf 8 TL 68.73425 0 Td (Metric) Tj T* -68.73425 0 Td ET
+Q
+Q
+q
+1 0 0 1 175.2 130.64 cm
+q
+1 1 1 rg
+BT 1 0 0 1 0 1.3 Tm /F2 6.7 Tf 8 TL 9.8931 0 Td (85% benchmark) Tj T* -9.8931 0 Td ET
+Q
+Q
+q
+1 0 0 1 258 130.64 cm
+q
+1 1 1 rg
+BT 1 0 0 1 0 1.3 Tm /F2 6.7 Tf 8 TL 9.8931 0 Td (95% benchmark) Tj T* -9.8931 0 Td ET
+Q
+Q
+q
+1 0 0 1 340.8 130.64 cm
+q
+1 1 1 rg
+BT 1 0 0 1 0 1.3 Tm /F2 6.7 Tf 8 TL 36.2118 0 Td (Your 90% estimate) Tj T* -36.2118 0 Td ET
+Q
+Q
+0 0 0 rg
+q
+1 0 0 1 6 103.36 cm
+q
+.141176 .192157 .247059 rg
+BT 1 0 0 1 0 2.3 Tm /F1 7.7 Tf 10 TL (Average peak infections) Tj T* ET
+Q
+Q
+BT 1 0 0 1 175.2 104.36 Tm (67.45) Tj T* ET
+BT 1 0 0 1 258 104.36 Tm (4.64) Tj T* ET
+BT 1 0 0 1 340.8 104.36 Tm  T* ET
+q
+1 0 0 1 6 72.4 cm
+q
+.141176 .192157 .247059 rg
+BT 1 0 0 1 0 2.3 Tm /F1 7.7 Tf 10 TL (Average total infected) Tj T* ET
+Q
+Q
+BT 1 0 0 1 175.2 73.4 Tm (205) Tj T* ET
+BT 1 0 0 1 258 73.4 Tm (7.55) Tj T* ET
+BT 1 0 0 1 340.8 73.4 Tm  T* ET
+q
+1 0 0 1 6 41.44 cm
+q
+.141176 .192157 .247059 rg
+BT 1 0 0 1 0 2.3 Tm /F1 7.7 Tf 10 TL (% vaccinated who become sick) Tj T* ET
+Q
+Q
+BT 1 0 0 1 175.2 42.44 Tm (5.68%) Tj T* ET
+BT 1 0 0 1 258 42.44 Tm (0.19%) Tj T* ET
+BT 1 0 0 1 340.8 42.44 Tm  T* ET
+q
+1 0 0 1 6 10.48 cm
+q
+.141176 .192157 .247059 rg
+BT 1 0 0 1 0 2.3 Tm /F1 7.7 Tf 10 TL (% unvaccinated who become sick) Tj T* ET
+Q
+Q
+BT 1 0 0 1 175.2 11.48 Tm (62.00%) Tj T* ET
+BT 1 0 0 1 258 11.48 Tm (7.60%) Tj T* ET
+BT 1 0 0 1 340.8 11.48 Tm  T* ET
+q
+1 J
+1 j
+.85098 .878431 .901961 RG
+.5 w
+n 0 145.44 m 478.8 145.44 l S
+n 0 0 m 478.8 0 l S
+n 0 0 m 0 145.44 l S
+n 478.8 0 m 478.8 145.44 l S
+n 0 123.84 m 478.8 123.84 l S
+n 0 92.88 m 478.8 92.88 l S
+n 0 61.92 m 478.8 61.92 l S
+n 0 30.96 m 478.8 30.96 l S
+n 169.2 0 m 169.2 145.44 l S
+n 252 0 m 252 145.44 l S
+n 334.8 0 m 334.8 145.44 l S
+Q
+Q
+Q
+q
+1 0 0 1 52.8 508.46 cm
+Q
+q
+1 0 0 1 52.8 480.06 cm
+q
+BT 1 0 0 1 0 13.6 Tm 11.2 TL /F2 8.8 Tf .141176 .192157 .247059 rg (After entering your 90% estimates: Were your estimates for peak infections and total infections closer to the 85%) Tj T* (benchmark or the 95% benchmark?) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 461.96 cm
+q
+BT 1 0 0 1 0 3.2 Tm 12.1 TL /F1 8.9 Tf .141176 .192157 .247059 rg /F5 8.9 Tf 12.1 TL (n) Tj /F1 8.9 Tf 12.1 TL ( Closer to 85%  ) Tj ( ) Tj (  ) Tj /F5 8.9 Tf 12.1 TL (n) Tj /F1 8.9 Tf 12.1 TL ( Closer to 95%  ) Tj ( ) Tj (  ) Tj /F5 8.9 Tf 12.1 TL (n) Tj /F1 8.9 Tf 12.1 TL ( About equally close) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 444.76 cm
+q
+.141176 .192157 .247059 rg
+BT 1 0 0 1 0 2.4 Tm /F2 8.8 Tf 11.2 TL (Explain why.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 59.4 390.92 cm
+q
+1 1 1 rg
+n 0 51.84 493.2 -51.84 re f*
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 5 5 Tm  T* ET
+q
+1 J
+1 j
+.85098 .878431 .901961 RG
+.55 w
+n 0 51.84 m 493.2 51.84 l S
+n 0 0 m 493.2 0 l S
+n 0 0 m 0 51.84 l S
+n 493.2 0 m 493.2 51.84 l S
+Q
+Q
+Q
+q
+1 0 0 1 52.8 362.52 cm
+q
+.141176 .192157 .247059 rg
+BT 1 0 0 1 0 13.6 Tm /F2 8.8 Tf 11.2 TL (4. Return to your original prediction. Were your predictions that peak infections and total infections would increase or) Tj T* (decrease supported by your experiment? Use at least one result from your data.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 59.4 308.68 cm
+q
+1 1 1 rg
+n 0 51.84 493.2 -51.84 re f*
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 5 5 Tm  T* ET
+q
+1 J
+1 j
+.85098 .878431 .901961 RG
+.55 w
+n 0 51.84 m 493.2 51.84 l S
+n 0 0 m 493.2 0 l S
+n 0 0 m 0 51.84 l S
+n 493.2 0 m 493.2 51.84 l S
+Q
+Q
+Q
+ 
+
+Q
+
+q
+0.0 0.0 612 792 re
+W
+n
+1 0 0 1 0 0 cm
+BT
+/F1-0 12 Tf
+14.4 TL
+ET
+1 1 1 rg
+n
+507.6 16.56 64.8 15.84 re
+f*
+0.419608 0.466667 0.521569 rg
+BT
+/F1-0 7 Tf
+8.4 TL
+ET
+BT
+1 0 0 1 543.017 25.92 Tm
+(Page 5) Tj
+T*
+ET
+Q
+
+
+endstream
+endobj
+23 0 obj
+<<
+/BaseFont /Helvetica
+/Encoding /WinAnsiEncoding
+/Name /F1
+/Subtype /Type1
+/Type /Font
+>>
+endobj
+24 0 obj
+<<
+/Contents 25 0 R
+/MediaBox [ 0 0 612 792 ]
+/Resources <<
+/Font <<
+/F1 6 0 R
+/F1-0 26 0 R
+/F2 8 0 R
+/F3 9 0 R
+/F4 10 0 R
+/F5 11 0 R
+>>
+/ProcSet [ /ImageB /ImageC /ImageI /PDF /Text ]
+>>
+/Rotate 0
+/Trans <<
+>>
+/Type /Page
+/Annots [ ]
+/Parent 2 0 R
+>>
+endobj
+25 0 obj
+<<
+/Length 4440
+>>
+stream
+q
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+BT /F1 7 Tf 8.4 TL ET
+.419608 .466667 .521569 rg
+BT 1 0 0 1 46.8 25.92 Tm (VaxImpact Simulator \177 NGSS-aligned investigation) Tj T* ET
+BT 1 0 0 1 543.017 25.92 Tm (Page 7) Tj T* ET
+Q
+q
+1 0 0 1 52.8 732 cm
+q
+.090196 .211765 .364706 rg
+BT 1 0 0 1 0 3 Tm /F2 15 Tf 18 TL (Part V \227 Analysis Questions) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 706 cm
+q
+.141176 .192157 .247059 rg
+BT 1 0 0 1 0 12.3 Tm /F1 7.7 Tf 10 TL (Use your results, the simulator, and the information in each prompt to explain what the model shows about disease transmission. These questions) Tj T* (also ask you to think about what a simplified model may not capture.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 59.4 649 cm
+q
+.956863 .964706 .972549 rg
+n 0 54 493.2 -54 re f*
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 8 35 cm
+q
+.090196 .211765 .364706 rg
+BT 1 0 0 1 0 2.5 Tm /F2 11.5 Tf 14 TL (1. Vaccine effectiveness) Tj T* ET
+Q
+Q
+q
+1 0 0 1 8 5 cm
+q
+.141176 .192157 .247059 rg
+BT 1 0 0 1 0 12.3 Tm /F1 7.7 Tf 10 TL (How may vaccine effectiveness influence disease transmission? Please write a hypothesis and explain how you would test this with the) Tj T* (simulator, based on how you tested vaccine rates in Part II?) Tj T* ET
+Q
+Q
+q
+1 J
+1 j
+.85098 .878431 .901961 RG
+.7 w
+n 0 54 m 493.2 54 l S
+n 0 0 m 493.2 0 l S
+n 0 0 m 0 54 l S
+n 493.2 0 m 493.2 54 l S
+Q
+Q
+Q
+q
+1 0 0 1 52.8 646 cm
+Q
+q
+1 0 0 1 52.8 628.8 cm
+q
+.141176 .192157 .247059 rg
+BT 1 0 0 1 0 2.4 Tm /F2 8.8 Tf 11.2 TL (Your response:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 59.4 562 cm
+q
+1 1 1 rg
+n 0 64.8 493.2 -64.8 re f*
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 5 5 Tm  T* ET
+q
+1 J
+1 j
+.85098 .878431 .901961 RG
+.55 w
+n 0 64.8 m 493.2 64.8 l S
+n 0 0 m 493.2 0 l S
+n 0 0 m 0 64.8 l S
+n 493.2 0 m 493.2 64.8 l S
+Q
+Q
+Q
+q
+1 0 0 1 52.8 557 cm
+Q
+q
+1 0 0 1 59.4 493 cm
+q
+.956863 .964706 .972549 rg
+n 0 64 493.2 -64 re f*
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 8 45 cm
+q
+.090196 .211765 .364706 rg
+BT 1 0 0 1 0 2.5 Tm /F2 11.5 Tf 14 TL (2. Indirect transmission) Tj T* ET
+Q
+Q
+q
+1 0 0 1 8 5 cm
+q
+.141176 .192157 .247059 rg
+BT 1 0 0 1 0 22.3 Tm /F1 7.7 Tf 10 TL (Many diseases can spread through indirect contact with others, such as germs that can live on door handles. For example, measles can) Tj T* (remain in the air for 2 hours after a person has left a room, which is one of the factors that makes measles highly contagious. Considering) Tj T* (this, how might this change the results of the simulator?) Tj T* ET
+Q
+Q
+q
+1 J
+1 j
+.85098 .878431 .901961 RG
+.7 w
+n 0 64 m 493.2 64 l S
+n 0 0 m 493.2 0 l S
+n 0 0 m 0 64 l S
+n 493.2 0 m 493.2 64 l S
+Q
+Q
+Q
+q
+1 0 0 1 52.8 490 cm
+Q
+q
+1 0 0 1 52.8 472.8 cm
+q
+.141176 .192157 .247059 rg
+BT 1 0 0 1 0 2.4 Tm /F2 8.8 Tf 11.2 TL (Your response:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 59.4 409.6 cm
+q
+1 1 1 rg
+n 0 61.2 493.2 -61.2 re f*
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 5 5 Tm  T* ET
+q
+1 J
+1 j
+.85098 .878431 .901961 RG
+.55 w
+n 0 61.2 m 493.2 61.2 l S
+n 0 0 m 493.2 0 l S
+n 0 0 m 0 61.2 l S
+n 493.2 0 m 493.2 61.2 l S
+Q
+Q
+Q
+q
+1 0 0 1 52.8 404.6 cm
+Q
+q
+1 0 0 1 59.4 350.6 cm
+q
+.956863 .964706 .972549 rg
+n 0 54 493.2 -54 re f*
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 8 35 cm
+q
+.090196 .211765 .364706 rg
+BT 1 0 0 1 0 2.5 Tm /F2 11.5 Tf 14 TL (3. Unvaccinated decisions can affect other people) Tj T* ET
+Q
+Q
+q
+1 0 0 1 8 5 cm
+q
+.141176 .192157 .247059 rg
+BT 1 0 0 1 0 12.3 Tm /F1 7.7 Tf 10 TL (John has decided that he doesn\222t want to receive an annual flu vaccine and believes that being unvaccinated is a decision that only affects) Tj T* (himself. Based on the simulation and what you\222ve learned above, do you agree or disagree with this reasoning? Explain why or why not.) Tj T* ET
+Q
+Q
+q
+1 J
+1 j
+.85098 .878431 .901961 RG
+.7 w
+n 0 54 m 493.2 54 l S
+n 0 0 m 493.2 0 l S
+n 0 0 m 0 54 l S
+n 493.2 0 m 493.2 54 l S
+Q
+Q
+Q
+q
+1 0 0 1 52.8 347.6 cm
+Q
+q
+1 0 0 1 52.8 330.4 cm
+q
+.141176 .192157 .247059 rg
+BT 1 0 0 1 0 2.4 Tm /F2 8.8 Tf 11.2 TL (Your response:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 59.4 276.56 cm
+q
+1 1 1 rg
+n 0 51.84 493.2 -51.84 re f*
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 5 5 Tm  T* ET
+q
+1 J
+1 j
+.85098 .878431 .901961 RG
+.55 w
+n 0 51.84 m 493.2 51.84 l S
+n 0 0 m 493.2 0 l S
+n 0 0 m 0 51.84 l S
+n 493.2 0 m 493.2 51.84 l S
+Q
+Q
+Q
+q
+1 0 0 1 52.8 271.56 cm
+Q
+ 
+
+Q
+
+q
+0.0 0.0 612 792 re
+W
+n
+1 0 0 1 0 0 cm
+BT
+/F1-0 12 Tf
+14.4 TL
+ET
+1 1 1 rg
+n
+507.6 16.56 64.8 15.84 re
+f*
+0.419608 0.466667 0.521569 rg
+BT
+/F1-0 7 Tf
+8.4 TL
+ET
+BT
+1 0 0 1 543.017 25.92 Tm
+(Page 6) Tj
+T*
+ET
+Q
+
+
+endstream
+endobj
+26 0 obj
+<<
+/BaseFont /Helvetica
+/Encoding /WinAnsiEncoding
+/Name /F1
+/Subtype /Type1
+/Type /Font
+>>
+endobj
+27 0 obj
+<<
+/Contents 28 0 R
+/MediaBox [ 0 0 612 792 ]
+/Resources <<
+/Font <<
+/F1 6 0 R
+/F1-0 29 0 R
+/F2 8 0 R
+/F3 9 0 R
+/F4 10 0 R
+/F5 11 0 R
+>>
+/ProcSet [ /ImageB /ImageC /ImageI /PDF /Text ]
+>>
+/Rotate 0
+/Trans <<
+>>
+/Type /Page
+/Annots [ ]
+/Parent 2 0 R
+>>
+endobj
+28 0 obj
+<<
+/Length 3235
+>>
+stream
+q
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+BT /F1 7 Tf 8.4 TL ET
+.419608 .466667 .521569 rg
+BT 1 0 0 1 46.8 25.92 Tm (VaxImpact Simulator \177 NGSS-aligned investigation) Tj T* ET
+BT 1 0 0 1 543.017 25.92 Tm (Page 8) Tj T* ET
+Q
+q
+1 0 0 1 52.8 732 cm
+q
+.090196 .211765 .364706 rg
+BT 1 0 0 1 0 3 Tm /F2 15 Tf 18 TL (Part V \227 Analysis Questions \(continued\)) Tj T* ET
+Q
+Q
+q
+1 0 0 1 59.4 662 cm
+q
+.956863 .964706 .972549 rg
+n 0 64 493.2 -64 re f*
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 8 45 cm
+q
+.090196 .211765 .364706 rg
+BT 1 0 0 1 0 2.5 Tm /F2 11.5 Tf 14 TL (4. Protecting people who cannot safely receive a vaccine) Tj T* ET
+Q
+Q
+q
+1 0 0 1 8 5 cm
+q
+.141176 .192157 .247059 rg
+BT 1 0 0 1 0 22.3 Tm /F1 7.7 Tf 10 TL (Sarah is someone who is immunocompromised and is a part of the very small percentage of people who can not safely receive a vaccine.) Tj T* (Additionally, if she does get an infectious disease, such as the Flu or Measles, she has a much greater risk of severe complications. Explain) Tj T* (how John\222s decision can influence Sarah\222s health, if it does at all.) Tj T* ET
+Q
+Q
+q
+1 J
+1 j
+.85098 .878431 .901961 RG
+.7 w
+n 0 64 m 493.2 64 l S
+n 0 0 m 493.2 0 l S
+n 0 0 m 0 64 l S
+n 493.2 0 m 493.2 64 l S
+Q
+Q
+Q
+q
+1 0 0 1 52.8 659 cm
+Q
+q
+1 0 0 1 52.8 641.8 cm
+q
+.141176 .192157 .247059 rg
+BT 1 0 0 1 0 2.4 Tm /F2 8.8 Tf 11.2 TL (Your response:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 59.4 567.8 cm
+q
+1 1 1 rg
+n 0 72 493.2 -72 re f*
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 5 5 Tm  T* ET
+q
+1 J
+1 j
+.85098 .878431 .901961 RG
+.55 w
+n 0 72 m 493.2 72 l S
+n 0 0 m 493.2 0 l S
+n 0 0 m 0 72 l S
+n 493.2 0 m 493.2 72 l S
+Q
+Q
+Q
+q
+1 0 0 1 52.8 562.8 cm
+Q
+q
+1 0 0 1 59.4 488.8 cm
+q
+.956863 .964706 .972549 rg
+n 0 74 493.2 -74 re f*
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 8 55 cm
+q
+.090196 .211765 .364706 rg
+BT 1 0 0 1 0 2.5 Tm /F2 11.5 Tf 14 TL (5. Hospital burden) Tj T* ET
+Q
+Q
+q
+1 0 0 1 8 5 cm
+q
+.141176 .192157 .247059 rg
+BT 1 0 0 1 0 32.3 Tm /F1 7.7 Tf 10 TL (One important variable not included in this simulation is hospital burden. How might vaccination rates indirectly influence hospital burden) Tj T* (\(number of sick and hospitalized people at any given time\)? Would you expect this to also affect the mortality rate if hospitals and healthcare) Tj T* (professionals are unable to manage the volume of cases occurring within a single day or season? Hint: Consider what happened during the) Tj T* (COVID-19 Pandemic when resources became scarce.) Tj T* ET
+Q
+Q
+q
+1 J
+1 j
+.85098 .878431 .901961 RG
+.7 w
+n 0 74 m 493.2 74 l S
+n 0 0 m 493.2 0 l S
+n 0 0 m 0 74 l S
+n 493.2 0 m 493.2 74 l S
+Q
+Q
+Q
+q
+1 0 0 1 52.8 485.8 cm
+Q
+q
+1 0 0 1 52.8 468.6 cm
+q
+.141176 .192157 .247059 rg
+BT 1 0 0 1 0 2.4 Tm /F2 8.8 Tf 11.2 TL (Your response:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 59.4 394.6 cm
+q
+1 1 1 rg
+n 0 72 493.2 -72 re f*
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 5 5 Tm  T* ET
+q
+1 J
+1 j
+.85098 .878431 .901961 RG
+.55 w
+n 0 72 m 493.2 72 l S
+n 0 0 m 493.2 0 l S
+n 0 0 m 0 72 l S
+n 493.2 0 m 493.2 72 l S
+Q
+Q
+Q
+q
+1 0 0 1 52.8 389.6 cm
+Q
+ 
+
+Q
+
+q
+0.0 0.0 612 792 re
+W
+n
+1 0 0 1 0 0 cm
+BT
+/F1-0 12 Tf
+14.4 TL
+ET
+1 1 1 rg
+n
+507.6 16.56 64.8 15.84 re
+f*
+0.419608 0.466667 0.521569 rg
+BT
+/F1-0 7 Tf
+8.4 TL
+ET
+BT
+1 0 0 1 543.017 25.92 Tm
+(Page 7) Tj
+T*
+ET
+Q
+
+
+endstream
+endobj
+29 0 obj
+<<
+/BaseFont /Helvetica
+/Encoding /WinAnsiEncoding
+/Name /F1
+/Subtype /Type1
+/Type /Font
+>>
+endobj
+30 0 obj
+<<
+/Contents 31 0 R
+/MediaBox [ 0 0 612 792 ]
+/Resources <<
+/Font <<
+/F1 6 0 R
+/F1-0 32 0 R
+/F2 8 0 R
+/F3 9 0 R
+/F4 10 0 R
+/F5 11 0 R
+>>
+/ProcSet [ /ImageB /ImageC /ImageI /PDF /Text ]
+>>
+/Rotate 0
+/Trans <<
+>>
+/Type /Page
+/Annots [ ]
+/Parent 2 0 R
+>>
+endobj
+31 0 obj
+<<
+/Length 5988
+>>
+stream
+q
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+BT /F1 7 Tf 8.4 TL ET
+.419608 .466667 .521569 rg
+BT 1 0 0 1 46.8 25.92 Tm (VaxImpact Simulator \177 NGSS-aligned investigation) Tj T* ET
+BT 1 0 0 1 543.017 25.92 Tm (Page 9) Tj T* ET
+Q
+q
+1 0 0 1 52.8 732 cm
+q
+.090196 .211765 .364706 rg
+BT 1 0 0 1 0 3 Tm /F2 15 Tf 18 TL (Part V \227 Analysis Questions \(continued\)) Tj T* ET
+Q
+Q
+q
+1 0 0 1 59.4 662 cm
+q
+.956863 .964706 .972549 rg
+n 0 64 493.2 -64 re f*
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 8 45 cm
+q
+.090196 .211765 .364706 rg
+BT 1 0 0 1 0 2.5 Tm /F2 11.5 Tf 14 TL (6. Real communities are not isolated) Tj T* ET
+Q
+Q
+q
+1 0 0 1 8 5 cm
+q
+.141176 .192157 .247059 rg
+BT 1 0 0 1 0 22.3 Tm /F1 7.7 Tf 10 TL (This simulator assumes that people in a community \(such as a school\) are isolated from everyone else and can only become infected by) Tj T* (others within that community. Would you expect such an isolated scenario to occur in real life? Explain why or why not, and how this might) Tj T* (alter patterns of disease transmission.) Tj T* ET
+Q
+Q
+q
+1 J
+1 j
+.85098 .878431 .901961 RG
+.7 w
+n 0 64 m 493.2 64 l S
+n 0 0 m 493.2 0 l S
+n 0 0 m 0 64 l S
+n 493.2 0 m 493.2 64 l S
+Q
+Q
+Q
+q
+1 0 0 1 52.8 659 cm
+Q
+q
+1 0 0 1 52.8 641.8 cm
+q
+.141176 .192157 .247059 rg
+BT 1 0 0 1 0 2.4 Tm /F2 8.8 Tf 11.2 TL (Your response:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 59.4 557 cm
+q
+1 1 1 rg
+n 0 82.8 493.2 -82.8 re f*
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 5 5 Tm  T* ET
+q
+1 J
+1 j
+.85098 .878431 .901961 RG
+.55 w
+n 0 82.8 m 493.2 82.8 l S
+n 0 0 m 493.2 0 l S
+n 0 0 m 0 82.8 l S
+n 493.2 0 m 493.2 82.8 l S
+Q
+Q
+Q
+q
+1 0 0 1 52.8 552 cm
+Q
+q
+1 0 0 1 59.4 478 cm
+q
+.956863 .964706 .972549 rg
+n 0 74 493.2 -74 re f*
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 8 55 cm
+q
+.090196 .211765 .364706 rg
+BT 1 0 0 1 0 2.5 Tm /F2 11.5 Tf 14 TL (7. People are not mixed randomly) Tj T* ET
+Q
+Q
+q
+1 0 0 1 8 5 cm
+q
+.141176 .192157 .247059 rg
+BT 1 0 0 1 0 32.3 Tm /F1 7.7 Tf 10 TL (In real life, people are not mixed randomly. Individuals often spend time in the same groups, such as friend groups, classrooms, job offices,) Tj T* (or even sitting at the same cafeteria table. This can also mean that unvaccinated people may be around other unvaccinated people more) Tj T* (often. Our simulator does not include this and instead mixes everyone randomly. How do you think this difference would affect how a) Tj T* (disease spreads? Would outbreaks become larger, smaller, or stay the same? Explain your reasoning.) Tj T* ET
+Q
+Q
+q
+1 J
+1 j
+.85098 .878431 .901961 RG
+.7 w
+n 0 74 m 493.2 74 l S
+n 0 0 m 493.2 0 l S
+n 0 0 m 0 74 l S
+n 493.2 0 m 493.2 74 l S
+Q
+Q
+Q
+q
+1 0 0 1 52.8 475 cm
+Q
+q
+1 0 0 1 52.8 457.8 cm
+q
+.141176 .192157 .247059 rg
+BT 1 0 0 1 0 2.4 Tm /F2 8.8 Tf 11.2 TL (Your response:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 59.4 369.4 cm
+q
+1 1 1 rg
+n 0 86.4 493.2 -86.4 re f*
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 5 5 Tm  T* ET
+q
+1 J
+1 j
+.85098 .878431 .901961 RG
+.55 w
+n 0 86.4 m 493.2 86.4 l S
+n 0 0 m 493.2 0 l S
+n 0 0 m 0 86.4 l S
+n 493.2 0 m 493.2 86.4 l S
+Q
+Q
+Q
+q
+1 0 0 1 52.8 364.4 cm
+Q
+q
+1 0 0 1 59.4 300.4 cm
+q
+.956863 .964706 .972549 rg
+n 0 64 493.2 -64 re f*
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 8 45 cm
+q
+.090196 .211765 .364706 rg
+BT 1 0 0 1 0 2.5 Tm /F2 11.5 Tf 14 TL (8. Multiple variables can change at once) Tj T* ET
+Q
+Q
+q
+1 0 0 1 8 5 cm
+q
+.141176 .192157 .247059 rg
+BT 1 0 0 1 0 22.3 Tm /F1 7.7 Tf 10 TL (In Part II, you changed only one variable \(vaccination rate\). In real-world scenarios, multiple variables change at once. Choose one) Tj T* (additional variable \(e.g., population density or transmission rate\) and explain how changing it, together with the vaccination rate, might alter) Tj T* (the outbreak differently than changing either one alone.) Tj T* ET
+Q
+Q
+q
+1 J
+1 j
+.85098 .878431 .901961 RG
+.7 w
+n 0 64 m 493.2 64 l S
+n 0 0 m 493.2 0 l S
+n 0 0 m 0 64 l S
+n 493.2 0 m 493.2 64 l S
+Q
+Q
+Q
+q
+1 0 0 1 52.8 297.4 cm
+Q
+q
+1 0 0 1 52.8 280.2 cm
+q
+.141176 .192157 .247059 rg
+BT 1 0 0 1 0 2.4 Tm /F2 8.8 Tf 11.2 TL (Your response:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 59.4 206.2 cm
+q
+1 1 1 rg
+n 0 72 493.2 -72 re f*
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 5 5 Tm  T* ET
+q
+1 J
+1 j
+.85098 .878431 .901961 RG
+.55 w
+n 0 72 m 493.2 72 l S
+n 0 0 m 493.2 0 l S
+n 0 0 m 0 72 l S
+n 493.2 0 m 493.2 72 l S
+Q
+Q
+Q
+q
+1 0 0 1 52.8 201.2 cm
+Q
+q
+1 0 0 1 59.4 179.2 cm
+q
+.184314 .560784 .615686 rg
+n 0 22 493.2 -22 re f*
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 8 5 cm
+q
+1 1 1 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL (OPTIONAL EXTENSION) Tj T* ET
+Q
+Q
+q
+1 J
+1 j
+.184314 .560784 .615686 RG
+.5 w
+n 0 22 m 493.2 22 l S
+n 0 0 m 493.2 0 l S
+n 0 0 m 0 22 l S
+n 493.2 0 m 493.2 22 l S
+Q
+Q
+Q
+q
+1 0 0 1 52.8 149 cm
+q
+.141176 .192157 .247059 rg
+BT 1 0 0 1 0 15.3 Tm /F1 8.9 Tf 12.1 TL (Read the paper discussing measles resurgence due to declining vaccine rates and the implications of this resurgence for) Tj T* (infectious diseases. Then compare what the real-world evidence shows with what your simulation predicts.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 133 cm
+q
+.141176 .192157 .247059 rg
+BT 1 0 0 1 0 2.3 Tm /F1 7.7 Tf 10 TL (https://pmc.ncbi.nlm.nih.gov/articles/PMC12581858/) Tj T* ET
+Q
+Q
+q
+1 0 0 1 59.4 76 cm
+q
+.917647 .952941 .972549 rg
+n 0 54 493.2 -54 re f*
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 8 35 cm
+q
+.090196 .211765 .364706 rg
+BT 1 0 0 1 0 2.5 Tm /F2 11.5 Tf 14 TL (Final reflection) Tj T* ET
+Q
+Q
+q
+1 0 0 1 8 5 cm
+q
+BT 1 0 0 1 0 12.3 Tm 10 TL /F2 7.7 Tf .141176 .192157 .247059 rg (A computational model is useful because) Tj /F1 7.7 Tf ( ________________________________, ) Tj /F2 7.7 Tf (but it has limitations because) Tj /F1 7.7 Tf  T* (________________________________________________.) Tj T* ET
+Q
+Q
+q
+1 J
+1 j
+.623529 .772549 .909804 RG
+.7 w
+n 0 54 m 493.2 54 l S
+n 0 0 m 493.2 0 l S
+n 0 0 m 0 54 l S
+n 493.2 0 m 493.2 54 l S
+Q
+Q
+Q
+ 
+
+Q
+
+q
+0.0 0.0 612 792 re
+W
+n
+1 0 0 1 0 0 cm
+BT
+/F1-0 12 Tf
+14.4 TL
+ET
+1 1 1 rg
+n
+507.6 16.56 64.8 15.84 re
+f*
+0.419608 0.466667 0.521569 rg
+BT
+/F1-0 7 Tf
+8.4 TL
+ET
+BT
+1 0 0 1 543.017 25.92 Tm
+(Page 8) Tj
+T*
+ET
+Q
+
+
+endstream
+endobj
+32 0 obj
+<<
+/BaseFont /Helvetica
+/Encoding /WinAnsiEncoding
+/Name /F1
+/Subtype /Type1
+/Type /Font
+>>
+endobj
+xref
+0 33
+0000000000 65535 f 
+0000000015 00000 n 
+0000000054 00000 n 
+0000000162 00000 n 
+0000000211 00000 n 
+0000000476 00000 n 
+0000006413 00000 n 
+0000006520 00000 n 
+0000006627 00000 n 
+0000006739 00000 n 
+0000006816 00000 n 
+0000006932 00000 n 
+0000007016 00000 n 
+0000007284 00000 n 
+0000015064 00000 n 
+0000015172 00000 n 
+0000015440 00000 n 
+0000025372 00000 n 
+0000025480 00000 n 
+0000025748 00000 n 
+0000030079 00000 n 
+0000030187 00000 n 
+0000030455 00000 n 
+0000035537 00000 n 
+0000035645 00000 n 
+0000035913 00000 n 
+0000040406 00000 n 
+0000040514 00000 n 
+0000040782 00000 n 
+0000044070 00000 n 
+0000044178 00000 n 
+0000044446 00000 n 
+0000050487 00000 n 
+trailer
+<<
+/Size 33
+/Root 3 0 R
+/Info 1 0 R
+>>
+startxref
+50595
+%%EOF
+3 1 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+ /AF [34 0 R] /Names << /EmbeddedFiles << /Names [(Content Credentials) 34 0 R] >> >> >>
+endobj
+33 0 obj
+<< /Length 20178 /F << /Subtype (application/c2pa) /Length 20178 >> >>
+stream
+  N“jumb   jumdc2pa  Ä  ™ 8õqc2pa   N¨jumb   Gjumdc2ma  Ä  ™ 8õqurn:c2pa:6db11756-635e-415d-9e91-7988073ad1a5   újumb   )jumdc2as  Ä  ™ 8õqc2pa.assertions   	πjumb   #jumd@À2ªäHùß*÷ÙCic2pa.icon    bfdb image/svg+xml   	wbidb<svg width="716" height="716" viewBox="0 0 716 716" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M508.749 317.399C516.777 287.314 508.991 253.884 485.389 230.282C461.788 206.681 428.36 198.895 398.273 206.923C376.231 184.928 343.39 174.956 311.148 183.596C278.906 192.234 255.45 217.292 247.36 247.361C217.291 255.451 192.233 278.91 183.595 311.149C174.957 343.391 184.927 376.232 206.924 398.274C198.896 428.359 206.683 461.789 230.284 485.391C253.885 508.992 287.313 516.779 317.401 508.75C339.442 530.745 372.286 540.717 404.525 532.079C436.767 523.441 460.223 498.384 468.313 468.315C498.383 460.224 523.44 436.766 532.078 404.526C540.716 372.285 530.747 339.443 508.749 317.402V317.399ZM470.899 244.776C486.892 260.77 493.488 282.601 490.687 303.412L415.577 260.046C412.411 258.218 408.509 258.218 405.345 260.046L317.401 310.82V277.526C317.401 275.191 318.652 273.005 320.676 271.837L387.644 233.174C414.178 218.353 448.346 222.223 470.901 244.776H470.899ZM357.837 311.144L398.275 334.491V381.185L357.837 404.532L317.398 381.185V334.491L357.837 311.144ZM264.776 269.693C265.207 239.305 285.644 211.649 316.453 203.393C338.3 197.54 360.505 202.744 377.127 215.573L302.014 258.937C298.848 260.764 296.898 264.144 296.898 267.798V369.346L268.065 352.699C266.043 351.531 264.776 349.353 264.776 347.017V269.691V269.693ZM203.391 316.454C209.244 294.608 224.854 277.978 244.276 269.999V356.73C244.276 360.384 246.226 363.763 249.392 365.591L337.337 416.365L308.503 433.013C306.481 434.181 303.961 434.188 301.939 433.02L234.971 394.357C208.868 378.789 195.138 347.261 203.391 316.454ZM244.775 470.9C228.781 454.906 222.186 433.075 224.986 412.264L300.096 455.63C303.263 457.457 307.164 457.457 310.328 455.63L398.273 404.856V438.149C398.273 440.485 397.022 442.671 394.997 443.839L328.029 482.502C301.495 497.322 267.327 493.452 244.772 470.9H244.775ZM450.897 445.982C450.466 476.371 430.029 504.027 399.22 512.283C377.373 518.136 355.168 512.932 338.547 500.102L413.659 456.738C416.826 454.911 418.775 451.532 418.775 447.877V346.329L447.609 362.977C449.631 364.145 450.897 366.323 450.897 368.659V445.985V445.982ZM512.282 399.221C506.429 421.068 490.819 437.697 471.397 445.676V358.946C471.397 355.292 469.448 351.912 466.281 350.085L378.336 299.311L407.17 282.663C409.192 281.495 411.712 281.487 413.734 282.655L480.702 321.318C506.805 336.887 520.536 368.415 512.282 399.221Z" fill="black"/>
+</svg>
+  jumb   )jumdcbor  Ä  ™ 8õqc2pa.actions.v2    ›cbor°gactionsÅ§factionlc2pa.createdqdigitalSourceTypexFhttp://cv.iptc.org/newscodes/digitalsourcetype/trainedAlgorithmicMediamsoftwareAgent¢dnamengpt-5-6-t-minigversionngpt-5-6-t-minidwhenx2026-08-29T03:00:21.039443Z   §jumb   (jumdcbor  Ä  ™ 8õqc2pa.hash.data    tcbor•jexclusionsÅ¢estart…dflengthN“dnamenjumbf manifestcalgfsha256dhashX Ì˛Ÿ¸öÆﬁD2pco‘∏pp›T6Ú˝∞’PÙcpad@  âjumb   'jumdc2cl  Ä  ™ 8õqc2pa.claim.v2   Zcbor¶jinstanceIDx,xmp:iid:b99307c1-bb6a-4caa-8927-9b40d0699705tclaim_generator_info£dnamegChatGPTdicon¢curlx$self#jumbf=c2pa.assertions/c2pa.icondhashX u>=W1í≥®NÎL˚¡åt∑'w÷–6«e6„ÒkspecVersione2.2.0isignaturexMself#jumbf=/c2pa/urn:c2pa:6db11756-635e-415d-9e91-7988073ad1a5/c2pa.signaturercreated_assertionsÉ¢curlx$self#jumbf=c2pa.assertions/c2pa.icondhashX u>=W1í≥®NÎL˚¡åt∑'w÷–6«e6„Ò¢curlx*self#jumbf=c2pa.assertions/c2pa.actions.v2dhashX j8˛Ú∫5Áq÷äÿ∆ñÒ…≤ÚÒ‰¬•@)%Ω4©—≥…Â¢curlx)self#jumbf=c2pa.assertions/c2pa.hash.datadhashX Ñ›≠µßˇ¬ïŒkîé[Ó\ó(èﬂõ2:L®S†∑K‘hdc:titleiimage.pdfcalgfsha256  @8jumb   (jumdc2cs  Ä  ™ 8õqc2pa.signature   @cbor“ÑYË¢8$!ÇYà0ÇÑ0Çl†•¸ÈpåÚÄ1ÓDds0	*ÜHÜ˜ 0J1!0USSL.com C2PA ICA R1 202510U
+SSL Corporation10	UUS0260422155105Z270423155104Z0G10	UUS10U
+OpenAI OpCo, LLC10UOpenAI Media Service0Ç"0	*ÜHÜ˜ Ç 0Ç
+Ç ù∫jLMóÍÅâ∂—æ^XNr°ôﬂiq|Â!#”Å¢5úL£J<Ôn+øÊdÆ◊ÑKi$ZcœÍv
+ê≤e€|<ç·˛¡3wØ'ﬁ; :¥cáòÕMúø¥3D™T07F∏˝öyDsWU£c|›¨X/ÊzÆﬁ•ò√ìNHZ¯‡|§íK’l∫ ¬*»íæu‘îgµW™jöm00,◊Uaåj“S∂ x^ECûNí£ÄÒØ[—≤Î˛ãÔ∫◊7	ï´d-ô…áö¯ø.–ÁcÄñöy†7ì6£5…H…,òcÈDõ5¨πßSlúhs»
+9ÃIÛ £Çg0Çc0Uˇ0 0U#0Ä9=G‹óèØà{MsÕÂÓ§•*0o+c0a09+0Ü-http://crt-c2pa.ssl.com/SSL.com-C2PA-I-R1.cer0$+0Ühttp://ocsp-c2pa.ssl.com0U 00
++ÉË^0)U%"0 ++$
++ÉË^0UÛùM‘Àùr¯F
+vG•hOt0Uˇ¿0	+ÉË^
++ÉË^
+03	+ÉË^&$019bc403-5cd7-7669-afe6-fdb17177d4280	*ÜHÜ˜ Ç Ç8óle°7 Ò˘Ìt∫’¶[5ıglœ+fi@Õı¸“rVﬂ ï(Í¯fﬁBC=¯x†h(â≠µÓ¸ı2“å∏_ÁlÄnÎ[|ó[0Á.B∏∆pö˛˛ 	¨5F’†åIEÄ√∫íU«Zùo“Îÿyõñ:ºDê44}ÙA•3ó/.lQR
+m=I∞À«ÜXÃ‹Óû.È∆9∏3\ ⁄Ó W3T.p(J%)Oí|.“˙›g.zËPx9Q∫É:⁄à~ê#êíıbXöÂ¬®sÜû≈ÿqÈÔ\d{ëÓ7/vòxVdÁoB—}íºÖjomdÖÿˇ"ñÌπÔ≤–\Ñ}h]5[K±≈iHyÊhé†ƒaò:L¯¿$yÂ¶h‡Ô˝÷ê÷.-AduV_ìî∂°úä<∂¿ËmÛ≈CÁv,h§ÚÊÀãàïË{*r$Å=!∆cm/%Ä£ô[™)•˝GÍ·˜kÂ˚[P&m+°Ç]1ı›b®|2‹L«•,r0PÄWìÇ‚ËÆ≥ßØY4ÆrÔ*ùÆx¨‚3ÏSµ…ô“(®*7°N´¸Ã~Xõ'mE·¥*úΩ0W°1. .…‚»T€°íOæ$5ò˛/i‹∏M„ﬁ/Ëlı¡ä‚”˛rw”®+‘WóÆáÿ æì∂âYS0ÇO0Ç7†'+c»ÃM-õÑQrlÙú^2QÆﬁ0	*ÜHÜ˜ 0O1&0$USSL.com C2PA RSA Root CA 202510U
+SSL Corporation10	UUS0251222181730Z301221181730Z0J1!0USSL.com C2PA ICA R1 202510U
+SSL Corporation10	UUS0Ç"0	*ÜHÜ˜ Ç 0Ç
+Ç À:¥Õ∏úÀ)V∏yß¯kˆ˘ÿèr√¶ò≠*A⁄a.GRΩtQæ]ÏzÇ∂¿˚˙Ë'•ãË˛bÛ`Ò_H ssï‰NnÃNz5ﬁX·◊Ç‹“GCwõﬂHàyü£9§YN^‡NGóÚuB◊v=∂§"‹Ì∆o‘rFå÷Q«µ∑zÚì˘#'’ÄPuäp†hÈÁºÑ(|ú*Í)©¿/˛…vFU∞/cÍ}ûÙ∞D§@ﬁ@6\DäTkWHˇªo§’Íé¬◊|ÿºŒiø† MìE;ô.y“œûü)ªFŸxc0ñ3Qú^ìm˙Â4JXx≥)l]|∏uï<ôw!{ÿ¥JÎ⁄Õ«
+÷…¢ﬁÆó≥∂Qñ⁄íõ√≤ªPƒ˛∂§Lï]-íjObÂ‡*˜i†ú’πì ⁄—ª^O∆Ø˘)L–…ÏÎÛ≤qP{v'hë˘Pà∏w5ÿÕ°·◊”)ÁJ∆áTY$¬g≤m	5€∫Œ∏F•‡ã⁄·ßüjŒ`“ƒ˜¡ﬁsyU‡p¥ÔÍÃ«˛vâNf
+ià-Ì√F¢*‰å‘úWF-Xb’ ®˙~¯¬ŸajÀ5]†ì£≤e®/ÌÔòÁ¸~∫HÙ™°q¸ìØÍßNsài’B¿˘ÑíÖOÀT≥=:¯›)ey Cûñ∏áXñ!Ô—ë{ £Ç&0Ç"0Uˇ0ˇ 0Uˇ0)U%"0 ++$
++ÉË^0U9=G‹óèØà{MsÕÂÓ§•*0U 00
++ÉË^0U#0Ä¸*Ju:Ä˙ôcìsWÏæì∞}√{0x+l0j0$+0Ühttp://ocsp-c2pa.ssl.com0B+0Ü6http://crt-c2pa.ssl.com/SSL.com-C2PA-Root-2025-RSA.cer0	*ÜHÜ˜ Ç Œ6˙>Ôñ6-éØUfˇ{+ kVıÀ≠Ω*Å≠•¶–M£>ì‰ìi’‰å®nÊ7T‚%úÏef(<3=¢ö¢ªÕgdJÁæt!°n√´&ƒ;,⁄Uπ˝GN‡çxõ7Éƒt;≈GaÔmAr§€]CS…ñNÂ‡:ﬂ®›.—ØXó÷ÁÙ_r#<kœΩ9´åì®èßvY>·íı˜Ÿ˚Fb´nn‘àF†≥/*j_•N⁄¯‘¸ÃŸ£<©wE
+¡˘òπ9ÀÃ°q¿*Çq”‰ˆ%‚Q!m÷ﬂ‰SçoJ}é^¿∫’wy!ÅzŒÌ˜õé∂≤äBVùèkA*˛kúãÓ£(œ_ÛÈ–d÷Ó¬âKÎíœıØ¬'M∏ë°7%ôÊ˝Ä‹Ùº«7{æ¥-gX/Á√≥ãqÂDz0∂•≤u>[#~;”T¶:π«Ã3’j5zÅv/˛W⁄i¯>?ÔTèã{F√cû˙Ìƒ/pÑ+ˆVÇÙßÀ$◊l^${:Ω©X;i≥úè“ptˇãn&ª√´E«SñúGµ∆F´^ı¸àãh£5Â|jïeµ´Îπˇ∫∏‡õJG≤ŒÏ/â}ÓØúMƒ…Œı2=è˜&4˛"ãzÌ˘^^g_Q[€$V˚—Y°∑ﬁöf	∂—Ü.˙}~ïyõDf|6Öˆı°cpadY3                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ˆY F÷•Ãıï™4
+t6}N[i_0ñ®ÂÄdUw≈”ΩÁbz g÷∞Î∫ÿÉ¯Ùˆzs¸£f∏Q9µI€9öx∆8a…(œbxb„˙ c≥Ÿì&ocPcœàî^Z6ifr›v¬¬bM3Ã≈F3LtOH¯öã]è|B(Ë„‘\âé∂Po9¶Ü
+˘/ı_[&•
+÷TaR®›ÁMπ^˝Ip”ÜuªwƒÍ¨œ˝4{ÃQ''B£ÿ‡é@”®âgäC+‰òWŸÕ“w}./p&Œ˛¿«ÄªÛuΩbW3
+"é©msI{cAÕ3/
+⁄ïpxf`ù<“g"ë“˝Õä“õ,·£ã˜X
+endstream
+endobj
+34 0 obj
+<< /AFRelationship /C2PA_Manifest /Desc (Content Credentials) /F (Content Credentials) /EF << /F 33 0 R >> /Subtype (application/c2pa) /Type /FileSpec /UF (Content Credentials) >>
+endobj
+xref
+3 1
+0000051334 00001 n 
+33 2
+0000051469 00000 n 
+0000071752 00000 n 
+trailer
+<< /Size 35 /Root 3 1 R /Prev 50595 >>
+startxref
+71948
+%%EOF
