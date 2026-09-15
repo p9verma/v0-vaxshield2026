@@ -52,7 +52,7 @@ const resources = [
   icon: FileText,
   free: true,
   featured: true,
-  file: "/downloads/VaxImpact_NGSS_Colored_Online_Version.pdf",
+  file: "/downloads/VaxImpact_NGSS_Colored_Online_Version_Document.pdf",
   },
   {
   title: "VaxImpact Teacher Quick Guide",
