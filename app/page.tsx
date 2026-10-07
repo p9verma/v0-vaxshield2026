@@ -8,6 +8,7 @@ import { AudienceSection } from "@/components/home/audience-section"
 import { ProductsSection } from "@/components/home/products-section"
 import { TestimonialsSection } from "@/components/home/testimonials-section"
 import { PartnersSection } from "@/components/home/partners-section"
+import { PressSection } from "@/components/home/press-section"
 import { FaqSection } from "@/components/home/faq-section"
 import { FeedbackSection } from "@/components/home/feedback-section"
 import { DonateSection } from "@/components/home/donate-section"
@@ -25,6 +26,7 @@ export default function HomePage() {
         <ProductsSection />
         <TestimonialsSection />
         <PartnersSection />
+        <PressSection />
         <FaqSection />
         <FeedbackSection />
         <DonateSection />
