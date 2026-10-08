@@ -19,6 +19,7 @@ export default function HomePage() {
       <Navbar />
       <main>
         <HeroSection />
+        <PressSection />
         <ImpactCounter />
         <SimulatorSection />
         <ProblemSection />
@@ -26,7 +27,6 @@ export default function HomePage() {
         <ProductsSection />
         <TestimonialsSection />
         <PartnersSection />
-        <PressSection />
         <FaqSection />
         <FeedbackSection />
         <DonateSection />
