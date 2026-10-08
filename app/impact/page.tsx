@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
@@ -6,6 +7,12 @@ import { BarChart2, TrendingUp, Heart } from "lucide-react"
 import { LiveMetrics } from "@/components/impact/live-metrics"
 import { PressSection } from "@/components/home/press-section"
 import { CATEGORY_LABELS, CATEGORY_ORDER, futureCollaboration, partnersByCategory } from "@/lib/partners"
+
+export const metadata: Metadata = {
+  title: "Our Impact",
+  description:
+    "See VaxShield's measurable reach: schools and clinics served, pilot program results, our partner network, and where donations go.",
+}
 
 const caseStudies = [
   {

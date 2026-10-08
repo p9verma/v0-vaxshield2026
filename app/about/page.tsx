@@ -1,9 +1,16 @@
+import type { Metadata } from "next"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { Shield, Target, Eye, Heart, Users, BookOpen } from "lucide-react"
 import { partners } from "@/lib/partners"
+
+export const metadata: Metadata = {
+  title: "About Us",
+  description:
+    "Learn how VaxShield, founded by University of Michigan students, builds science-backed vaccine education for students, families, and healthcare providers.",
+}
 
 const values = [
   { icon: BookOpen, title: "Education, Not Fear", body: "We believe in empowering people with knowledge, not alarming them. Every resource is designed to build understanding, not anxiety." },
