@@ -5,10 +5,11 @@ export function PressSection() {
   if (pressMentions.length === 0) return null
 
   return (
-    <section className="py-10 bg-white">
+    <section className="py-16 bg-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-6">
-          <p className="text-[--sky] text-sm font-semibold uppercase tracking-widest">Featured In</p>
+        <div className="text-center mb-10">
+          <p className="text-[--sky] text-sm font-semibold uppercase tracking-widest mb-2">Featured In</p>
+          <h2 className="text-3xl font-bold text-[--navy] text-balance">As seen in</h2>
         </div>
         <div className="flex flex-wrap justify-center gap-4">
           {pressMentions.map(({ outlet, description, url, date }) => (
