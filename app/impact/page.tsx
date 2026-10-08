@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { BarChart2, TrendingUp, Heart } from "lucide-react"
 import { LiveMetrics } from "@/components/impact/live-metrics"
+import { PressSection } from "@/components/home/press-section"
 import { CATEGORY_LABELS, CATEGORY_ORDER, futureCollaboration, partnersByCategory } from "@/lib/partners"
 
 const caseStudies = [
@@ -157,6 +158,8 @@ export default function ImpactPage() {
             </div>
           </div>
         </section>
+
+        <PressSection />
 
         {/* CTA */}
         <section className="py-14 bg-sky-50 text-center px-4">
