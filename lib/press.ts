@@ -8,6 +8,8 @@ export interface PressMention {
   description: string
   url: string
   date: string
+  /** Small eyebrow chip on the card, e.g. "Government Recognition". Optional. */
+  badge?: string
 }
 
 export const pressMentions: PressMention[] = [
@@ -17,5 +19,6 @@ export const pressMentions: PressMention[] = [
       "Featured in the MDE Science Newsletter as an interactive infectious disease simulation tool for grades 9–12.",
     url: "https://content.govdelivery.com/accounts/MIMDE/bulletins/41f9859",
     date: "October 2026",
+    badge: "Government Recognition",
   },
 ]
