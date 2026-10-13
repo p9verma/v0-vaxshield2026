@@ -38,7 +38,7 @@ const resources = [
   icon: FileText,
   free: true,
   featured: true,
-  file: "/downloads/VaxImpact_NGSS_Printed_Version_Document.pdf",
+  file: "/downloads/VaxImpact_NGSS_High School_Printed_Version.pdf",
   },
   {
   title: "NGSS-Aligned Worksheet: Online Version",
