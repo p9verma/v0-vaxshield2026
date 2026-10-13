@@ -78,18 +78,18 @@ const resources = [
   description:
     "A printable, NGSS-aligned investigation where students use the VaxImpact simulator to explore disease transmission, collect and analyze data, graph results, and evaluate how vaccination rates affect outbreaks.",
   type: "Worksheet" as ResourceType,
-  audience: ["Students", "Educators", "High School"] as Audience[],
+  audience: ["Students", "Educators", "Middle School"] as Audience[],
   icon: FileText,
   free: true,
   featured: true,
-  file: "/downloads/VaxImpact_NGSS_High School_Printed_Version.pdf",
+  file: "/downloads/VaxImpact_Middle_School_NGSS_Lesson_Plan.pdf",
   },
   {
   title: "VaxImpact Teacher Guide for NGSS-Aligned Middle School Worksheets",
   description:
     "A concise educator guide covering lesson goals, simulator controls, student workflow, classroom activity options, facilitation strategies, and important model limitations.",
   type: "Lesson Plan" as ResourceType,
-  audience: ["Educators", "High School"] as Audience[],
+  audience: ["Educators", "Middle School"] as Audience[],
   icon: BookOpen,
   free: true,
   featured: true,
@@ -100,7 +100,7 @@ const resources = [
   description:
     "A concise educator guide covering lesson goals, simulator controls, student workflow, classroom activity options, facilitation strategies, and important model limitations.",
   type: "Lesson Plan" as ResourceType,
-  audience: ["Students", "High School"] as Audience[],
+  audience: ["Students", "Middle School"] as Audience[],
   icon: BookOpen,
   free: true,
   featured: true,
