@@ -63,15 +63,15 @@ const resources = [
   file: "/downloads/VaxImpact_Teacher_Quick_Guide_High_School_Lesson_Plans.pdf",
   },
   {
-  title: "VaxImpact Teacher Quick Guide",
+  title: "VaxImpact Student Guide for NGSS-Aligned High School Worksheets",
   description:
     "A concise educator guide covering lesson goals, simulator controls, student workflow, classroom activity options, facilitation strategies, and important model limitations.",
   type: "Lesson Plan" as ResourceType,
-  audience: ["Educators"] as Audience[],
+  audience: ["Students", "High School"] as Audience[],
   icon: BookOpen,
   free: true,
   featured: true,
-  file: "/downloads/VaxImpact_Teacher_Quick_Guide.pdf",
+  file: "/downloads/VaxImpact_Student_Quick_Guide_High School Lesson Plans.pdf",
   },
 ]
 
