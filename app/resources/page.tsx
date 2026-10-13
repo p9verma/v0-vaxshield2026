@@ -93,7 +93,7 @@ const resources = [
   icon: BookOpen,
   free: true,
   featured: true,
-  file: "/downloads/VaxImpact_Teacher_Quick_Guide_High_School_Lesson_Plans.pdf",
+  file: "/downloads/VaxImpact_Teacher_Quick_Middle School Lesson Plan.pdf",
   },
   {
   title: "VaxImpact Student Guide for NGSS-Aligned Middle School Worksheets",
