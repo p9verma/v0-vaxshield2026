@@ -73,6 +73,39 @@ const resources = [
   featured: true,
   file: "/downloads/VaxImpact_Student_Quick_Guide_High School Lesson Plans.pdf",
   },
+  {
+  title: "NGSS-Aligned Worksheet: Middle School Printable Version",
+  description:
+    "A printable, NGSS-aligned investigation where students use the VaxImpact simulator to explore disease transmission, collect and analyze data, graph results, and evaluate how vaccination rates affect outbreaks.",
+  type: "Worksheet" as ResourceType,
+  audience: ["Students", "Educators", "High School"] as Audience[],
+  icon: FileText,
+  free: true,
+  featured: true,
+  file: "/downloads/VaxImpact_NGSS_High School_Printed_Version.pdf",
+  },
+  {
+  title: "VaxImpact Teacher Guide for NGSS-Aligned Middle School Worksheets",
+  description:
+    "A concise educator guide covering lesson goals, simulator controls, student workflow, classroom activity options, facilitation strategies, and important model limitations.",
+  type: "Lesson Plan" as ResourceType,
+  audience: ["Educators", "High School"] as Audience[],
+  icon: BookOpen,
+  free: true,
+  featured: true,
+  file: "/downloads/VaxImpact_Teacher_Quick_Guide_High_School_Lesson_Plans.pdf",
+  },
+  {
+  title: "VaxImpact Student Guide for NGSS-Aligned Middle School Worksheets",
+  description:
+    "A concise educator guide covering lesson goals, simulator controls, student workflow, classroom activity options, facilitation strategies, and important model limitations.",
+  type: "Lesson Plan" as ResourceType,
+  audience: ["Students", "High School"] as Audience[],
+  icon: BookOpen,
+  free: true,
+  featured: true,
+  file: "/downloads/VaxImpact_Student_Quick_Guide_High School Lesson Plans.pdf",
+  },
 ]
 
 // Derived from the catalogue, so a chip is only ever offered when it has
