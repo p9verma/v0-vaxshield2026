@@ -15,20 +15,10 @@ import { FileText, Download, Search, ExternalLink, BookOpen } from "lucide-react
  */
 type ResourceType = "Lesson Plan" | "Worksheet" | "Infographic" | "Video" | "Kit" | "Pamphlet"
 type TypeFilter = "All" | ResourceType
-type Audience = "Students" | "Educators" | "Parents" | "Providers"
+type Audience = "Students" | "Educators" | "Parents" | "Providers" | 'High School" | "Middle School"
 type AudienceFilter = "All" | Audience
 
 const resources = [
-  {
-    title: "Worksheet 1: Original",
-    description: "A foundational worksheet covering vaccine basics, disease spread, and herd immunity concepts, suitable for grades 9–12.",
-    type: "Worksheet" as ResourceType,
-    audience: ["Students", "Educators"] as Audience[],
-    icon: FileText,
-    free: true,
-    featured: true,
-    file: "/downloads/VaxImpact-Simulator-Worksheet.pdf",
-  },
   {
     title: "Worksheet 2: Case Study",
     description: "The longer, case-study version and judges' favorite. Students analyze a real-world outbreak scenario and apply herd immunity concepts.",
@@ -40,11 +30,11 @@ const resources = [
     file: "/downloads/VaxImpact-Simulator-Case-Study.pdf",
   },
   {
-  title: "NGSS-Aligned Worksheet: Printed Version",
+  title: "NGSS-Aligned Worksheet: High School Printable Version",
   description:
     "A printable, NGSS-aligned investigation where students use the VaxImpact simulator to explore disease transmission, collect and analyze data, graph results, and evaluate how vaccination rates affect outbreaks.",
   type: "Worksheet" as ResourceType,
-  audience: ["Students", "Educators"] as Audience[],
+  audience: ["Students", "Educators", "High School"] as Audience[],
   icon: FileText,
   free: true,
   featured: true,
@@ -60,6 +50,17 @@ const resources = [
   free: true,
   featured: true,
   file: "/downloads/VaxImpact_NGSS_Online_Version_Document.pdf",
+  },
+  {
+  title: "VaxImpact Teacher Quick Guide",
+  description:
+    "A concise educator guide covering lesson goals, simulator controls, student workflow, classroom activity options, facilitation strategies, and important model limitations.",
+  type: "Lesson Plan" as ResourceType,
+  audience: ["Educators"] as Audience[],
+  icon: BookOpen,
+  free: true,
+  featured: true,
+  file: "/downloads/VaxImpact_Teacher_Quick_Guide.pdf",
   },
   {
   title: "VaxImpact Teacher Quick Guide",
