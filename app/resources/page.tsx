@@ -15,7 +15,7 @@ import { FileText, Download, Search, ExternalLink, BookOpen } from "lucide-react
  */
 type ResourceType = "Lesson Plan" | "Worksheet" | "Infographic" | "Video" | "Kit" | "Pamphlet"
 type TypeFilter = "All" | ResourceType
-type Audience = "Students" | "Educators" | "Parents" | "Providers" | 'High School" | "Middle School"
+type Audience = "Students" | "Educators" | "Parents" | "Providers" | "High School" | "Middle School"
 type AudienceFilter = "All" | Audience
 
 const resources = [
