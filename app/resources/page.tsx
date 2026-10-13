@@ -104,7 +104,7 @@ const resources = [
   icon: BookOpen,
   free: true,
   featured: true,
-  file: "/downloads/VaxImpact_Student_Quick_Guide_High School Lesson Plans.pdf",
+  file: "/downloads/VaxImpact_Student_Quick_Guide_Middle School Lesson Plan.pdf",
   },
 ]
 
