@@ -116,7 +116,7 @@ const types: TypeFilter[] = [
 ]
 const audiences: AudienceFilter[] = [
   "All",
-  ...(["Students", "Educators", "Parents", "Providers"] as Audience[]).filter((a) =>
+  ...(["Students", "Educators", "Parents", "Providers", "High School", "Middle School"] as Audience[]).filter((a) =>
     resources.some((r) => r.audience.includes(a))
   ),
 ]
