@@ -4,8 +4,8 @@ import { useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { BookOpen, ExternalLink, Info } from "lucide-react"
-import { MEDICAL_DISCLAIMER } from "@/lib/disclaimer"
 import { VaccineFactsSlideshow } from "@/components/home/vaccine-facts-section"
+import { MEDICAL_DISCLAIMER } from "@/lib/disclaimer"
 
 export function SimulatorSection() {
   const iframeRef = useRef<HTMLIFrameElement>(null)
@@ -23,11 +23,11 @@ export function SimulatorSection() {
   }, [])
 
   return (
-    <section id="simulator" className="py-16 bg-[--sky-pale]">
+    <section id="simulator" className="bg-[--sky-pale] py-8 sm:py-10">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <VaccineFactsSlideshow /> 
+        <VaccineFactsSlideshow />
 
-        <div className="text-center mb-10">
+        <div className="text-center mb-6">
           <p className="text-[--sky] text-sm font-semibold uppercase tracking-widest mb-2">Featured Tool</p>
           <h2 className="text-3xl font-bold text-[--navy] text-balance mb-3">
             VaxImpact Herd Immunity Simulator
@@ -37,11 +37,17 @@ export function SimulatorSection() {
           </p>
         </div>
 
-        <div className="max-w-3xl mx-auto mb-6 rounded-xl border border-[--sky]/30 bg-white p-4 sm:p-5">
-          <div className="flex gap-3">
-            <Info className="h-5 w-5 text-[--sky] shrink-0 mt-0.5" aria-hidden="true" />
-            <div className="text-sm leading-relaxed text-muted-foreground">
-              <p className="font-semibold text-[--navy] mb-1">Before you start: this is a teaching model.</p>
+        <aside
+          aria-label="Simulator information"
+          className="mb-5 rounded-xl border border-[#00274C]/20 border-l-4 border-l-[#FFCB05] bg-white p-4 shadow-sm sm:p-5"
+        >
+          <div className="mb-3 flex items-center gap-2">
+            <Info className="h-5 w-5 shrink-0 text-[#00274C]" aria-hidden="true" />
+            <h3 className="font-semibold text-[#00274C]">Before you explore</h3>
+          </div>
+          <div className="grid gap-4 text-sm leading-relaxed text-muted-foreground lg:grid-cols-2 lg:gap-6">
+            <div>
+              <p className="mb-1 font-semibold text-[#00274C]">This is a teaching model.</p>
               <p>
                 The simulator is a simplified illustration of how vaccination rates affect disease spread. It is
                 not a prediction of any real outbreak. Real transmission depends on many factors this model does
@@ -52,24 +58,21 @@ export function SimulatorSection() {
                   href="https://www.cdc.gov/vaccines"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[--sky] font-medium underline underline-offset-2 hover:no-underline"
+                  className="font-medium text-[#00274C] underline underline-offset-2 hover:text-[#36566F]"
                 >
                   CDC
                 </a>{" "}
                 or your healthcare provider.
               </p>
             </div>
+            <div className="border-t border-[#00274C]/10 pt-3 lg:border-l lg:border-t-0 lg:pl-6 lg:pt-0">
+              <p>
+                <span className="font-semibold text-[#00274C]">Disclaimer: </span>
+                {MEDICAL_DISCLAIMER}
+              </p>
+            </div>
           </div>
-        </div>
-
-        {/* Medical disclaimer, passive notice. Sits below the accuracy callout
-            so both are read before the simulator, but nothing gates the embed. */}
-        <div className="max-w-3xl mx-auto mb-8">
-          <p className="text-xs leading-relaxed text-muted-foreground">
-            <span className="font-semibold text-[--navy]">Disclaimer: </span>
-            {MEDICAL_DISCLAIMER}
-          </p>
-        </div>
+        </aside>
 
         <div className="bg-white rounded-2xl shadow-lg border border-[--sky]/20 overflow-hidden">
           <div className="bg-[--navy] px-5 py-3 flex items-center justify-between">
