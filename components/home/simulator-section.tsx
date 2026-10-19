@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { BookOpen, ExternalLink, Info } from "lucide-react"
 import { MEDICAL_DISCLAIMER } from "@/lib/disclaimer"
+import { VaccineFactsSlideshow } from "@/components/home/vaccine-facts-section"
 
 export function SimulatorSection() {
   const iframeRef = useRef<HTMLIFrameElement>(null)
@@ -24,6 +25,7 @@ export function SimulatorSection() {
   return (
     <section id="simulator" className="py-16 bg-[--sky-pale]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <VaccineFactsSlideshow /> 
 
         <div className="text-center mb-10">
           <p className="text-[--sky] text-sm font-semibold uppercase tracking-widest mb-2">Featured Tool</p>
