@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { ArrowLeft, ArrowRight } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button" 
 
 const vaccineFacts = [
   {
